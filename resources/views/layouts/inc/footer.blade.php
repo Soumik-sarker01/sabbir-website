@@ -18,7 +18,7 @@
     <div class="container-lg">
         <div class="footer-bottom">
             <div>
-                <p style="font-size: 1.3rem;text-align:center;color:white;" class="mb-0">Design & Development by <a href="https://monokrome.dev" target="_blank" class="text-white fw-bold" style="color:#913f9f !important;">Aynaur</a></p>
+                <p style="font-size: 1.3rem;text-align:center;color: #25262f;;" class="mb-0">Design & Development by <a href="https://monokrome.dev" target="_blank" class="text-white fw-bold" style="color:#913f9f !important;">Aynaur</a></p>
             </div>
         </div>
     </div>
