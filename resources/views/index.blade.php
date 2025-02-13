@@ -358,29 +358,27 @@
         }
     }
 
+    /* Remove centering from the hero-wrapper */
     .hero-wrapper {
         display: flex;
         justify-content: flex-start;
-        /* Align content to the left */
+        /* Align elements to the left */
         align-items: center;
-        /* Keep vertical centering */
-        text-align: left;
-        /* Ensure text is left-aligned */
         width: 100%;
         height: 100%;
         padding-left: 5%;
-        /* Adjust padding for spacing */
     }
 
-    
+
     .profile h4 {
+        position: relative;
         font-size: 3.2rem;
         /* Smaller text */
         font-weight: 400;
         color: #80db66;
         /* Ensure visibility */
         margin-bottom: 5px;
-        left:10px;
+        left: 5px;
         font-family: 'Jost', sans-serif;
     }
 
@@ -388,11 +386,10 @@
         font-size: 8.8rem;
         /* Larger name */
         font-weight: 700;
-        color: #ffffff;
+        color: #e2ecf6;
         margin-top: 0;
         font-family: 'Jost', sans-serif;
     }
-
 
     .hero-text {
         text-align: left;
@@ -416,133 +413,81 @@
     }
 
 
-
-
-
-
-    /* Ensure the entire h1 is centered */
+    /* Left-align social media container */
     .social-media-container {
         display: flex;
-        justify-content: flex-start;
-        /* Center the whole text block */
         align-items: center;
-        /* Keep vertical alignment */
-        gap: 10px;
-        /* Space between static and rolling text */
+        justify-content: flex-start;
+        /* Align left */
+        gap: 6px;
         flex-wrap: nowrap;
-        /* Prevent line breaks */
         text-align: left;
-        /* Ensure overall centering */
-        font-size: 3.2rem !important;
-        /* Responsive font size */
+        font-size: 3.2rem;
         white-space: nowrap;
-        left: -98px;
-        /* Prevent wrapping */
         position: relative;
         height: 70px;
-        /* Prevents shifting */
-        font-size: 37px;
-        font-family: 'Plus Jakarta Sans', sans-serif;
+        left: -16px;
+        /* Ensure it's positioned correctly */
+        font-family: 'Jost', sans-serif;
     }
 
-    /* Keep "Social Media" fixed in place */
+    /* Keep "Social Media" text fixed */
     .social-media-text {
         flex-shrink: 0;
-        /* Prevents resizing */
-        min-width: 250px;
-        /* Ensures stability */
-        text-align: right;
-
+        min-width: fit-content;
+        text-align: left;
         color: #e2ecf6;
-        /* Ensure visibility */
     }
 
-
-    /* Social Media Container */
-    .social-media-container {
-        display: flex;
-        justify-content: center;
+    /* Ensure the container has a fixed width to prevent shifting */
+    .typing-container {
+        display: inline-flex;
         align-items: center;
-        gap: 15px;
-        flex-wrap: nowrap;
-        text-align: center;
-        font-size: clamp(28px, 5vw, 50px);
-        /* Responsive font size */
+        position: relative;
         white-space: nowrap;
-        position: relative;
-        height: 70px;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    /* Rolling Triangle - Adjusted for Social Media Container */
-    .rolling-triangle {
-        width: 180px;
-        /* Matches Social Media Container */
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        perspective: 800px;
-        /* Adjusted for better 3D depth */
-    }
-
-    /* 3D Rotating Triangle - Smooth Transition */
-    .triangle {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transform-style: preserve-3d;
-        transition: transform 1.2s ease-in-out;
-        /* Slower and smoother transition */
-    }
-
-    /* Triangle Faces */
-    .triangle-face {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        text-align: center;
         font-size: inherit;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: left;
-        opacity: 1;
-        backface-visibility: hidden;
-        color: white;
+        width: 270px;
+        /* Adjust as needed */
+        overflow: hidden;
+        text-align: left;
     }
 
-    /* Adjust Face Positioning */
-    .triangle-face:nth-child(1) {
-        transform: rotateX(0deg) translateZ(35px);
+    /* Typing text grows without shifting "Social Media" */
+    .typing-text {
+        font-weight: bold;
+        color: #80db66;
+        display: inline-block;
+        overflow: hidden;
+        min-width: fit-content;
+        padding-right: -10px;
+        /* Ensures cursor sticks to last letter */
+        margin-right: -15px;
+        /* Adjust this if needed */
     }
 
-    .triangle-face:nth-child(2) {
-        transform: rotateX(120deg) translateZ(35px);
+    /* Cursor positioning */
+    .cursor {
+        font-size: inherit;
+        color: #80db66;
+        display: inline-block;
+        position: absolute;
+        /* Changed from relative */
+        left: 0;
+        animation: blink 1.3s infinite;
+        /* Adjusted speed */
     }
 
-    .triangle-face:nth-child(3) {
-        transform: rotateX(240deg) translateZ(35px);
-    }
-
-
-    /* Triangle Rotation Animation */
-    @keyframes rotateTriangle {
+    /* Cursor Blinking Animation - Adjusted for Better Visibility */
+    @keyframes blink {
 
         0%,
-        33% {
-            transform: rotateX(0deg);
+        100% {
+            opacity: 1;
         }
 
-        34%,
-        66% {
-            transform: rotateX(-120deg);
-        }
-
-        67%,
-        99% {
-            transform: rotateX(-240deg);
+        50% {
+            opacity: 0.5;
+            /* Instead of disappearing completely, reduce opacity */
         }
     }
 
@@ -567,6 +512,7 @@
         min-width: 200px;
         /* Ensure consistent width */
         text-align: center;
+        justify-content: left;
     }
 
     /* Hover effect: Transparent background */
@@ -581,6 +527,121 @@
 
     /* Ensure buttons have equal width */
     .custom-button+.custom-button {
+        margin-left: 10px;
+    }
+
+    /* Left-align hero button */
+    .custom-button-hero {
+        display: inline-block;
+        padding: 12px 40px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        background: #80db66;
+        color: #25262f;
+        border: 2px solid #80db66;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-transform: uppercase;
+        min-width: 200px;
+        text-align: center;
+        justify-content: left;
+        margin-left: -260px;
+        /* Ensure alignment */
+    }
+
+    /* Hover effect: Transparent background */
+    .custom-button-hero:hover {
+        background: rgba(255, 255, 255, 1);
+        color: #25262f;
+        border: 1px solid #fff;
+    }
+
+
+    /* Ensure buttons have equal width */
+    .custom-button-hero+.custom-button-hero {
+        margin-left: 10px;
+    }
+
+    .custom-button-starter {
+        display: inline-block;
+        padding: 12px 40px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        background: #e93765;
+        color: white;
+        border: 2px solid #e93765;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-transform: uppercase;
+        min-width: 200px;
+        text-align: center;
+    }
+
+    /* Center the button without affecting section height */
+    .custom-button-starter-wrapper {
+        position: absolute;
+        /* Prevents affecting section height */
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -30px;
+        /* Adjust as needed */
+    }
+
+    /* Make sure the section has a relative position */
+    .section-with-button {
+        position: relative;
+        /* Ensures absolute positioning of button works */
+        padding-bottom: 60px;
+        /* Adjust this to avoid overlap */
+    }
+
+    /* Ensure anchor link does not take extra space */
+    .custom-button-starter-wrapper a {
+        display: inline-block;
+    }
+
+    /* Hover effect */
+    .custom-button-starter:hover {
+        background: rgba(255, 255, 255, 1);
+        color: #e93765;
+        border: 1px solid #e93765;
+    }
+
+    /* Left-align hero button */
+    .custom-button-nav-portfolio {
+        display: inline-block;
+        padding: 12px 40px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        background: #80db66;
+        color: #25262f;
+        border: 2px solid #80db66;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-transform: uppercase;
+        min-width: 200px;
+        text-align: center;
+        justify-content: left;
+        margin-left: -260px;
+        /* Ensure alignment */
+    }
+
+    /* Hover effect: Transparent background */
+    .custom-button-nav-portfolio:hover {
+        background: rgba(255, 255, 255, 1);
+        color: #25262f;
+        border: 1px solid #fff;
+    }
+
+
+    /* Ensure buttons have equal width */
+    .custom-button-nav-portfolio+.custom-button-nav-portfolio {
         margin-left: 10px;
     }
 
@@ -1161,24 +1222,17 @@
                         <h1>Sabbir Tareq</h1>
                     </div>
                     <div class="social-media-container">
-                        <span class="social-media-text">Social Media</span>
-                        <div class="rolling-triangle">
-                            <div class="triangle">
-                                <span class="triangle-face">Content</span>
-                                <span class="triangle-face">Design</span>
-                                <span class="triangle-face">Management</span>
-                            </div>
+                        <span class="social-media-text">A Social Media</span>
+                        <div class="typing-container">
+                            <span class="typing-text"></span>
+                            <span class="cursor">|</span>
                         </div>
+
                     </div>
                     <div class="spacer"></div>
                     <div style="display: flex; gap: 15px; justify-content: center;">
-                        <a href="https://www.fiverr.com/this_is_anika/be-your-social-media-content-creator-and-instagram-manager"
-                            target="_blank">
-                            <button class="custom-button">GET STARTED</button>
-                        </a>
-
-                        <a href="#portfolio">
-                            <button class="custom-button">SHOW PORTFOLIO</button>
+                        <a href="https://www.fiverr.com/sabbir_tareq" target="_blank">
+                            <button class="custom-button-hero">GET STARTED</button>
                         </a>
                     </div>
                 </div>
@@ -1560,7 +1614,7 @@
                     </div>
 
                     <section class="section-with-button">
-                        <a href="https://www.fiverr.com/this_is_anika/" target="_blank"
+                        <a href="https://www.fiverr.com/sabbir_tareq" target="_blank"
                             class="custom-button-starter-wrapper">
                             <div class="custom-button-starter">GET STARTED</div>
                         </a>
@@ -1591,7 +1645,7 @@
                 <br><br>
                 <div>
                     <p><b>Ready to take your brand to the next level?</b></p> <br>
-                    <a href="https://www.fiverr.com/this_is_anika" target="_blank">
+                    <a href="https://www.fiverr.com/sabbir_tareq" target="_blank">
                         <button class="custom-button-starter">
                             Let's chat!
                         </button>
@@ -2160,21 +2214,6 @@
         });
     });
 
-
-
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const triangle = document.querySelector(".triangle");
-        let rotation = 0;
-
-        function rotateTriangle() {
-            rotation -= 120; // Rotate by 120 degrees smoothly
-            triangle.style.transform = `rotateX(${rotation}deg)`;
-        }
-
-        setInterval(rotateTriangle, 1800); // Slower cycle time for smoother effect
-    });
-
     document.addEventListener("DOMContentLoaded", function () {
         const steps = document.querySelectorAll(".step");
         const line = document.querySelector(".steps-wrapper::before");
@@ -2261,6 +2300,44 @@
                 connectingLine.style.height = `${calculateLineHeight()}px`;
             }
         });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const typingText = document.querySelector(".typing-text");
+        const cursor = document.querySelector(".cursor");
+        const words = ["Content Creator", "Designer", "Manager"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 150;
+        let deletingSpeed = 60;
+        let pauseTime = 500;
+
+        function typeEffect() {
+            let currentWord = words[wordIndex];
+
+            if (isDeleting) {
+                typingText.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            // Set cursor position **exactly** at the last letter
+            cursor.style.left = `${typingText.offsetWidth-5}px`;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                setTimeout(() => isDeleting = true, pauseTime);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+            }
+
+            setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+        }
+
+        typeEffect();
     });
 
 </script>
