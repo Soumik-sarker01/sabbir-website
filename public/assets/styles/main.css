@@ -121,7 +121,7 @@ a:focus,
 button:focus,
 input:focus,
 textarea:focus {
-    -webkit-tap-highlight-color: #e93765;
+    -webkit-tap-highlight-color: #80db66;
 }
 
 input,
@@ -129,17 +129,17 @@ textarea,
 button,
 select,
 a {
-    -webkit-tap-highlight-color: #e93765;
+    -webkit-tap-highlight-color: #80db66;
 }
 
 /* General selection styling */
 ::-moz-selection {
-    background-color: #e93765;
+    background-color: #80db66;
     color: #fff;
 }
 
 ::selection {
-    background-color: #e93765;
+    background-color: #80db66;
     color: #fff;
 }
 
@@ -162,7 +162,7 @@ a {
 
 /* Scrollbar itself */
 ::-webkit-scrollbar-thumb {
-    background-color: #e93765;
+    background-color: #80db66;
     /* Scrollbar color */
     border-radius: 10px;
     /* Optional: round edges */
@@ -434,9 +434,9 @@ nav ul {
 
 .phone-menu .button1 {
     font-size: 1.6rem;
-    background-color: #e93765;
+    background-color: #80db66;
     color: #ffff;
-    border-color: #e93765;
+    border-color: #80db66;
 }
 
 .phone-link.active,
@@ -495,15 +495,15 @@ nav ul {
 }
 
 .button1:hover {
-    background-color: #e93765;
+    background-color: #80db66;
     color: #fff;
-    border-color: #e93765;
+    border-color: #80db66;
     transition: 0.2s ease-in-out;
 }
 
 .button2 {
     border: 1px solid transparent;
-    background-color: #e93765;
+    background-color: #80db66;
     color: #fff;
     padding: 1rem 2.8rem;
     border-radius: 200px;
@@ -513,8 +513,8 @@ nav ul {
 
 .button2:hover {
     background-color: transparent;
-    border: 1px solid #e93765;
-    color: #e93765;
+    border: 1px solid #80db66;
+    color: #80db66;
     transition: 0.2s ease-in-out;
 }
 
@@ -717,7 +717,7 @@ nav ul {
 }
 
 .infograph-wrapper {
-    background-color: #e3ebf5;
+    background-color: #e2ecf6;
     border-radius: 20px;
     padding: 8rem 10rem;
     display: flex;
@@ -989,7 +989,7 @@ nav ul {
 }
 
 .hashtags i {
-    color: #e93765;
+    color: #80db66;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1000,10 +1000,12 @@ nav ul {
 }
 
 .projects-wrapper {
-    background-color: #feefee;
-    border-radius: 200px;
+    background-color: #e2ecf6;
     border-radius: 20px;
-    padding: 8rem 12rem;
+    padding: 6rem 5rem;
+    
+    width: 1832px; /* Adjust as per your requirement */
+    margin: 0 auto;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1055,9 +1057,9 @@ nav ul {
 }
 
 .projects-btn button:hover {
-    background-color: #e93765;
+    background-color: #80db66;
     color: #fff;
-    border-color: #e93765;
+    border-color: #80db66;
     transition: 0.2s ease-in-out;
 }
 
@@ -1122,9 +1124,9 @@ nav ul {
 }
 
 .projects-btn button.active {
-    background-color: #e93765;
+    background-color: #80db66;
     color: #fff;
-    border-color: #e93765;
+    border-color: #80db66;
 }
 
 /* ------------------------------------------------*/
@@ -1138,25 +1140,31 @@ nav ul {
     margin-top: 100px;
 }
 
-.aim-wrapper {
+.aim-wrapper,
+.services-wrapper {
+    border-radius: 20px; /* Same as infograph */
+    padding: 8rem 10rem; /* Adjust padding to match */
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 5rem;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    justify-items: center;
+    text-align: center;
+    padding: 50px 0;
+    box-sizing: border-box; /* Prevents padding from increasing width */
 }
 
 @media only screen and (max-width: 800px) {
     .aim-wrapper {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 1rem;
+        padding: 4rem 1rem; /* Match responsive padding */
     }
 }
 
 .aim-item h1 {
     font-size: 1.8rem;
     font-weight: 500;
-    color: #e93765;
+    color: #80db66;
     margin-bottom: 20px;
 }
 
@@ -1169,7 +1177,7 @@ nav ul {
     display: flex;
     gap: 10px;
     align-items: flex-start;
-    border: 1px solid #e937651f;
+    border: 1px solid #80db661f;
     border-radius: 10px;
     padding: 20px;
     flex-direction: column;
@@ -1177,7 +1185,7 @@ nav ul {
 
 .aim-item i {
     font-size: 2.6rem;
-    color: #e93765;
+    color: #80db66;
 }
 
 .aim-title {
@@ -1215,13 +1223,6 @@ nav ul {
     .section-title {
         font-size: 2.6rem;
     }
-}
-
-.services-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 5rem;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1297,7 +1298,7 @@ nav ul {
 
 .steps-wrapper>i {
     font-size: 5rem;
-    color: #e93765;
+    color: #80db66;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1325,13 +1326,13 @@ nav ul {
     align-items: center;
     height: 60px;
     width: 60px;
-    border: 2px solid #e93765;
+    border: 2px solid #80db66;
     border-radius: 200px;
     transition: 0.3s ease-out;
 }
 
 .step:hover .step-icon {
-    background-color: #e93765;
+    background-color: #80db66;
 }
 
 .step:hover .step-icon h1 {
@@ -1339,7 +1340,7 @@ nav ul {
 }
 
 .step-icon h1 {
-    color: #e93765;
+    color: #80db66;
     font-size: 3.4rem;
 
     margin-bottom: 0;
@@ -1437,7 +1438,7 @@ nav ul {
 }
 
 .package-item ul i {
-    color: #ee3665;
+    color: #80db66;
     margin-right: 5px;
 }
 
@@ -1485,7 +1486,7 @@ nav ul {
     padding: 1.6rem 4.6rem;
     margin: auto;
     margin-top: 50px;
-    background-color: #3c0c44;
+    background-color: #80db66;
 }
 
 .package-item-title {
@@ -1599,7 +1600,7 @@ nav ul {
 
 .testimonial-swiper-button-prev,
 .testimonial-swiper-button-next {
-    border: 1px solid #ee3665;
+    border: 1px solid #80db66;
     height: 50px;
     width: 50px;
     display: flex;
@@ -1614,7 +1615,7 @@ nav ul {
 /* Default icon color */
 .testimonial-swiper-button-prev i,
 .testimonial-swiper-button-next i {
-    color: #ee3665;
+    color: #80db66;
     /* Icon color before hover */
 }
 
@@ -1675,6 +1676,7 @@ nav ul {
     margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: bold;
+    color: #e2ecf6;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1702,6 +1704,7 @@ nav ul {
     font-size: 1.8rem;
     text-align: justify;
     text-justify: inter-word;
+    color: #e2ecf6;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1725,8 +1728,9 @@ nav ul {
 /* ------------------------------------------------*/
 
 footer {
-    background-color: #ee3665;
+    background-color: #e2ecf6;
 }
+
 
 footer a:hover {
     color: #97d09d;
@@ -1737,6 +1741,7 @@ footer a:hover {
     padding-bottom: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    color: #25262f;
 }
 
 footer img {
@@ -1780,7 +1785,7 @@ footer img {
 /* call to actions section */
 
 .cta-section {
-    /* background: linear-gradient(45deg, #e93765, #ffb6c1); */
+    /* background: linear-gradient(45deg, #80db66, #ffb6c1); */
     /* padding: 3rem 0; */
     margin-bottom: 100px;
 }
@@ -1817,7 +1822,7 @@ footer img {
 
 .cta-card .button2:hover {
     background-color: #fff;
-    color: #e93765;
+    color: #80db66;
     border: 1px solid #fff;
 }
 

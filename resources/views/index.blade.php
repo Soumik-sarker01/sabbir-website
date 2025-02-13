@@ -72,18 +72,6 @@
     }
 
 
-    /* AIM & SERVICES SECTION STYLING */
-    .aim-wrapper,
-    .services-wrapper {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        /* 3 columns per row */
-        gap: 30px;
-        justify-items: center;
-        text-align: center;
-        padding: 50px 0;
-        background: white;
-    }
 
     /* Uniform Box Sizing */
     .aim-item,
@@ -149,7 +137,7 @@
     .aim-icon i,
     .service-icon i {
         font-size: 30px;
-        color: #e93765;
+        color: #80db66;
     }
 
     /* Pulse Animation */
@@ -172,9 +160,9 @@
     .services-included h1 {
         font-size: 38px;
         font-weight: 800;
-        color: #222;
         text-transform: uppercase;
         margin-bottom: 20px;
+        color: #e2ecf6;
     }
 
     /* BOX HEADER (Smaller Size) */
@@ -183,6 +171,7 @@
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 10px;
+        color: #25262f        ;
     }
 
     /* TEXT */
@@ -500,10 +489,10 @@
         /* Match padding of View All */
         font-size: 1.4rem;
         font-weight: 600;
-        background: #e93765;
+        background: #80db66;
         /* Same as View All button */
         color: white;
-        border: 2px solid #e93765;
+        border: 2px solid #80db66;
         border-radius: 25px;
         text-decoration: none;
         transition: all 0.3s ease;
@@ -519,9 +508,8 @@
     /* Hover effect: White transparent background */
     .custom-button:hover {
         background: rgba(255, 255, 255, 1);
-        /* White with 30% transparency */
-        color: #ee3665;
-        border: 1px solid #ee3665;
+        color: #25262f;
+        border: 1px solid #fff;
     }
 
 
@@ -569,9 +557,9 @@
         padding: 12px 40px;
         font-size: 1.4rem;
         font-weight: 600;
-        background: #e93765;
-        color: white;
-        border: 2px solid #e93765;
+        background: #80db66;
+        color: #25262f;
+        border: 2px solid#80db66;
         border-radius: 25px;
         text-decoration: none;
         transition: all 0.3s ease;
@@ -607,8 +595,8 @@
     /* Hover effect */
     .custom-button-starter:hover {
         background: rgba(255, 255, 255, 1);
-        color: #e93765;
-        border: 1px solid #e93765;
+        color: #25262f;
+        border: 1px solid #fff;
     }
 
     /* Left-align hero button */
@@ -650,9 +638,9 @@
         padding: 12px 40px;
         font-size: 1.4rem;
         font-weight: 600;
-        background: #e93765;
-        color: white;
-        border: 2px solid #e93765;
+        background: #80db66;
+        color: #25262f;
+        border: 2px solid #80db66;
         border-radius: 25px;
         text-decoration: none;
         transition: all 0.3s ease;
@@ -688,8 +676,8 @@
     /* Hover effect */
     .custom-button-starter:hover {
         background: rgba(255, 255, 255, 1);
-        color: #e93765;
-        border: 1px solid #e93765;
+        color: #25262f;
+        border: 1px solid #fff;
     }
 
     /* Make h1 in infograph section bolder */
@@ -707,7 +695,7 @@
     /* Stylish Pricing Tag */
     .price-tag {
         display: inline-block;
-        background: linear-gradient(45deg, #e93765, #ff6a89);
+        background: linear-gradient(45deg, #80db66, #ff6a89);
         padding: 10px 20px;
         border-radius: 30px;
         font-size: 1.5rem;
@@ -739,7 +727,7 @@
 
     /* Packages */
     .package-item:hover {
-        background-color: #ee3665 !important;
+        background-color: #80db66 !important;
         color: white;
         transform: scale(1.05);
         box-shadow: 0px 5px 15px rgba(238, 54, 101, 0.3) !important;
@@ -989,7 +977,7 @@
         /* Line thickness */
         height: 0;
         /* Initially zero, expands */
-        background: #e93765;
+        background: #80db66;
         z-index: 0;
         transition: height 1s ease-in-out;
     }
@@ -1003,7 +991,7 @@
         width: 5px;
         /* Thickness of the line */
         height: 0;
-        background: #e93765;
+        background: #80db66;
         z-index: 0;
         transition: height 1s ease-in-out;
     }
@@ -1023,7 +1011,7 @@
     .step-number {
         width: 50px;
         height: 50px;
-        background: #e93765;
+        background: #80db66;
         color: white;
         font-size: 22px;
         font-weight: bold;
@@ -1126,7 +1114,7 @@
             top: 60px;
             width: 5px;
             height: 0;
-            background: #e93765;
+            background: #80db66;
             z-index: 0;
             transition: height 1s ease-in-out;
         }
@@ -1203,6 +1191,7 @@
             font-size: 1.8rem;
             text-align: justify;
             text-justify: inter-word;
+            color: #e2ecf6;
         }
     }
 
@@ -1336,7 +1325,7 @@
     <section class="projects container-fluid" id="portfolio">
         <div class="projects-wrapper">
             <div class="container-lg">
-                <h1>Social media content we created</h1>
+                <h1>Social media content I created</h1>
                 <div class="spacer"></div>
                 <!-- Scrollable Project List -->
                 <div class="scroll-container">
@@ -1432,7 +1421,7 @@
 
     <section class="aim">
         <div class="container-lg">
-            <h1 class="aim-title">Our service is ideal for you if you aim to</h1>
+            <h1 class="aim-title" style="color:#e2ecf6;">My service is ideal for you if you aim to</h1>
             <div class="aim-wrapper">
                 <div class="aim-item">
                     <div class="aim-icon"><i class="fa-solid fa-comments"></i></div>
@@ -1556,74 +1545,7 @@
 
 
 
-    <section class="packages" id="pricing">
-        <div class="container-fluid">
-            <div class="packages-wrapper">
-                <div class="container-lg">
-                    <h1 class="package-header">Our Packages</h1>
-                    <div class="package-list">
-                        <div class="package-item">
-                            <div class="package-info">
-                                <div class="package-item-title">
-                                    <h1>STARTER PACK</h1>
-                                </div>
-
-                                <ul>
-                                    <li><i class="fa-solid fa-circle-check"></i> 12 Posts (10 Static, 2 Reels)/Month
-                                    </li>
-                                    <li><i class="fa-solid fa-circle-check"></i> Captions with CTAs</li>
-                                    <li><i class="fa-solid fa-circle-check"></i> 30 Best Hashtags</li>
-                                    <li><i class="fa-solid fa-circle-check"></i> Scheduling</li>
-                                </ul>
-                            </div>
-
-                        </div>
-                        <div class="package-item">
-                            <div class="package-info">
-                                <div class="package-item-title">
-                                    <h1>GROWTH PACK</h1>
-                                </div>
-
-                                <ul>
-                                    <li><i class="fa-solid fa-circle-check"></i> 20 Posts (16 Static, 4 Reels)/Month
-                                    </li>
-                                    <li><i class="fa-solid fa-circle-check"></i> Captions with CTAs</li>
-                                    <!-- FIXED TYPO -->
-                                    <li><i class="fa-solid fa-circle-check"></i> 60 Best Hashtags</li>
-                                    <li><i class="fa-solid fa-circle-check"></i> Scheduling</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="package-item">
-                            <div class="package-info">
-                                <div class="package-item-title">
-                                    <h1>PRO PACK</h1>
-                                </div>
-
-                                <ul>
-                                    <li><i class="fa-solid fa-circle-check"></i> 40 Posts (32 Static, 8 Reels)/Month
-                                    </li>
-                                    <li><i class="fa-solid fa-circle-check"></i> Captions with CTAs</li>
-                                    <li><i class="fa-solid fa-circle-check"></i> 90 Best Hashtags</li>
-                                    <li><i class="fa-solid fa-circle-check"></i> Scheduling</li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <section class="section-with-button">
-                        <a href="https://www.fiverr.com/sabbir_tareq" target="_blank"
-                            class="custom-button-starter-wrapper">
-                            <div class="custom-button-starter">GET STARTED</div>
-                        </a>
-                    </section>
-
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
 
     <section id="about">
