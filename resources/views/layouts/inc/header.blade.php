@@ -11,9 +11,9 @@
                 </ul>
             </div>
             <div class="nav-action">
-                <a href="https://www.fiverr.com/this_is_anika" target="_blank">
-                    <div class="button1">Get Started</div>
-                </a>
+            <a href="#portfolio">
+                            <button class="custom-button-nav-portfolio">SHOW PORTFOLIO</button>
+                        </a>
             </div>
             <div id="burger-icon"><i class="fa-solid fa-bars"></i></div>
         </div>

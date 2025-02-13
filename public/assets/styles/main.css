@@ -533,14 +533,9 @@ nav ul {
     display: inline-block;
     padding: 10px 15px;
     text-decoration: none;
-    color: #ff4a4a;
+    color: #80db66;
     /* Default text color */
     transition: all 0.3s ease-in-out;
-}
-
-/* Navbar links when scrolled */
-header.scrolled .nav-link {
-    color: #ffffff !important;
 }
 
 /* ------------------------------------------------*/
