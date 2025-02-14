@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
 
 
 <style>
@@ -171,7 +172,7 @@
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 10px;
-        color: #25262f        ;
+        color: #25262f;
     }
 
     /* TEXT */
@@ -227,7 +228,10 @@
     }
 
 
-
+    .testimonial-info,
+    .testimonial-text p {
+        color: #e2ecf6;
+    }
 
 
 
@@ -350,12 +354,12 @@
     /* Remove centering from the hero-wrapper */
     .hero-wrapper {
         display: flex;
-        justify-content: flex-start;
-        /* Align elements to the left */
         align-items: center;
+        justify-content: space-between;
         width: 100%;
-        height: 100%;
-        padding-left: 5%;
+        padding: 50px;
+        position: relative;
+        overflow: hidden; /* Ensures elements stay inside */
     }
 
 
@@ -466,6 +470,68 @@
         /* Adjusted speed */
     }
 
+/* Abstracts - Move & Float */
+.abstract-image-1,
+.abstract-image-2,
+.abstract-image-3 {
+    position: absolute;
+    transition: transform 0.1s ease-out; /* Smooth movement */
+    will-change: transform;
+    animation: floating 5s infinite ease-in-out alternate;
+}
+
+/* Apply unique animations */
+.abstract-image-1 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: -330px;
+    top: -40px;
+    animation: floating-1 3s infinite ease-in-out;
+}
+
+.abstract-image-2 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 210px;
+    top: -40px;
+    animation: floating-2 3s infinite ease-in-out;
+}
+
+.abstract-image-3 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 320px;
+    top: 400px;
+    animation: floating-3 3s infinite ease-in-out;
+}
+@media (max-width: 768px) {
+    .abstract-image-1 {
+        width: 50%;
+        max-width: 20em;
+    }
+}
+
+@keyframes floating-1 {
+    0% { transform: translate(-15px, -15px) scale(1.2); }
+    50% { transform: translate(0px, 0px) scale(1.2); }
+    100% { transform: translate(-15px, -15px) scale(1.2); }
+}
+
+@keyframes floating-2 {
+    0% { transform: translate(10px, -10px) scale(1.2); }
+    50% { transform: translate(0px, 0px) scale(1.2); }
+    100% { transform: translate(10px, -10px) scale(1.2); }
+}
+
+@keyframes floating-3 {
+    0% { transform: translate(15px, 15px) scale(1.2); }
+    50% { transform: translate(0px, 0px) scale(1.2); }
+    100% { transform: translate(15px, 15px) scale(1.2); }
+}
+
     /* Cursor Blinking Animation - Adjusted for Better Visibility */
     @keyframes blink {
 
@@ -480,7 +546,96 @@
         }
     }
 
+    :root {
+        --image-width: 950px;
+        /* Image size increased */
+        --image-height: 950px;
+        --circle-size: 620px;
+        /* Circle size increased */
+    }
 
+    /* Container for image and circle */
+    .hero-image-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--circle-size);
+        height: var(--circle-size);
+        margin-left: -100px;
+        /* Shift slightly left */
+    }
+
+/* Background Circle - Static but Zooms on Hover */
+.circle-background {
+    position: absolute;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    background: rgba(128, 128, 128, 0.2); /* Gray transparent */
+    border-radius: 50%;
+    z-index: 0;
+    left: 10%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Hover Effect - Enlarge Circle */
+.hero-image-container:hover .circle-background {
+    transform: translate(-50%, -50%) scale(1.1); /* Zoom without moving */
+    opacity: 0.4;
+}
+
+    /* IMAGE - Force it to increase */
+    .hero-image {
+        width: var(--image-width) !important;
+        /* FORCE BIGGER IMAGE */
+        height: var(--image-height) !important;
+        max-width: none !important;
+        /* Prevents constraints */
+        max-height: none !important;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+        /* Above circle */
+        object-fit: contain;
+        transition: transform 0.3s ease-in-out;
+        left: -40%;
+    }
+
+
+    /* Responsive Adjustments */
+    @media (max-width: 1200px) {
+        :root {
+            --image-width: 750px;
+            --image-height: 750px;
+            --circle-size: 850px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        :root {
+            --image-width: 650px;
+            --image-height: 650px;
+            --circle-size: 750px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        :root {
+            --image-width: 550px;
+            --image-height: 550px;
+            --circle-size: 650px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        :root {
+            --image-width: 450px;
+            --image-height: 450px;
+            --circle-size: 550px;
+        }
+    }
 
     /* Ensure both buttons match "View All" in size */
     .custom-button {
@@ -1202,9 +1357,9 @@
     <div class="spacer"></div>
 
     <section class="hero">
-        <!-- Hero Content -->
         <div class="container-fluid">
             <div class="hero-wrapper">
+                <!-- Left Side: Text Content -->
                 <div class="hero-text">
                     <div class="profile">
                         <h4>Hello I'm</h4>
@@ -1216,7 +1371,6 @@
                             <span class="typing-text"></span>
                             <span class="cursor">|</span>
                         </div>
-
                     </div>
                     <div class="spacer"></div>
                     <div style="display: flex; gap: 15px; justify-content: center;">
@@ -1225,6 +1379,17 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="hero-image-container">
+                    
+                <img src="{{ asset('assets/img/1.svg') }}" alt="Abstract" class="abstract-image-1">
+                    <img src="{{ asset('assets/img/2.svg') }}" alt="Abstract" class="abstract-image-2">
+                    <img src="{{ asset('assets/img/3.svg') }}" alt="Abstract" class="abstract-image-3">
+                    <div class="circle-background"></div> <!-- Enlarged Circle -->
+                    <img src="{{ asset('assets/img/profile.png') }}" alt="Sabbir Tareq" class="hero-image">
+                </div>
+
+
             </div>
         </div>
     </section>
@@ -1545,7 +1710,7 @@
 
 
 
-    
+
 
 
     <section id="about">
@@ -1583,7 +1748,7 @@
     <section id="testimonial">
         <div class="container-lg testimonial-wrapper">
             <div class="testimonial-head">
-                <h1>
+                <h1 style="color: #e2ecf6;">
                     What Our
                     <span class="fiverr">Fiverr</span>
                     Clients Say
@@ -2261,6 +2426,43 @@
 
         typeEffect();
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const heroSection = document.querySelector(".hero");
+    const abstract1 = document.querySelector(".abstract-image-1");
+    const abstract2 = document.querySelector(".abstract-image-2");
+    const abstract3 = document.querySelector(".abstract-image-3");
+
+    heroSection.addEventListener("mousemove", (event) => {
+        let x = (event.clientX / window.innerWidth - 0.5) * 30; // Scale movement
+        let y = (event.clientY / window.innerHeight - 0.5) * 30;
+
+        // Move abstracts dynamically at different angles
+        abstract1.style.transform = `translate(${x * 1.2}px, ${y * 0.8}px) scale(1.2)`;
+        abstract2.style.transform = `translate(${x * -1}px, ${y * 1.1}px) scale(1.2)`;
+        abstract3.style.transform = `translate(${x * 0.9}px, ${y * -1.2}px) scale(1.2)`;
+    });
+
+    // Reset when mouse leaves the hero section
+    heroSection.addEventListener("mouseleave", () => {
+        abstract1.style.transform = "translate(0px, 0px) scale(1.2)";
+        abstract2.style.transform = "translate(0px, 0px) scale(1.2)";
+        abstract3.style.transform = "translate(0px, 0px) scale(1.2)";
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const heroSection = document.querySelector(".hero");
+    const circleBackground = document.querySelector(".circle-background");
+
+    // Reset when mouse leaves the hero section
+    heroSection.addEventListener("mouseleave", () => {
+        circleBackground.style.transform = `translate(-50%, -50%) scale(1.1)`;
+    });
+});
+
 
 </script>
 
