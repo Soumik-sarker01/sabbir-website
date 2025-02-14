@@ -557,7 +557,7 @@ nav ul {
     }
 .hero-wrapper {
     text-align: center;
-    min-height: 80vh;
+    min-height: 90vh;
     /* border: 1px solid black; */
     /* display: flex;
     flex-direction: column;
@@ -629,18 +629,6 @@ nav ul {
     max-width: 220px;
 }
 
-.hero-img {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 8em;
-}
-
-@media screen and (max-width: 800px) {
-    .hero-img {
-        display: none;
-    }
-}
 
 .hero-text {
     display: flex;
