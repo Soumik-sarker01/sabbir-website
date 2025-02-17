@@ -13,1342 +13,344 @@
 
 
 <style>
-    html,
-    body {
-        overflow-x: hidden;
-    }
+    
+    
 
-    body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    h1 {
-        text-transform: capitalize;
-    }
-
-    /* General Hover Shadow Effect */
-    .aim-item:hover,
-    .service-item:hover,
-    .package-item:hover,
-    .testimonial:hover,
-    .project-item:hover {
-        box-shadow: 0 5px 15px rgba(238, 54, 101, 0.3) !important;
-    }
-
-    /* General Styles */
-    .scroll-container {
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
-        width: 100%;
-    }
-
-    .project-list {
-        display: flex;
-        gap: 15px;
-        width: max-content;
-        will-change: transform;
-    }
-
-    .project-item {
-        flex: 0 0 auto;
-        width: 350px;
-        cursor: pointer;
-        background: white;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease-in-out;
-    }
-
-    /* Projects */
-    .project-item:hover {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(238, 54, 101, 0.3) !important;
-    }
-
-    .project-item img {
-        width: 100%;
-        border-radius: 10px;
-    }
-
-
-
-    /* Uniform Box Sizing */
-    .aim-item,
-    .service-item {
-        background: white;
-        border-radius: 20px;
-        padding: 25px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 200px;
-        /* Fixed Height */
-        width: 100%;
-        /* Ensures uniform width */
-        max-width: 350px;
-        /* Limits maximum size */
-    }
-
-    /* Alternating Box Background Colors */
-    .aim-item:nth-child(odd),
-    .service-item:nth-child(odd) {
-        background: #FFEEF0;
-    }
-
-    .aim-item:nth-child(even),
-    .service-item:nth-child(even) {
-        background: #E3EBF5;
-    }
-
-    /* Hover Effect */
-    .aim-item:hover,
-    .service-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    }
-
-    /* ICONS WITH BACKGROUND */
-    .aim-icon {
-        width: 40px;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 100%;
-        margin-bottom: 10px;
-        animation: pulseEffect 1.5s infinite ease-in-out;
-    }
-
-    /* ICONS WITH BACKGROUND */
-    .service-icon {
-        width: 40px;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 100%;
-        margin-bottom: -5px;
-        animation: pulseEffect 1.5s infinite ease-in-out;
-    }
-
-    .aim-icon i,
-    .service-icon i {
-        font-size: 30px;
-        color: #80db66;
-    }
-
-    /* Pulse Animation */
-    @keyframes pulseEffect {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.1);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-
-    /* SECTION HEADER (Larger Size) */
-    .aim h1,
-    .services-included h1 {
-        font-size: 38px;
-        font-weight: 800;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        color: #e2ecf6;
-    }
-
-    /* BOX HEADER (Smaller Size) */
-    .aim-item h1,
-    .service-item h1 {
-        font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 10px;
-        color: #25262f;
-    }
-
-    /* TEXT */
-    .aim-item p,
-    .service-item p {
-        font-size: 15px;
-        color: #555;
-        max-width: 90%;
-    }
-
-    /* RESPONSIVENESS */
-    @media (max-width: 1024px) {
-
-        .aim-wrapper,
-        .services-wrapper {
-            grid-template-columns: repeat(2, 1fr);
-            /* 2 columns per row */
-        }
-
-        .aim h1,
-        .services-included h1 {
-            font-size: 34px;
-        }
-
-        .aim-item,
-        .service-item {
-            height: 180px;
-        }
-    }
-
-    @media (max-width: 768px) {
-
-        .aim-wrapper,
-        .services-wrapper {
-            grid-template-columns: 1fr;
-            /* 1 column per row */
-        }
-
-        .aim h1,
-        .services-included h1 {
-            font-size: 30px;
-        }
-
-        .aim-item h1,
-        .service-item h1 {
-            font-size: 15px;
-        }
-
-        .aim-item,
-        .service-item {
-            height: 170px;
-        }
-    }
-
-
-    .testimonial-info,
-    .testimonial-text p {
-        color: #e2ecf6;
-    }
-
-
-
-    .clients-scroll-container {
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
-        width: 34%;
-        /* Default: Push towards right */
-        margin-left: auto;
-    }
-
-    /* Client images container */
-    .clients-img {
-        display: flex;
-        gap: 20px;
-        width: max-content;
-        will-change: transform;
-    }
-
-    /* Ensure logos scale correctly */
-    .clients-img img {
-        width: 80px;
-        /* Default logo size */
+/* Fix Hero Section for Mobile View */
+@media (max-width: 1024px) {
+    .hero {
         height: auto;
-        opacity: 0.9;
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        padding: 80px 0;
     }
 
-
-    /* Responsive adjustments */
-    @media (max-width: 1200px) {
-        .clients-scroll-container {
-            width: 40%;
-            /* Adjust width for tablets */
-        }
-
-        .clients-img img {
-            width: 70px;
-            /* Slightly smaller for tablets */
-        }
-    }
-
-    @media (max-width: 1024px) {
-        .clients-scroll-container {
-            width: 50%;
-            /* More centered for mid screens */
-        }
-
-        .clients-img img {
-            width: 65px;
-            /* Reduce logo size */
-        }
-    }
-
-    @media (max-width: 768px) {
-        .clients-scroll-container {
-            width: 60%;
-            /* More center-aligned */
-            margin: 0 auto;
-        }
-
-        .clients-img img {
-            width: 60px;
-            /* Smaller size for mobile */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .clients-scroll-container {
-            width: 80%;
-            /* Almost full width */
-        }
-
-        .clients-img img {
-            width: 50px;
-            /* Smallest size for compact view */
-        }
-    }
-
-
-
-
-    /* Reduce speed for smaller section */
-    @keyframes scrollClients {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-
-
-    /* Wavy Arrow Animation */
-    .wavy-arrow {
-        position: relative;
-        animation: moveArrowDown 1.8s infinite ease-in-out;
-    }
-
-    /* Keyframe Animation (Smooth Wavy Movement) */
-    @keyframes moveArrowDown {
-        0% {
-            transform: translateY(-5px);
-            opacity: 1;
-        }
-
-        50% {
-            transform: translateY(5px);
-            opacity: 0.9;
-        }
-
-        100% {
-            transform: translateY(-5px);
-            opacity: 1;
-        }
-    }
-
-    /* Remove centering from the hero-wrapper */
     .hero-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 50px;
-        position: relative;
-        overflow: hidden; /* Ensures elements stay inside */
+        text-align: center;
+        gap: 20px;
+        margin-top:-250px;
+        flex-direction: column;
+        text-align: center;
+        min-height: 90vh;
+        grid-template-columns: 1fr 2fr 1fr;
+        max-height: 900px;
     }
+    
+
+    .hero-text {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+        padding: 0 1.5rem;
+        margin: auto;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(26px, 5vw, 40px);
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
 
 
     .profile h4 {
-        position: relative;
-        font-size: 3.2rem;
-        /* Smaller text */
-        font-weight: 400;
-        color: #80db66;
-        /* Ensure visibility */
-        margin-bottom: 5px;
-        left: 5px;
-        font-family: 'Jost', sans-serif;
+    position: relative;
+    text-align: center;
+    font-size: 2.0rem;
+    /* Smaller text */
+    font-weight: 400;
+    color: #80db66;
+    /* Ensure visibility */
+    margin-bottom: 5px;
+    left: 5px;
+    font-family: 'Jost-medium-font';
+}
+
+.profile h1 {
+    font-size: 4.8rem;
+    /* Larger name */
+    font-weight: 800;
+    color: #e2ecf6;
+    margin-top: -10;
+    font-family: 'Jost';
+}
+
+    .hero-text .button2 {
+        font-size: 1.4rem;
+        padding: 12px 30px;
     }
 
-    .profile h1 {
-        font-size: 8.8rem;
-        /* Larger name */
-        font-weight: 700;
-        color: #e2ecf6;
-        margin-top: 0;
-        font-family: 'Jost', sans-serif;
-    }
-
-    .hero-text {
-        text-align: left;
-        max-width: 600px;
-        /* Set a reasonable max width */
-        width: 100%;
-        position: inline-block;
-    }
-
-    .hero-text p {
-        font-size: 2.2rem;
-        font-family: 'Jost', sans-serif;
-        color: #fff;
-        text-align: center;
-        max-width: 600px;
-        /* Adjust width */
-        width: 100%;
-        /* Ensures it doesn't exceed parent width */
-        margin-top: 10px;
-        /* Add some spacing */
-    }
-
-
-    /* Left-align social media container */
-    .social-media-container {
+    .hero-image-container {
         display: flex;
+        justify-content: center;
         align-items: center;
-        justify-content: flex-start;
-        /* Align left */
-        gap: 6px;
-        flex-wrap: nowrap;
-        text-align: left;
-        font-size: 3.2rem;
-        white-space: nowrap;
-        position: relative;
-        height: 70px;
-        left: -16px;
-        /* Ensure it's positioned correctly */
-        font-family: 'Jost', sans-serif;
+        margin: auto;
+        width: 80%;
+        max-width: 400px;
+        height: auto;
     }
 
-    /* Keep "Social Media" text fixed */
-    .social-media-text {
-        flex-shrink: 0;
-        min-width: fit-content;
-        text-align: left;
-        color: #e2ecf6;
+    .hero .custom-button {
+        min-width: 0;
+        width: auto;
+        padding: 12px 25px;
+        font-size: 1.2rem;
     }
 
-    /* Ensure the container has a fixed width to prevent shifting */
-    .typing-container {
-        display: inline-flex;
-        align-items: center;
-        position: relative;
-        white-space: nowrap;
-        font-size: inherit;
-        width: 270px;
-        /* Adjust as needed */
-        overflow: hidden;
-        text-align: left;
+    .wavy-arrow {
+        width: 40px;
+        height: 80px;
+        margin: auto;
     }
 
-    /* Typing text grows without shifting "Social Media" */
-    .typing-text {
-        font-weight: bold;
-        color: #80db66;
-        display: inline-block;
-        overflow: hidden;
-        min-width: fit-content;
-        padding-right: -10px;
-        /* Ensures cursor sticks to last letter */
-        margin-right: -15px;
-        /* Adjust this if needed */
-    }
+    .hero p {
+    font-size: 1.8rem;
+    max-width: 450px;
+    color: #41464f;
+    /* margin: auto; */
+}
 
-    /* Cursor positioning */
-    .cursor {
-        font-size: inherit;
-        color: #80db66;
-        display: inline-block;
-        position: absolute;
-        /* Changed from relative */
-        left: 0;
-        animation: blink 1.3s infinite;
-        /* Adjusted speed */
-    }
+.hero .button2 {
+    padding: 1.2rem 8rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.hero img {
+    border-radius: 20px;
+    width: 100%;
+    max-width: 220px;
+}
+
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    max-width: 600px;
+    position: relative;
+    width: 100%;
+    top: 150px;
+}
+
+
+.intro-text{
+    position: relative;
+}
+
+.intro-text p {
+text-align: center; /* Left-align text */
+font-size: 1.3rem; /* Adjust font size as needed */
+max-width: 600px; /* Ensures proper width */
+width: 100%;
+margin-left: 10px; /* Ensure no left margin */
+padding-left: 0; /* Ensure no padding is pushing the text */
+color: #e2ecf6;
+}
+
+/* Left-align social media container */
+.social-media-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    flex-wrap: nowrap;
+    text-align: left;
+    font-size: 100px;
+    white-space: nowrap;
+    position: relative;
+    height: 70px;
+    left: 100px;
+    top: -30px;
+    font-family: 'Jost', sans-serif;
+}
+
+/* Keep "Social Media" text fixed */
+.social-media-text {
+    flex-shrink: 0;
+    min-width: fit-content;
+    text-align: left;
+    color: #e2ecf6;
+    font-size: 15px;
+}
+
+/* Ensure the container has a fixed width to prevent shifting */
+.typing-container {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    font-size: inherit;
+    width: 270px;
+    overflow: hidden;
+    text-align: left;
+}
+
+/* Typing text grows without shifting "Social Media" */
+.typing-text {
+    font-weight: bold;
+    color: #80db66;
+    display: inline-block;
+    overflow: hidden;
+    min-width: fit-content;
+    padding-right: -10px;
+    /* Ensures cursor sticks to last letter */
+    margin-right: -15px;
+    /* Adjust this if needed */
+    font-size: 15px;
+}
+
+/* Cursor positioning */
+.cursor {
+    font-size: inherit;
+    color: #80db66;
+    display: inline-block;
+    position: absolute;
+    /* Changed from relative */
+    left: 0;
+    animation: blink 1.3s infinite;
+    /* Adjusted speed */
+}
+
+/* Left-align hero button */
+.custom-button-hero {
+    display: inline-block;
+    padding: 12px 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: #80db66;
+    color: #25262f;
+    border: 2px solid #80db66;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    min-width: 200px;
+    text-align: center;
+    justify-content: left;
+    margin-left: 10px;
+    /* Ensure alignment */
+}
+
+/* Hover effect: Transparent background */
+.custom-button-hero:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #25262f;
+    border: 1px solid #fff;
+}
+
+
+/* Ensure buttons have equal width */
+.custom-button-hero+.custom-button-hero {
+    margin-left: 10px;
+}
+
 
 /* Abstracts - Move & Float */
 .abstract-image-1,
 .abstract-image-2,
 .abstract-image-3 {
-    position: absolute;
-    transition: transform 0.1s ease-out; /* Smooth movement */
-    will-change: transform;
-    animation: floating 5s infinite ease-in-out alternate;
+    display:none;
 }
 
-/* Apply unique animations */
-.abstract-image-1 {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    left: -330px;
-    top: -40px;
-    animation: floating-1 3s infinite ease-in-out;
+
+/* Container for image and circle */
+.hero-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    margin-left: -95px;
+    /* Shift slightly left */
 }
-
-.abstract-image-2 {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    left: 210px;
-    top: -40px;
-    animation: floating-2 3s infinite ease-in-out;
-}
-
-.abstract-image-3 {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    left: 320px;
-    top: 400px;
-    animation: floating-3 3s infinite ease-in-out;
-}
-@media (max-width: 768px) {
-    .abstract-image-1 {
-        width: 50%;
-        max-width: 20em;
-    }
-}
-
-@keyframes floating-1 {
-    0% { transform: translate(-15px, -15px) scale(1.2); }
-    50% { transform: translate(0px, 0px) scale(1.2); }
-    100% { transform: translate(-15px, -15px) scale(1.2); }
-}
-
-@keyframes floating-2 {
-    0% { transform: translate(10px, -10px) scale(1.2); }
-    50% { transform: translate(0px, 0px) scale(1.2); }
-    100% { transform: translate(10px, -10px) scale(1.2); }
-}
-
-@keyframes floating-3 {
-    0% { transform: translate(15px, 15px) scale(1.2); }
-    50% { transform: translate(0px, 0px) scale(1.2); }
-    100% { transform: translate(15px, 15px) scale(1.2); }
-}
-
-    /* Cursor Blinking Animation - Adjusted for Better Visibility */
-    @keyframes blink {
-
-        0%,
-        100% {
-            opacity: 1;
-        }
-
-        50% {
-            opacity: 0.5;
-            /* Instead of disappearing completely, reduce opacity */
-        }
-    }
-
-    :root {
-        --image-width: 950px;
-        /* Image size increased */
-        --image-height: 950px;
-        --circle-size: 620px;
-        /* Circle size increased */
-    }
-
-    /* Container for image and circle */
-    .hero-image-container {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: var(--circle-size);
-        height: var(--circle-size);
-        margin-left: -100px;
-        /* Shift slightly left */
-    }
 
 /* Background Circle - Static but Zooms on Hover */
 .circle-background {
-    position: absolute;
-    width: var(--circle-size);
-    height: var(--circle-size);
-    background: rgba(128, 128, 128, 0.2); /* Gray transparent */
-    border-radius: 50%;
-    z-index: 0;
-    left: 10%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+position: absolute;
+width: 300px;
+height: 300px;
+background: rgba(128, 128, 128, 0.2); /* Gray transparent */
+border-radius: 50%;
+z-index: 0;
+left: 260px;
+top: 360px;
+transform: translate(-50%, -50%);
+transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 /* Hover Effect - Enlarge Circle */
 .hero-image-container:hover .circle-background {
-    transform: translate(-50%, -50%) scale(1.1); /* Zoom without moving */
-    opacity: 0.4;
+transform: translate(-50%, -50%) scale(1.1); /* Zoom without moving */
+opacity: 0.4;
 }
 
-    /* IMAGE - Force it to increase */
-    .hero-image {
-        width: var(--image-width) !important;
-        /* FORCE BIGGER IMAGE */
-        height: var(--image-height) !important;
-        max-width: none !important;
-        /* Prevents constraints */
-        max-height: none !important;
-        border-radius: 10px;
-        position: relative;
-        z-index: 1;
-        /* Above circle */
-        object-fit: contain;
-        transition: transform 0.3s ease-in-out;
-        left: -40%;
+/* IMAGE - Force it to increase */
+.hero-image {
+    width: 500px !important;
+    /* FORCE BIGGER IMAGE */
+    height: 500px !important;
+    max-width: none !important;
+    /* Prevents constraints */
+    max-height: none !important;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    /* Above circle */
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+    left: 50px;
+    top: 100px;
+}
+:root {
+    --image-width: 550px;
+    /* Image size increased */
+    --image-height: 550px;
+    --circle-size: 500px;
+    /* Circle size increased */
+}
+nav .custom-button-nav-portfolio {
+        display: none;
     }
 
+    .phone-menu {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
 
-    /* Responsive Adjustments */
-    @media (max-width: 1200px) {
-        :root {
-            --image-width: 750px;
-            --image-height: 750px;
-            --circle-size: 850px;
-        }
-    }
-
-    @media (max-width: 1024px) {
-        :root {
-            --image-width: 650px;
-            --image-height: 650px;
-            --circle-size: 750px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        :root {
-            --image-width: 550px;
-            --image-height: 550px;
-            --circle-size: 650px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        :root {
-            --image-width: 450px;
-            --image-height: 450px;
-            --circle-size: 550px;
-        }
-    }
-
-    /* Ensure both buttons match "View All" in size */
-    .custom-button {
+    .phone-menu .custom-button-nav-portfolio {
         display: inline-block;
-        padding: 12px 40px;
-        /* Match padding of View All */
-        font-size: 1.4rem;
-        font-weight: 600;
-        background: #80db66;
-        /* Same as View All button */
-        color: white;
-        border: 2px solid #80db66;
-        border-radius: 25px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        text-transform: uppercase;
-        min-width: 200px;
-        /* Ensure consistent width */
-        text-align: center;
-        justify-content: left;
-    }
+    padding: 12px 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: #80db66;
+    color: #25262f;
+    border: 2px solid #80db66;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    min-width: 200px;
+    text-align: center;
+    justify-content: left;
+    margin-left: -5px;
 
-    /* Hover effect: Transparent background */
-    /* Hover effect: White transparent background */
-    .custom-button:hover {
-        background: rgba(255, 255, 255, 1);
-        color: #25262f;
-        border: 1px solid #fff;
-    }
+}
 
 
-    /* Ensure buttons have equal width */
-    .custom-button+.custom-button {
-        margin-left: 10px;
-    }
 
-    /* Left-align hero button */
-    .custom-button-hero {
-        display: inline-block;
-        padding: 12px 40px;
-        font-size: 1.4rem;
-        font-weight: 600;
-        background: #80db66;
-        color: #25262f;
-        border: 2px solid #80db66;
-        border-radius: 25px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        text-transform: uppercase;
-        min-width: 200px;
-        text-align: center;
-        justify-content: left;
-        margin-left: -260px;
-        /* Ensure alignment */
-    }
+}
 
-    /* Hover effect: Transparent background */
-    .custom-button-hero:hover {
-        background: rgba(255, 255, 255, 1);
-        color: #25262f;
-        border: 1px solid #fff;
-    }
 
 
-    /* Ensure buttons have equal width */
-    .custom-button-hero+.custom-button-hero {
-        margin-left: 10px;
-    }
-
-    .custom-button-starter {
-        display: inline-block;
-        padding: 12px 40px;
-        font-size: 1.4rem;
-        font-weight: 600;
-        background: #80db66;
-        color: #25262f;
-        border: 2px solid#80db66;
-        border-radius: 25px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        text-transform: uppercase;
-        min-width: 200px;
-        text-align: center;
-    }
-
-    /* Center the button without affecting section height */
-    .custom-button-starter-wrapper {
-        position: absolute;
-        /* Prevents affecting section height */
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -30px;
-        /* Adjust as needed */
-    }
-
-    /* Make sure the section has a relative position */
-    .section-with-button {
-        position: relative;
-        /* Ensures absolute positioning of button works */
-        padding-bottom: 60px;
-        /* Adjust this to avoid overlap */
-    }
-
-    /* Ensure anchor link does not take extra space */
-    .custom-button-starter-wrapper a {
-        display: inline-block;
-    }
-
-    /* Hover effect */
-    .custom-button-starter:hover {
-        background: rgba(255, 255, 255, 1);
-        color: #25262f;
-        border: 1px solid #fff;
-    }
-
-    /* Left-align hero button */
-    .custom-button-nav-portfolio {
-        display: inline-block;
-        padding: 12px 40px;
-        font-size: 1.4rem;
-        font-weight: 600;
-        background: #80db66;
-        color: #25262f;
-        border: 2px solid #80db66;
-        border-radius: 25px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        text-transform: uppercase;
-        min-width: 200px;
-        text-align: center;
-        justify-content: left;
-        margin-left: -260px;
-        /* Ensure alignment */
-    }
-
-    /* Hover effect: Transparent background */
-    .custom-button-nav-portfolio:hover {
-        background: rgba(255, 255, 255, 1);
-        color: #25262f;
-        border: 1px solid #fff;
-    }
-
-
-    /* Ensure buttons have equal width */
-    .custom-button-nav-portfolio+.custom-button-nav-portfolio {
-        margin-left: 10px;
-    }
-
-    .custom-button-starter {
-        display: inline-block;
-        padding: 12px 40px;
-        font-size: 1.4rem;
-        font-weight: 600;
-        background: #80db66;
-        color: #25262f;
-        border: 2px solid #80db66;
-        border-radius: 25px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        text-transform: uppercase;
-        min-width: 200px;
-        text-align: center;
-    }
-
-    /* Center the button without affecting section height */
-    .custom-button-starter-wrapper {
-        position: absolute;
-        /* Prevents affecting section height */
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -30px;
-        /* Adjust as needed */
-    }
-
-    /* Make sure the section has a relative position */
-    .section-with-button {
-        position: relative;
-        /* Ensures absolute positioning of button works */
-        padding-bottom: 60px;
-        /* Adjust this to avoid overlap */
-    }
-
-    /* Ensure anchor link does not take extra space */
-    .custom-button-starter-wrapper a {
-        display: inline-block;
-    }
-
-    /* Hover effect */
-    .custom-button-starter:hover {
-        background: rgba(255, 255, 255, 1);
-        color: #25262f;
-        border: 1px solid #fff;
-    }
-
-    /* Make h1 in infograph section bolder */
-    .infograph-wrapper h1 {
-        font-weight: 900;
-        /* Use 700, 800, or 900 for extra boldness */
-        font-size: 5.5rem;
-        /* Adjust size if needed */
-        text-transform: uppercase;
-        /* Optional for a stronger effect */
-        letter-spacing: 1px;
-        /* Slight spacing for better readability */
-    }
-
-    /* Stylish Pricing Tag */
-    .price-tag {
-        display: inline-block;
-        background: linear-gradient(45deg, #80db66, #ff6a89);
-        padding: 10px 20px;
-        border-radius: 30px;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: white;
-        text-transform: uppercase;
-        text-align: center;
-        box-shadow: 0px 4px 10px rgba(233, 55, 101, 0.3);
-        animation: pulseGlow 1.8s infinite alternate ease-in-out;
-    }
-
-    /* Subtle Glowing Animation */
-    @keyframes pulseGlow {
-        0% {
-            transform: scale(1);
-            box-shadow: 0px 4px 10px rgba(233, 55, 101, 0.3);
-        }
-
-        100% {
-            transform: scale(1.05);
-            box-shadow: 0px 6px 15px rgba(233, 55, 101, 0.5);
-        }
-    }
-
-    /* Default background color */
-    .package-item {
-        transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    }
-
-    /* Packages */
-    .package-item:hover {
-        background-color: #80db66 !important;
-        color: white;
-        transform: scale(1.05);
-        box-shadow: 0px 5px 15px rgba(238, 54, 101, 0.3) !important;
-    }
-
-    .package-item:hover .package-info h1,
-    .package-item:hover .package-info li i {
-        color: white !important;
-    }
-
-    .package-item:hover .package-info h1 {
-        font-weight: 1000 !important;
-    }
-
-
-    /* Optional: Border effect on hover */
-    .package-item:hover {
-        box-shadow: 0px 5px 15px rgba(238, 54, 101, 0.3);
-    }
-
-
-    /* ========== HERO SECTION FIXES ========== */
-    @media (max-width: 1024px) {
-        .hero {
-            height: auto;
-            padding: 80px 0;
-        }
-
-        .hero-wrapper {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .hero-text h1 {
-            font-size: clamp(26px, 5vw, 40px);
-            flex-direction: column;
-            height: auto;
-        }
-
-        .social-media-text {
-            min-width: auto;
-            text-align: center;
-        }
-
-        .rolling-box {
-            max-width: 100%;
-            width: auto;
-            height: 45px;
-            text-align: center;
-            justify-content: center;
-        }
-
-        .hero-text p {
-            font-size: 1rem;
-            max-width: 90%;
-            margin: 0 auto;
-        }
-
-        .hero-text .button2 {
-            font-size: 1rem;
-            padding: 10px 20px;
-        }
-
-        .wavy-arrow {
-            width: 60px;
-            height: 100px;
-        }
-    }
-
-    /* ========== SERVICES SECTION FIXES ========== */
-    @media (max-width: 1024px) {
-        .services-wrapper {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .service-item {
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-    }
-
-    /* ========== AIM SECTION FIXES ========== */
-    @media (max-width: 1024px) {
-        .aim-wrapper {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .aim-item {
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-    }
-
-    /* ========== CLIENT LOGOS (SCROLLING) FIX ========== */
-    @media (max-width: 1024px) {
-        .clients-scroll-container {
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        .clients-img {
-            justify-content: center;
-        }
-
-        .clients-img img {
-            width: 60px;
-            height: auto;
-        }
-    }
-
-    /* ========== TESTIMONIALS SECTION FIXES ========== */
-    @media (max-width: 1024px) {
-        .testimonial-wrapper {
-            flex-direction: column;
-        }
-
-        .testimonial {
-            text-align: center;
-            padding: 15px;
-        }
-
-        .testimonial-name {
-            justify-content: center;
-        }
-    }
-
-    /* ========== FOOTER FIXES ========== */
-    @media (max-width: 1024px) {
-        footer {
-            text-align: center;
-        }
-
-        .footer-links {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .footer-logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    }
-
-    /* ========== BUTTON & TEXT FIXES ========== */
-    @media (max-width: 768px) {
-        h1 {
-            font-size: clamp(22px, 5vw, 36px);
-        }
-
-        .rolling-box {
-            max-width: 100%;
-            height: 40px;
-        }
-
-        .button2 {
-            font-size: 0.9rem;
-            padding: 8px 16px;
-        }
-
-        .wavy-arrow {
-            width: 50px;
-            height: 90px;
-        }
-
-        .testimonial p {
-            font-size: 0.9rem;
-        }
-    }
-
-    /* ========== SMALL SCREEN FIXES ========== */
-    @media (max-width: 480px) {
-        .hero-text h1 {
-            font-size: clamp(20px, 4vw, 32px);
-        }
-
-        .rolling-box {
-            height: 35px;
-        }
-
-        .hero-text p {
-            font-size: 0.9rem;
-        }
-
-        .clients-img img {
-            width: 50px;
-        }
-
-        .button2 {
-            font-size: 0.85rem;
-        }
-
-        .service-item,
-        .aim-item {
-            width: 100%;
-            max-width: 350px;
-        }
-
-        .testimonial p {
-            font-size: 0.8rem;
-        }
-    }
-
-
-    /* Testimonials */
-    .testimonial:hover {
-        box-shadow: 0 5px 15px rgba(238, 54, 101, 0.3) !important;
-    }
-
-    .steps {
-        text-align: center;
-        padding: 60px 0;
-        background: #fff;
-    }
-
-    .steps-title {
-        font-size: 4rem;
-        font-weight: bold;
-        color: #222;
-        margin-bottom: 60px;
-        text-transform: uppercase;
-        /* Ensure it's in all caps */
-    }
-
-    .steps-wrapper {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 70px;
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        padding-left: 50px;
-    }
-
-    .steps-wrapper::before {
-        content: "";
-        position: absolute;
-        left: calc(50px / 2 - 2.5px);
-        /* Centering the line relative to step numbers */
-        top: 0;
-        width: 5px;
-        /* Line thickness */
-        height: 0;
-        /* Initially zero, expands */
-        background: #80db66;
-        z-index: 0;
-        transition: height 1s ease-in-out;
-    }
-
-    .connecting-line {
-        position: absolute;
-        left: 80px;
-        /* Adjust this to align the line exactly in the center */
-        top: 25px;
-        /* Start below the first step number */
-        width: 5px;
-        /* Thickness of the line */
-        height: 0;
-        background: #80db66;
-        z-index: 0;
-        transition: height 1s ease-in-out;
-    }
-
-
-    .step {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        position: relative;
-        z-index: 1;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    }
-
-    .step-number {
-        width: 50px;
-        height: 50px;
-        background: #80db66;
-        color: white;
-        font-size: 22px;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        position: absolute;
-        left: 7px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .step-content {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #222;
-        text-align: left;
-        max-width: 600px;
-        margin-left: 80px;
-    }
-
-    .step-content h2 {
-        font-size: 2.8rem;
-        font-weight: bold;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    .step-content p {
-        font-size: 1.4rem;
-        color: #555;
-    }
-
-    /* Hover Effect for Fiverr */
-    .fiverr {
-        position: relative;
-        display: inline-block;
-        color: #1dbf73;
-        /* Fiverr green color */
-        font-weight: bold;
-        transition: opacity 0.3s ease-in-out;
-        font-family: 'Montserrat font', sans-serif;
-    }
-
-    @media only screen and (max-width: 767px) {
-
-        /* Stack the two columns into one so orders/reviews and clients are aligned */
-        .infograph-wrapper .container-lg>div {
-            flex-direction: column;
-            gap: 20px;
-            justify-content: flex-start;
-            align-items: flex-start;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-        /* Remove auto centering from the clients-scroll-container */
-        .clients-scroll-container {
-            width: 100%;
-            margin-left: 0;
-        }
-
-        /* Ensure the client numbers and text align consistently with orders/reviews */
-        .clients-number {
-            text-align: left;
-            width: 100%;
-            margin: 0;
-        }
-
-        .clients-number h1,
-        .clients-number p {
-            text-align: left;
-        }
-
-        /* Retain your other mobile fixes */
-        .container,
-        .container-fluid {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-        .social-media-container {
-            flex-direction: row !important;
-            white-space: nowrap;
-            height: 70px;
-            font-size: clamp(28px, 5vw, 50px) !important;
-        }
-
-        .hero .custom-button {
-            min-width: 0;
-            width: 100%;
-            padding: 0.8rem 1rem;
-            font-size: 1rem;
-        }
-
-        .connecting-line {
-            position: absolute;
-            left: 80px;
-            top: 60px;
-            width: 5px;
-            height: 0;
-            background: #80db66;
-            z-index: 0;
-            transition: height 1s ease-in-out;
-        }
-
-        /* 1. Fix Orders container so it doesn't overflow */
-        .orders {
-            width: 100%;
-            max-width: 100%;
-            box-sizing: border-box;
-            padding: 2rem 1rem;
-            /* Reduced padding */
-            overflow: hidden;
-        }
-
-        .order-types {
-            overflow: hidden;
-            box-sizing: border-box;
-        }
-
-        .testimonial-text p {
-            font-size: 17px;
-            color: #333;
-            min-height: 200px;
-            display: flex;
-            align-items: flex-start;
-            /* aligns content at the top */
-            justify-content: center;
-            text-align: justify;
-            text-justify: inter-word;
-            padding-top: 20px;
-            /* optional: add some top padding */
-        }
-
-        /* 3. Adjust the position and size of icons in AIM & Services */
-        .aim-icon,
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            /* Makes them perfectly round */
-            margin-bottom: 15px;
-            /* Adjust spacing if needed */
-        }
-
-        /* 3. Adjust the position and size of icons in AIM & Services */
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            /* Makes them perfectly round */
-            margin-bottom: -5px;
-            /* Adjust spacing if needed */
-        }
-
-        .aim-icon i,
-        .service-icon i {
-            font-size: 28px;
-            /* Slightly smaller or adjust as desired */
-        }
-
-        /* 4. Adjust the size and position of the paragraph in the hero section */
-        .hero-text p {
-            font-size: 1.6rem;
-            /* Adjust font-size for better legibility on mobile */
-            max-width: 90%;
-            /* Reduce max width to avoid overflow */
-            margin-top: 1rem;
-            /* Increase or adjust top margin as needed */
-            padding: 0 1rem;
-            /* Add horizontal padding for spacing */
-        }
-
-        .about-text p {
-            font-size: 1.8rem;
-            text-align: justify;
-            text-justify: inter-word;
-            color: #e2ecf6;
-        }
-    }
 
 </style>
 
@@ -1371,6 +373,12 @@
                             <span class="typing-text"></span>
                             <span class="cursor">|</span>
                         </div>
+                    </div>
+                    <div class="intro-text">
+                        <p>
+                            Meet Sabbir Tareq, Entrepreneur, Content Creator, Video Editing Maestro, and Mentor. 
+                            With a thriving video editing agency based in the UK and over 500+ client social media post crafted 
+                        </p>
                     </div>
                     <div class="spacer"></div>
                     <div style="display: flex; gap: 15px; justify-content: center;">
@@ -1496,7 +504,7 @@
                 <div class="scroll-container">
                     <div class="project-list">
                         <div class="project-item category-health" data-modal-target="#exampleModal-1">
-                            <img src="{{asset('assets/img/1.png')}}" alt="project">
+                            <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -1510,7 +518,7 @@
 
                         <!-- #2 -->
                         <div class="project-item category-beauty" data-modal-target="#exampleModal-2">
-                            <img src="{{asset('assets/img/2.png')}}" alt="project">
+                        <img src="{{asset('assets/img/projects/129.png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -1523,7 +531,7 @@
 
                         <!-- #3 -->
                         <div class="project-item category-medical" data-modal-target="#exampleModal-3">
-                            <img src="{{asset('assets/img/3.png')}}" alt="project">
+                        <img src="{{asset('assets/img/projects/18.png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -1536,7 +544,7 @@
 
                         <!-- #4 -->
                         <div class="project-item category-beauty" data-modal-target="#exampleModal-4">
-                            <img src="{{asset('assets/img/4.png')}}" alt="project">
+                        <img src="{{asset('assets/img/projects/29.png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -1628,7 +636,7 @@
     </section>
 
     <section class="services-included container-lg">
-        <h1 class="section-title">Our Service Includes</h1>
+        <h1 class="section-title">My Service Includes</h1>
         <div class="services-wrapper">
             <div class="service-item">
                 <div class="service-icon"><i class="fa-solid fa-paint-brush"></i></div>
@@ -1674,7 +682,7 @@
 
     <section class="steps" id="growth-section">
         <div class="container-lg">
-            <h1 class="steps-title">Our 3 Simple Steps Process</h1>
+            <h1 class="steps-title">My 3 Simple Steps Process</h1>
             <div class="steps-wrapper">
                 <div class="connecting-line"></div>
                 <div class="step">
@@ -1719,7 +727,7 @@
                 <img src="{{asset('assets/img/about.png')}}" alt="about">
             </div>
             <div class="about-text">
-                <h1>About Us</h1>
+                <h1>About Me</h1>
                 <p>Hey there! We're AyNaur, your partners in crafting stunning visual identities.</p>
                 <p>Since day one, we've been passionate about helping small and medium-sized businesses make a big
                     impact online. Our team of talented designers is dedicated to turning your brand vision into
@@ -1749,7 +757,7 @@
         <div class="container-lg testimonial-wrapper">
             <div class="testimonial-head">
                 <h1 style="color: #e2ecf6;">
-                    What Our
+                    What My
                     <span class="fiverr">Fiverr</span>
                     Clients Say
                 </h1>
@@ -1957,39 +965,6 @@
     </section>
 </div>
 
-
-
-
-<!-- <script>
-    const swiper = new Swiper('.swiper', {
-        loop: true,
-        spaceBetween: 20,
-        direction: "horizontal",
-
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-            },
-            640: {
-                slidesPerView: 1,
-
-            },
-            768: {
-                slidesPerView: 2.5,
-
-            },
-            1024: {
-                slidesPerView: 2,
-
-            },
-        },
-    });
-</script> -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
 <script>
