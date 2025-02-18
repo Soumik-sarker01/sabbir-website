@@ -14,343 +14,6 @@
 
 <style>
     
-    
-
-/* Fix Hero Section for Mobile View */
-@media (max-width: 1024px) {
-    .hero {
-        height: auto;
-        padding: 80px 0;
-    }
-
-    .hero-wrapper {
-        text-align: center;
-        gap: 20px;
-        margin-top:-250px;
-        flex-direction: column;
-        text-align: center;
-        min-height: 90vh;
-        grid-template-columns: 1fr 2fr 1fr;
-        max-height: 900px;
-    }
-    
-
-    .hero-text {
-        max-width: 100%;
-        width: 100%;
-        text-align: center;
-        padding: 0 1.5rem;
-        margin: auto;
-    }
-
-    .hero-text h1 {
-        font-size: clamp(26px, 5vw, 40px);
-        margin-bottom: 15px;
-        margin-top: 15px;
-    }
-
-
-
-    .profile h4 {
-    position: relative;
-    text-align: center;
-    font-size: 2.0rem;
-    /* Smaller text */
-    font-weight: 400;
-    color: #80db66;
-    /* Ensure visibility */
-    margin-bottom: 5px;
-    left: 5px;
-    font-family: 'Jost-medium-font';
-}
-
-.profile h1 {
-    font-size: 4.8rem;
-    /* Larger name */
-    font-weight: 800;
-    color: #e2ecf6;
-    margin-top: -10;
-    font-family: 'Jost';
-}
-
-    .hero-text .button2 {
-        font-size: 1.4rem;
-        padding: 12px 30px;
-    }
-
-    .hero-image-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-        width: 80%;
-        max-width: 400px;
-        height: auto;
-    }
-
-    .hero .custom-button {
-        min-width: 0;
-        width: auto;
-        padding: 12px 25px;
-        font-size: 1.2rem;
-    }
-
-    .wavy-arrow {
-        width: 40px;
-        height: 80px;
-        margin: auto;
-    }
-
-    .hero p {
-    font-size: 1.8rem;
-    max-width: 450px;
-    color: #41464f;
-    /* margin: auto; */
-}
-
-.hero .button2 {
-    padding: 1.2rem 8rem;
-    font-size: 1.6rem;
-    font-weight: 500;
-}
-
-.hero img {
-    border-radius: 20px;
-    width: 100%;
-    max-width: 220px;
-}
-
-
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    max-width: 600px;
-    position: relative;
-    width: 100%;
-    top: 150px;
-}
-
-
-.intro-text{
-    position: relative;
-}
-
-.intro-text p {
-text-align: center; /* Left-align text */
-font-size: 1.3rem; /* Adjust font size as needed */
-max-width: 600px; /* Ensures proper width */
-width: 100%;
-margin-left: 10px; /* Ensure no left margin */
-padding-left: 0; /* Ensure no padding is pushing the text */
-color: #e2ecf6;
-}
-
-/* Left-align social media container */
-.social-media-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 6px;
-    flex-wrap: nowrap;
-    text-align: left;
-    font-size: 100px;
-    white-space: nowrap;
-    position: relative;
-    height: 70px;
-    left: 100px;
-    top: -30px;
-    font-family: 'Jost', sans-serif;
-}
-
-/* Keep "Social Media" text fixed */
-.social-media-text {
-    flex-shrink: 0;
-    min-width: fit-content;
-    text-align: left;
-    color: #e2ecf6;
-    font-size: 15px;
-}
-
-/* Ensure the container has a fixed width to prevent shifting */
-.typing-container {
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-    white-space: nowrap;
-    font-size: inherit;
-    width: 270px;
-    overflow: hidden;
-    text-align: left;
-}
-
-/* Typing text grows without shifting "Social Media" */
-.typing-text {
-    font-weight: bold;
-    color: #80db66;
-    display: inline-block;
-    overflow: hidden;
-    min-width: fit-content;
-    padding-right: -10px;
-    /* Ensures cursor sticks to last letter */
-    margin-right: -15px;
-    /* Adjust this if needed */
-    font-size: 15px;
-}
-
-/* Cursor positioning */
-.cursor {
-    font-size: inherit;
-    color: #80db66;
-    display: inline-block;
-    position: absolute;
-    /* Changed from relative */
-    left: 0;
-    animation: blink 1.3s infinite;
-    /* Adjusted speed */
-}
-
-/* Left-align hero button */
-.custom-button-hero {
-    display: inline-block;
-    padding: 12px 40px;
-    font-size: 1.4rem;
-    font-weight: 600;
-    background: #80db66;
-    color: #25262f;
-    border: 2px solid #80db66;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-transform: uppercase;
-    min-width: 200px;
-    text-align: center;
-    justify-content: left;
-    margin-left: 10px;
-    /* Ensure alignment */
-}
-
-/* Hover effect: Transparent background */
-.custom-button-hero:hover {
-    background: rgba(255, 255, 255, 1);
-    color: #25262f;
-    border: 1px solid #fff;
-}
-
-
-/* Ensure buttons have equal width */
-.custom-button-hero+.custom-button-hero {
-    margin-left: 10px;
-}
-
-
-/* Abstracts - Move & Float */
-.abstract-image-1,
-.abstract-image-2,
-.abstract-image-3 {
-    display:none;
-}
-
-
-/* Container for image and circle */
-.hero-image-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: var(--circle-size);
-    height: var(--circle-size);
-    margin-left: -95px;
-    /* Shift slightly left */
-}
-
-/* Background Circle - Static but Zooms on Hover */
-.circle-background {
-position: absolute;
-width: 300px;
-height: 300px;
-background: rgba(128, 128, 128, 0.2); /* Gray transparent */
-border-radius: 50%;
-z-index: 0;
-left: 260px;
-top: 360px;
-transform: translate(-50%, -50%);
-transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-/* Hover Effect - Enlarge Circle */
-.hero-image-container:hover .circle-background {
-transform: translate(-50%, -50%) scale(1.1); /* Zoom without moving */
-opacity: 0.4;
-}
-
-/* IMAGE - Force it to increase */
-.hero-image {
-    width: 500px !important;
-    /* FORCE BIGGER IMAGE */
-    height: 500px !important;
-    max-width: none !important;
-    /* Prevents constraints */
-    max-height: none !important;
-    border-radius: 10px;
-    position: relative;
-    z-index: 1;
-    /* Above circle */
-    object-fit: contain;
-    transition: transform 0.3s ease-in-out;
-    left: 50px;
-    top: 100px;
-}
-:root {
-    --image-width: 550px;
-    /* Image size increased */
-    --image-height: 550px;
-    --circle-size: 500px;
-    /* Circle size increased */
-}
-nav .custom-button-nav-portfolio {
-        display: none;
-    }
-
-    .phone-menu {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 10rem;
-    font-size: 2rem;
-    font-weight: 500;
-}
-
-    .phone-menu .custom-button-nav-portfolio {
-        display: inline-block;
-    padding: 12px 40px;
-    font-size: 1.4rem;
-    font-weight: 600;
-    background: #80db66;
-    color: #25262f;
-    border: 2px solid #80db66;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-transform: uppercase;
-    min-width: 200px;
-    text-align: center;
-    justify-content: left;
-    margin-left: -5px;
-
-}
-
-
-
-}
-
-
-
 
 </style>
 
@@ -376,8 +39,9 @@ nav .custom-button-nav-portfolio {
                     </div>
                     <div class="intro-text">
                         <p>
-                            Meet Sabbir Tareq, Entrepreneur, Content Creator, Video Editing Maestro, and Mentor. 
-                            With a thriving video editing agency based in the UK and over 500+ client social media post crafted 
+                            Meet Sabbir Tareq, Entrepreneur, Content Creator, Video Editing Maestro, and Mentor.
+                            With a thriving video editing agency based in the UK and over 500+ client social media post
+                            crafted
                         </p>
                     </div>
                     <div class="spacer"></div>
@@ -389,8 +53,8 @@ nav .custom-button-nav-portfolio {
                 </div>
 
                 <div class="hero-image-container">
-                    
-                <img src="{{ asset('assets/img/1.svg') }}" alt="Abstract" class="abstract-image-1">
+
+                    <img src="{{ asset('assets/img/1.svg') }}" alt="Abstract" class="abstract-image-1">
                     <img src="{{ asset('assets/img/2.svg') }}" alt="Abstract" class="abstract-image-2">
                     <img src="{{ asset('assets/img/3.svg') }}" alt="Abstract" class="abstract-image-3">
                     <div class="circle-background"></div> <!-- Enlarged Circle -->
@@ -518,7 +182,7 @@ nav .custom-button-nav-portfolio {
 
                         <!-- #2 -->
                         <div class="project-item category-beauty" data-modal-target="#exampleModal-2">
-                        <img src="{{asset('assets/img/projects/129.png')}}" alt="project">
+                            <img src="{{asset('assets/img/projects/Carousel SAP Concur V1 (3).png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -531,7 +195,7 @@ nav .custom-button-nav-portfolio {
 
                         <!-- #3 -->
                         <div class="project-item category-medical" data-modal-target="#exampleModal-3">
-                        <img src="{{asset('assets/img/projects/18.png')}}" alt="project">
+                            <img src="{{asset('assets/img/projects/Individual Attendees (4).png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -544,7 +208,7 @@ nav .custom-button-nav-portfolio {
 
                         <!-- #4 -->
                         <div class="project-item category-beauty" data-modal-target="#exampleModal-4">
-                        <img src="{{asset('assets/img/projects/29.png')}}" alt="project">
+                            <img src="{{asset('assets/img/projects/29.png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -557,7 +221,7 @@ nav .custom-button-nav-portfolio {
 
                         <!-- #5 -->
                         <div class="project-item category-pets" data-modal-target="#exampleModal-5">
-                            <img src="{{asset('assets/img/5.png')}}" alt="project">
+                            <img src="{{asset('assets/img/projects/Product Announcement.png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -570,7 +234,7 @@ nav .custom-button-nav-portfolio {
 
                         <!-- #6 -->
                         <div class="project-item category-kids" data-modal-target="#exampleModal-6">
-                            <img src="{{asset('assets/img/6.png')}}" alt="project">
+                        <img src="{{asset('assets/img/projects/Speaker 3 (3).png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -968,441 +632,441 @@ nav .custom-button-nav-portfolio {
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Get all buttons and project items
-        const allButton = document.getElementById('btn-all');
-        const categoryButtons = document.querySelectorAll('.projects-btn button:not(#btn-all)');
-        const projectItems = document.querySelectorAll('.project-item');
+document.addEventListener('DOMContentLoaded', () => {
+    // Get all buttons and project items
+    const allButton = document.getElementById('btn-all');
+    const categoryButtons = document.querySelectorAll('.projects-btn button:not(#btn-all)');
+    const projectItems = document.querySelectorAll('.project-item');
 
-        // Function to show all projects
-        function showAllProjects() {
-            projectItems.forEach(item => item.style.display = 'block');
-        }
+    // Function to show all projects
+    function showAllProjects() {
+        projectItems.forEach(item => item.style.display = 'block');
+    }
 
-        // Function to filter projects by category
-        function filterProjects(category) {
-            projectItems.forEach(item => {
-                if (item.classList.contains(`category-${category}`) || category === 'all') {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Event listeners for buttons
-        allButton.addEventListener('click', () => {
-            showAllProjects();
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
-            allButton.classList.add('active');
+    // Function to filter projects by category
+    function filterProjects(category) {
+        projectItems.forEach(item => {
+            if (item.classList.contains(`category-${category}`) || category === 'all') {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
         });
+    }
 
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const category = button.id.replace('btn-', '').replace('-', '_');
-                filterProjects(category);
-                allButton.classList.remove('active');
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-            });
-        });
-
-        // Set default active button
+    // Event listeners for buttons
+    allButton.addEventListener('click', () => {
+        showAllProjects();
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
         allButton.classList.add('active');
     });
 
-
-    document.addEventListener('DOMContentLoaded', () => {
-        // Initialize Swiper for the testimonial slider
-        const testimonialSwiper = new Swiper('.testimonial-swiper', {
-            // Enable continuous loop
-            loop: true,
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.testimonial-swiper-button-next',
-                prevEl: '.testimonial-swiper-button-prev',
-            },
-
-            // Autoplay configuration
-            autoplay: {
-                delay: 3000, // 3 seconds per slide
-                disableOnInteraction: false,
-            },
-
-            // Pause on hover
-            on: {
-                init() {
-                    // If user hovers over the swiper container, pause autoplay
-                    this.el.addEventListener('mouseenter', () => {
-                        this.autoplay.stop();
-                    });
-                    // Resume autoplay when mouse leaves
-                    this.el.addEventListener('mouseleave', () => {
-                        this.autoplay.start();
-                    });
-                },
-            },
-
-            // How many slides to show at once
-            slidesPerView: 1,
-            spaceBetween: 20,
-
-            // Responsive breakpoints (optional)
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 2,
-                },
-            },
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.id.replace('btn-', '').replace('-', '_');
+            filterProjects(category);
+            allButton.classList.remove('active');
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
         });
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const projectList = document.querySelector(".project-list");
+    // Set default active button
+    allButton.classList.add('active');
+});
 
-        // Duplicate items for seamless looping
-        projectList.innerHTML += projectList.innerHTML;
 
-        let scrollSpeed = 1.5; // Adjust speed (lower = slower)
-        let scrollPosition = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Swiper for the testimonial slider
+    const testimonialSwiper = new Swiper('.testimonial-swiper', {
+        // Enable continuous loop
+        loop: true,
 
-        function autoScroll() {
-            scrollPosition += scrollSpeed;
-            projectList.style.transform = `translateX(-${scrollPosition}px)`;
+        // Navigation arrows
+        navigation: {
+            nextEl: '.testimonial-swiper-button-next',
+            prevEl: '.testimonial-swiper-button-prev',
+        },
 
-            // When first half is out of view, reset position seamlessly
-            if (scrollPosition >= projectList.scrollWidth / 2) {
-                scrollPosition = 0;
-                projectList.style.transform = `translateX(0px)`;
+        // Autoplay configuration
+        autoplay: {
+            delay: 3000, // 3 seconds per slide
+            disableOnInteraction: false,
+        },
+
+        // Pause on hover
+        on: {
+            init() {
+                // If user hovers over the swiper container, pause autoplay
+                this.el.addEventListener('mouseenter', () => {
+                    this.autoplay.stop();
+                });
+                // Resume autoplay when mouse leaves
+                this.el.addEventListener('mouseleave', () => {
+                    this.autoplay.start();
+                });
+            },
+        },
+
+        // How many slides to show at once
+        slidesPerView: 1,
+        spaceBetween: 20,
+
+        // Responsive breakpoints (optional)
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 2,
+            },
+        },
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const projectList = document.querySelector(".project-list");
+
+    // Duplicate items for seamless looping
+    projectList.innerHTML += projectList.innerHTML;
+
+    let scrollSpeed = 1.5; // Adjust speed (lower = slower)
+    let scrollPosition = 0;
+
+    function autoScroll() {
+        scrollPosition += scrollSpeed;
+        projectList.style.transform = `translateX(-${scrollPosition}px)`;
+
+        // When first half is out of view, reset position seamlessly
+        if (scrollPosition >= projectList.scrollWidth / 2) {
+            scrollPosition = 0;
+            projectList.style.transform = `translateX(0px)`;
+        }
+
+        requestAnimationFrame(autoScroll);
+    }
+
+    autoScroll(); // Start scrolling animation
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Function to animate the counting effect
+    function animateCounter(element, target, duration) {
+        let start = 0;
+        let stepTime = Math.abs(Math.floor(duration / target));
+        let counter = setInterval(() => {
+            start++;
+            element.textContent = start + "+";
+            if (start >= target) {
+                clearInterval(counter);
             }
+        }, stepTime);
+    }
 
-            requestAnimationFrame(autoScroll);
-        }
+    // Get the number elements
+    const orderNumber = document.querySelector(".order-number h1");
+    const reviewNumber = document.querySelector(".review-number h1");
+    const clientNumber = document.querySelector(".clients-number h1");
 
-        autoScroll(); // Start scrolling animation
-    });
+    // Flag to ensure the counters animate only once per scroll-into-view
+    let isVisible = false;
 
-    document.addEventListener("DOMContentLoaded", function () {
-        // Function to animate the counting effect
-        function animateCounter(element, target, duration) {
-            let start = 0;
-            let stepTime = Math.abs(Math.floor(duration / target));
-            let counter = setInterval(() => {
-                start++;
-                element.textContent = start + "+";
-                if (start >= target) {
-                    clearInterval(counter);
-                }
-            }, stepTime);
-        }
+    // Create an IntersectionObserver to watch the .infograph section
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // When the section becomes visible and wasn't visible before
+            if (entry.isIntersecting && !isVisible) {
+                // Reset the counters before starting the animation
+                orderNumber.textContent = "0+";
+                reviewNumber.textContent = "0+";
+                clientNumber.textContent = "0+";
 
-        // Get the number elements
-        const orderNumber = document.querySelector(".order-number h1");
-        const reviewNumber = document.querySelector(".review-number h1");
-        const clientNumber = document.querySelector(".clients-number h1");
+                // Animate the numbers
+                animateCounter(orderNumber, 200, 1000); // Count to 200 in 1 second
+                animateCounter(reviewNumber, 100, 600); // Count to 100 in 0.6 seconds
+                animateCounter(clientNumber, 160, 700); // Count to 160 in 0.7 seconds
 
-        // Flag to ensure the counters animate only once per scroll-into-view
-        let isVisible = false;
-
-        // Create an IntersectionObserver to watch the .infograph section
-        let observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // When the section becomes visible and wasn't visible before
-                if (entry.isIntersecting && !isVisible) {
-                    // Reset the counters before starting the animation
-                    orderNumber.textContent = "0+";
-                    reviewNumber.textContent = "0+";
-                    clientNumber.textContent = "0+";
-
-                    // Animate the numbers
-                    animateCounter(orderNumber, 200, 1000); // Count to 200 in 1 second
-                    animateCounter(reviewNumber, 100, 600); // Count to 100 in 0.6 seconds
-                    animateCounter(clientNumber, 160, 700); // Count to 160 in 0.7 seconds
-
-                    // Set flag to prevent re-animation while in view
-                    isVisible = true;
-                } else if (!entry.isIntersecting) {
-                    // Reset the flag when the section leaves view so it can animate again
-                    isVisible = false;
-                }
-            });
-        }, {
-            threshold: 0.5
-        });
-
-        // Start observing the section that contains the counters
-        observer.observe(document.querySelector(".infograph"));
-    });
-
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-        function startAnimation(entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    heroText.classList.add("animate");
-                    observer.unobserve(entry.target);
-                }
-            });
-        }
-
-        let observer = new IntersectionObserver(startAnimation, {
-            threshold: 0.5
-        });
-        observer.observe(heroText);
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const heroText = document.querySelector(".hero-text");
-
-        function checkVisibility(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    heroText.classList.add("animate");
-                } else {
-                    heroText.classList.remove("animate"); // Reset so it plays again
-                }
-            });
-        }
-
-        let observer = new IntersectionObserver(checkVisibility, {
-            threshold: 0.5
-        });
-        observer.observe(heroText);
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const heroText = document.querySelector(".hero-text");
-
-        // Parallax Effect on Mouse Move
-        document.addEventListener("mousemove", (event) => {
-            let x = (event.clientX / window.innerWidth) * 20 - 10;
-            let y = (event.clientY / window.innerHeight) * 20 - 10;
-
-        });
-
-        // Start Text Animation on Scroll
-        function checkVisibility(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    heroText.classList.add("animate");
-                }
-            });
-        }
-
-        let observer = new IntersectionObserver(checkVisibility, {
-            threshold: 0.5
-        });
-        observer.observe(heroText);
-    });
-
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const aimItems = document.querySelectorAll(".aim-item");
-
-        const aimObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate");
-                    observer.unobserve(entry.target); // Stop observing after animation
-                }
-            });
-        }, {
-            threshold: 0.3, // Trigger animation when 30% of element is visible
-            rootMargin: "0px 0px -10% 0px"
-        });
-
-        aimItems.forEach(item => aimObserver.observe(item));
-    });
-
-
-
-    document.addEventListener("DOMContentLoaded", function () {
-        // Service Items Observer
-        const serviceItems = document.querySelectorAll(".service-item");
-        const serviceObserver = new IntersectionObserver((entries) => {
-
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate");
-                } else {
-                    entry.target.classList.remove("animate");
-                }
-            });
-        }, {
-            threshold: 0.3,
-            rootMargin: "0px 0px -10% 0px"
-        });
-        serviceItems.forEach(item => serviceObserver.observe(item));
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const clientsImg = document.querySelector(".clients-img");
-
-        // Duplicate client logos for seamless looping
-        clientsImg.innerHTML += clientsImg.innerHTML;
-
-        let scrollSpeed = getScrollSpeed(); // Get initial speed
-        let scrollPosition = 0;
-
-        function getScrollSpeed() {
-            if (window.innerWidth > 1200) return 1.5;
-            if (window.innerWidth > 1024) return 1.2;
-            if (window.innerWidth > 768) return 1.0;
-            return 0.8; // Slower on smaller screens
-        }
-
-        function autoScrollClients() {
-            scrollPosition += scrollSpeed;
-            clientsImg.style.transform = `translateX(-${scrollPosition}px)`;
-
-            // Reset position when the first batch scrolls out of view
-            if (scrollPosition >= clientsImg.scrollWidth / 2) {
-                scrollPosition = 0;
-                clientsImg.style.transform = `translateX(0px)`;
+                // Set flag to prevent re-animation while in view
+                isVisible = true;
+            } else if (!entry.isIntersecting) {
+                // Reset the flag when the section leaves view so it can animate again
+                isVisible = false;
             }
-
-            requestAnimationFrame(autoScrollClients);
-        }
-
-        autoScrollClients(); // Start scrolling animation
-
-        // Update scroll speed dynamically when window resizes
-        window.addEventListener("resize", function () {
-            scrollSpeed = getScrollSpeed();
         });
+    }, {
+        threshold: 0.5
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const steps = document.querySelectorAll(".step");
-        const line = document.querySelector(".steps-wrapper::before");
-        let index = 0;
+    // Start observing the section that contains the counters
+    observer.observe(document.querySelector(".infograph"));
+});
 
-        function showStep() {
-            if (index < steps.length) {
-                steps[index].style.opacity = "1";
-                steps[index].style.transform = "translateY(0)";
-                document.querySelector(".steps-wrapper").style.setProperty('--line-height',
-                    `${(index + 1) * 100}px`);
-                index++;
-                setTimeout(showStep, 1000);
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    function startAnimation(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                heroText.classList.add("animate");
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+
+    let observer = new IntersectionObserver(startAnimation, {
+        threshold: 0.5
+    });
+    observer.observe(heroText);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const heroText = document.querySelector(".hero-text");
+
+    function checkVisibility(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                heroText.classList.add("animate");
             } else {
-                setTimeout(() => {
-                    steps.forEach(step => {
-                        step.style.opacity = "0";
-                        step.style.transform = "translateY(20px)";
-                    });
-                    document.querySelector(".steps-wrapper").style.setProperty('--line-height', '0');
-                    index = 0;
-                    setTimeout(showStep, 1000);
-                }, 3000);
+                heroText.classList.remove("animate"); // Reset so it plays again
             }
-        }
+        });
+    }
 
-        showStep();
+    let observer = new IntersectionObserver(checkVisibility, {
+        threshold: 0.5
     });
-    document.addEventListener("DOMContentLoaded", function () {
-        const steps = document.querySelectorAll(".step");
-        const connectingLine = document.querySelector(".connecting-line");
-        let currentStep = 0;
-        let isAnimating = false;
+    observer.observe(heroText);
+});
 
-        function calculateLineHeight() {
-            if (currentStep === 0) return 0;
+document.addEventListener("DOMContentLoaded", function () {
+    const heroText = document.querySelector(".hero-text");
 
-            const firstStep = steps[0].querySelector(".step-number");
-            const currentStepElement = steps[currentStep].querySelector(".step-number");
+    // Parallax Effect on Mouse Move
+    document.addEventListener("mousemove", (event) => {
+        let x = (event.clientX / window.innerWidth) * 20 - 10;
+        let y = (event.clientY / window.innerHeight) * 20 - 10;
 
-            const firstStepCenter = firstStep.getBoundingClientRect().top + firstStep.offsetHeight / 2;
-            const currentStepCenter = currentStepElement.getBoundingClientRect().top + currentStepElement
-                .offsetHeight / 2;
+    });
 
-            return currentStepCenter - firstStepCenter;
+    // Start Text Animation on Scroll
+    function checkVisibility(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                heroText.classList.add("animate");
+            }
+        });
+    }
+
+    let observer = new IntersectionObserver(checkVisibility, {
+        threshold: 0.5
+    });
+    observer.observe(heroText);
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const aimItems = document.querySelectorAll(".aim-item");
+
+    const aimObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+                observer.unobserve(entry.target); // Stop observing after animation
+            }
+        });
+    }, {
+        threshold: 0.3, // Trigger animation when 30% of element is visible
+        rootMargin: "0px 0px -10% 0px"
+    });
+
+    aimItems.forEach(item => aimObserver.observe(item));
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Service Items Observer
+    const serviceItems = document.querySelectorAll(".service-item");
+    const serviceObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+            } else {
+                entry.target.classList.remove("animate");
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: "0px 0px -10% 0px"
+    });
+    serviceItems.forEach(item => serviceObserver.observe(item));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const clientsImg = document.querySelector(".clients-img");
+
+    // Duplicate client logos for seamless looping
+    clientsImg.innerHTML += clientsImg.innerHTML;
+
+    let scrollSpeed = getScrollSpeed(); // Get initial speed
+    let scrollPosition = 0;
+
+    function getScrollSpeed() {
+        if (window.innerWidth > 1200) return 1.5;
+        if (window.innerWidth > 1024) return 1.2;
+        if (window.innerWidth > 768) return 1.0;
+        return 0.8; // Slower on smaller screens
+    }
+
+    function autoScrollClients() {
+        scrollPosition += scrollSpeed;
+        clientsImg.style.transform = `translateX(-${scrollPosition}px)`;
+
+        // Reset position when the first batch scrolls out of view
+        if (scrollPosition >= clientsImg.scrollWidth / 2) {
+            scrollPosition = 0;
+            clientsImg.style.transform = `translateX(0px)`;
         }
 
-        function animateSteps() {
-            if (isAnimating || currentStep >= steps.length) return;
+        requestAnimationFrame(autoScrollClients);
+    }
 
-            isAnimating = true;
+    autoScrollClients(); // Start scrolling animation
 
-            // Show the current step
-            steps[currentStep].classList.add("visible");
+    // Update scroll speed dynamically when window resizes
+    window.addEventListener("resize", function () {
+        scrollSpeed = getScrollSpeed();
+    });
+});
 
-            // Animate line height
-            const targetHeight = calculateLineHeight();
-            connectingLine.style.height = `${targetHeight}px`;
+document.addEventListener("DOMContentLoaded", function () {
+    const steps = document.querySelectorAll(".step");
+    const line = document.querySelector(".steps-wrapper::before");
+    let index = 0;
 
+    function showStep() {
+        if (index < steps.length) {
+            steps[index].style.opacity = "1";
+            steps[index].style.transform = "translateY(0)";
+            document.querySelector(".steps-wrapper").style.setProperty('--line-height',
+                `${(index + 1) * 100}px`);
+            index++;
+            setTimeout(showStep, 1000);
+        } else {
             setTimeout(() => {
-                isAnimating = false;
-                currentStep++;
-
-                if (currentStep >= steps.length) {
-                    // Reset animation after completion
-                    setTimeout(() => {
-                        steps.forEach(step => step.classList.remove("visible"));
-                        connectingLine.style.height = "0";
-                        currentStep = 0;
-                        setTimeout(animateSteps, 1000);
-                    }, 3000);
-                } else {
-                    animateSteps();
-                }
-            }, 1000);
+                steps.forEach(step => {
+                    step.style.opacity = "0";
+                    step.style.transform = "translateY(20px)";
+                });
+                document.querySelector(".steps-wrapper").style.setProperty('--line-height', '0');
+                index = 0;
+                setTimeout(showStep, 1000);
+            }, 3000);
         }
+    }
 
-        // Start the animation
-        animateSteps();
+    showStep();
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const steps = document.querySelectorAll(".step");
+    const connectingLine = document.querySelector(".connecting-line");
+    let currentStep = 0;
+    let isAnimating = false;
 
-        // Handle window resize
-        window.addEventListener("resize", () => {
-            if (currentStep > 0) {
-                connectingLine.style.height = `${calculateLineHeight()}px`;
-            }
-        });
-    });
+    function calculateLineHeight() {
+        if (currentStep === 0) return 0;
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const typingText = document.querySelector(".typing-text");
-        const cursor = document.querySelector(".cursor");
-        const words = ["Content Creator", "Designer", "Manager"];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 150;
-        let deletingSpeed = 60;
-        let pauseTime = 500;
+        const firstStep = steps[0].querySelector(".step-number");
+        const currentStepElement = steps[currentStep].querySelector(".step-number");
 
-        function typeEffect() {
-            let currentWord = words[wordIndex];
+        const firstStepCenter = firstStep.getBoundingClientRect().top + firstStep.offsetHeight / 2;
+        const currentStepCenter = currentStepElement.getBoundingClientRect().top + currentStepElement
+            .offsetHeight / 2;
 
-            if (isDeleting) {
-                typingText.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
+        return currentStepCenter - firstStepCenter;
+    }
+
+    function animateSteps() {
+        if (isAnimating || currentStep >= steps.length) return;
+
+        isAnimating = true;
+
+        // Show the current step
+        steps[currentStep].classList.add("visible");
+
+        // Animate line height
+        const targetHeight = calculateLineHeight();
+        connectingLine.style.height = `${targetHeight}px`;
+
+        setTimeout(() => {
+            isAnimating = false;
+            currentStep++;
+
+            if (currentStep >= steps.length) {
+                // Reset animation after completion
+                setTimeout(() => {
+                    steps.forEach(step => step.classList.remove("visible"));
+                    connectingLine.style.height = "0";
+                    currentStep = 0;
+                    setTimeout(animateSteps, 1000);
+                }, 3000);
             } else {
-                typingText.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
+                animateSteps();
             }
+        }, 1000);
+    }
 
-            // Set cursor position **exactly** at the last letter
-            cursor.style.left = `${typingText.offsetWidth-5}px`;
+    // Start the animation
+    animateSteps();
 
-            if (!isDeleting && charIndex === currentWord.length) {
-                setTimeout(() => isDeleting = true, pauseTime);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-            }
+    // Handle window resize
+    window.addEventListener("resize", () => {
+        if (currentStep > 0) {
+            connectingLine.style.height = `${calculateLineHeight()}px`;
+        }
+    });
+});
 
-            setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+document.addEventListener("DOMContentLoaded", function () {
+    const typingText = document.querySelector(".typing-text");
+    const cursor = document.querySelector(".cursor");
+    const words = ["Content Creator", "Designer", "Manager"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 150;
+    let deletingSpeed = 60;
+    let pauseTime = 500;
+
+    function typeEffect() {
+        let currentWord = words[wordIndex];
+
+        if (isDeleting) {
+            typingText.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingText.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
         }
 
-        typeEffect();
-    });
+        // Set cursor position **exactly** at the last letter
+        cursor.style.left = `${typingText.offsetWidth-5}px`;
 
-    document.addEventListener("DOMContentLoaded", function () {
+        if (!isDeleting && charIndex === currentWord.length) {
+            setTimeout(() => isDeleting = true, pauseTime);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+
+        setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+    }
+
+    typeEffect();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
     const heroSection = document.querySelector(".hero");
     const abstract1 = document.querySelector(".abstract-image-1");
     const abstract2 = document.querySelector(".abstract-image-2");
@@ -1437,7 +1101,6 @@ document.addEventListener("DOMContentLoaded", function () {
         circleBackground.style.transform = `translate(-50%, -50%) scale(1.1)`;
     });
 });
-
 
 </script>
 

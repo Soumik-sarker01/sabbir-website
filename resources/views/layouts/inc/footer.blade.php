@@ -1,7 +1,7 @@
 <footer class="footer text-white">
     <div class="container">
         <div class="footer-top">
-            <img src="{{asset('assets/img/footer-logo.png')}}" alt="logo">
+            <!-- <img src="{{asset('assets/img/footer-logo.png')}}" alt="logo"> -->
             <div style="text-align: center;">
                 <span style="font-size: 1.3rem;">Email Us</span><br>
                 <a style="font-size: 1.4rem;" href="mailto:hello@aynaur.com">hello@aynaur.com</a>
@@ -18,7 +18,7 @@
     <div class="container-lg">
         <div class="footer-bottom">
             <div>
-                <p style="font-size: 1.3rem;text-align:center;color: #25262f;;" class="mb-0">Design & Development by <a href="https://monokrome.dev" target="_blank" class="text-white fw-bold" style="color:#913f9f !important;">Aynaur</a></p>
+                <p style="font-size: 1.3rem;text-align:center;color: #25262f;" class="mb-0">Design & Development by <a href="https://aynaur.com/" target="_blank" class="text-white fw-bold" style="color:#913f9f !important;">Aynaur</a></p>
             </div>
         </div>
     </div>
