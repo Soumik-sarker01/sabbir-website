@@ -4,20 +4,11 @@
 
 @section('main-container')
 
-<section class="projects container-fluid" id="portfolio" style="padding-top: 100px;margin-bottom:0;padding-bottom:100px;background:#feefee;">
+<section class="projects container-fluid" id="portfolio" style="padding-top: 100px;margin-bottom:0;padding-bottom:100px;">
     <div class="projects-wrapper">
         <div class="container-lg">
             <h1>Social media content we created</h1>
             <div class="spacer"></div>
-            <!-- <div class="projects-btn">
-                <button id="btn-all">All</button>
-                <button id="btn-health">Health & Wellness</button>
-                <button id="btn-beauty">Beauty & Cosmetics</button>
-                <button id="btn-medical">Medical</button>
-                <button id="btn-realEstate">Real Estate</button>
-                <button id="btn-kids">Kids</button>
-                <button id="btn-pets">Pets</button>
-            </div> -->
             <div class="project-list">
             <div class="project-item category-health" data-modal-target="#exampleModal-1">
                     <img src="{{asset('assets/img/1.png')}}" alt="project">
@@ -68,7 +59,7 @@
                 </div>
 
                 <div class="project-item category-beauty" data-modal-target="#exampleModal-2">
-                    <img src="{{asset('assets/img/2.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -88,7 +79,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/2.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Every brand has a narrative - a reason for being. It's what sets you apart, resonates with your audience, and drives loyalty. Your story is your brand's soul. It’s what turns customers into advocates.</p>
@@ -135,7 +126,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/3.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Uplift your style with our authentic, preloved Chanel Flap Bag.</p>
@@ -161,7 +152,7 @@
                 </div>
 
                 <div class="project-item category-beauty" data-modal-target="#exampleModal-4">
-                    <img src="{{asset('assets/img/4.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -181,7 +172,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/4.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Why pay the total price when you can enjoy luxury for less?</p>
@@ -206,7 +197,7 @@
 
 
                 <div class="project-item category-pets" data-modal-target="#exampleModal-5">
-                    <img src="{{asset('assets/img/5.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -227,7 +218,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/5.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Did you know? Buying preloved luxury items reduces waste and promotes sustainability.</p>
@@ -250,7 +241,7 @@
                 </div>
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-6">
-                    <img src="{{asset('assets/img/6.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -271,7 +262,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/6.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Ensuring your health is our top priority!</p>
@@ -296,7 +287,7 @@
                 </div>
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-7">
-                    <img src="{{asset('assets/img/7.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -317,7 +308,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/7.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Transform your home into a haven with Homes Clean service from Truwealth Home Care Agency. Our expert team ensures meticulous cleaning, leaving no corner untouched. Enjoy a spotless living space without lifting a finger. With our trusted professionals, experience the joy of coming home to a fresh, hygienic environment.</p>
@@ -343,7 +334,7 @@
 
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-8">
-                    <img src="{{asset('assets/img/8.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -364,7 +355,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/8.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Feeling stressed? The solution might be right under your nose.</p>
@@ -394,7 +385,7 @@
 
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-9">
-                    <img src="{{asset('assets/img/9.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -415,7 +406,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/9.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Invest in your team's mental health, and reap the rewards. </p>
@@ -443,7 +434,7 @@
                 </div>
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-10">
-                    <img src="{{asset('assets/img/10.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -464,7 +455,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/10.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Your mental health is just as important as your physical health. Make time for yourself every day and embrace practices that nurture your mind and soul. Prioritising your wellbeing can transform your life.
@@ -492,7 +483,7 @@
                 </div>
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-11">
-                    <img src="{{asset('assets/img/11.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -513,7 +504,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/11.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Feeling Stressed by Dirty Trash Cans?
@@ -542,7 +533,7 @@
                 </div>
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-12">
-                    <img src="{{asset('assets/img/12.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -563,7 +554,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/12.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Trash bins seem like they thrive on the mess, but what about giving them a little TLC? 🗑️✨ Believe it or not, even trash bins have feelings and love to be clean and appreciated! With ATL Fresh Cans, we ensure your bins stay fresh, sanitised, and ready to serve. No more bad smells or dirty looks. Give your bins the love they deserve and make your home cleaner and happier. Keep them happy with ATL Fresh Cans! 🧼🌟
@@ -588,7 +579,7 @@
 
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-13">
-                    <img src="{{asset('assets/img/13.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -609,7 +600,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/13.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Sure, your bins can't talk, but they sure make a statement on trash day. 🗑️✨ Make sure it's a good one with ATL Fresh Cans! Keep your bin chat positive with our spotless cleaning service that leaves them smelling fresh. 🌼 Why not book a session today? Give your bins the pampering they deserve and start contributing to a cleaner neighborhood, one bin at a time!
@@ -635,7 +626,7 @@
 
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-14">
-                    <img src="{{asset('assets/img/14.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -680,7 +671,7 @@
                 </div>
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-15">
-                    <img src="{{asset('assets/img/15.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -701,7 +692,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/15.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Debunking Age Myths in Skin Rejuvenation: It's Never Too Late! 🌟 When it comes to rejuvenating your skin, age is not a barrier. Our clients often wonder, 'Am I too old for skin rejuvenation treatments?' The answer is a resounding no. 🚫 Age should never be a limit to feeling confident and enjoying life.
@@ -732,7 +723,7 @@
 
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-16">
-                    <img src="{{asset('assets/img/16.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -753,7 +744,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/16.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>✨ Step into Radiance with Our Luxury Facials! ✨</p>
@@ -782,7 +773,7 @@
 
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-17">
-                    <img src="{{asset('assets/img/17.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -803,7 +794,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/17.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Microneedling is used in a variety of treatments to address different skin concerns. If you are up to -</p>
@@ -845,7 +836,7 @@
 
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-18">
-                    <img src="{{asset('assets/img/18.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -866,7 +857,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/18.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Boost your video content with our top 5 video marketing hacks:
@@ -902,7 +893,7 @@
 
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-19">
-                    <img src="{{asset('assets/img/19.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -923,7 +914,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/19.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Ever feel like your content marketing isn't hitting the mark?
@@ -955,7 +946,7 @@
                 </div>
 
                 <div class="project-item category-kids" data-modal-target="#exampleModal-20">
-                    <img src="{{asset('assets/img/20.png')}}" alt="project">
+                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                     <div class="project-icons">
                         <div>
                             <i class="fa-solid fa-heart"></i>
@@ -976,7 +967,7 @@
                             </div>
                             <div class="modal-body project-modal">
                                 <div class="project-img">
-                                    <img src="{{asset('assets/img/20.png')}}" alt="project">
+                                <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
                                 </div>
                                 <div class="project-details">
                                     <p>Are you aware of the Power of Google Analytics! 📈
