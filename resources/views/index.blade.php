@@ -13,7 +13,140 @@
 
 
 <style>
-    
+h1 {
+    font-size: 2rem;
+    color: #25262f; /* Default color */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* If wrapper has background #e2ecf6, keep h1 color dark */
+.wrapper.has-bg h1 {
+    color: #25262f;
+}
+
+/* If body is dark but wrapper has no background, set h1 to light on hover */
+body.has-dark-bg h1:hover {
+    color: #e2ecf6;
+}
+
+/* Apply shadow effect on hover */
+h1:hover {
+    text-shadow: 2px 2px 8px #80db66; /* Always add green glow effect */
+}
+
+
+
+.company-logo-title {
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+    color:#e2ecf6;
+}
+
+/* Styling for the logo section */
+.company-logos {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.logos-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Hidden class for the initial state */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Visible class (Triggered when in viewport) */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reverse effect when leaving the screen */
+.reverse {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Logo Row Styling */
+.logos-row {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 15px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Track for smooth infinite scrolling */
+.logos-track {
+    display: flex;
+    width: max-content;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Right to Left Scrolling */
+.right-to-left .logos-track {
+    animation-name: scroll-right-left;
+    animation-duration: 15s;
+}
+
+@keyframes scroll-right-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Left to Right Scrolling */
+.left-to-right .logos-track {
+    animation-name: scroll-left-right;
+    animation-duration: 15s;
+}
+
+@keyframes scroll-left-right {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Logo Styling */
+.logos-track img {
+    width: 180px; /* Increased size */
+    height: auto;
+    margin: 0 30px;
+}
+
+
+/* When visible */
+.logos-row.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* When leaving - gradually fades away */
+.logos-row.fade-out {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
 
 </style>
 
@@ -31,7 +164,7 @@
                         <h1>Sabbir Tareq</h1>
                     </div>
                     <div class="social-media-container">
-                        <span class="social-media-text">A Social Media</span>
+                        <span class="social-media-text">A Pationate Social Media</span>
                         <div class="typing-container">
                             <span class="typing-text"></span>
                             <span class="cursor">|</span>
@@ -65,8 +198,6 @@
             </div>
         </div>
     </section>
-
-    <div class="spacer-xl"></div>
 
     <section class="infograph">
         <div class="container-fluid">
@@ -158,6 +289,53 @@
                 </div>
             </div>
     </section>
+
+    {{-- Company Logos Section --}}
+<section id="company-logos" class="company-logos my-5">
+    <div class="container">
+    <h1 class="company-logo-title">Our Clients</h1>
+
+        <div class="logos-wrapper">
+            {{-- Row 1 (Right to Left) --}}
+            <div class="logos-row right-to-left hidden">
+                <div class="logos-track">
+                    @for($i = 0; $i < 2; $i++)
+                        <img src="{{ asset('assets/img/logos/client-1.svg') }}" alt="Company 1">
+                        <img src="{{ asset('assets/img/logos/2.jpg') }}" alt="Company 2">
+                        <img src="{{ asset('assets/img/logos/3.jpg') }}" alt="Company 3">
+                        <img src="{{ asset('assets/img/logos/client-5.svg') }}" alt="Company 4">
+                    @endfor
+                </div>
+            </div>
+
+            {{-- Row 2 (Left to Right) --}}
+            <div class="logos-row left-to-right hidden">
+                <div class="logos-track">
+                    @for($i = 0; $i < 2; $i++)
+                        <img src="{{ asset('assets/img/logos/5.jpg') }}" alt="Company 5">
+                        <img src="{{ asset('assets/img/logos/6.jpg') }}" alt="Company 6">
+                        <img src="{{ asset('assets/img/logos/client-1.svg') }}" alt="Company 7">
+                        <img src="{{ asset('assets/img/logos/client-1.svg') }}" alt="Company 8">
+                    @endfor
+                </div>
+            </div>
+
+            {{-- Row 3 (Right to Left) --}}
+            <div class="logos-row right-to-left hidden">
+                <div class="logos-track">
+                    @for($i = 0; $i < 2; $i++)
+                        <img src="{{ asset('assets/img/logos/client-2.svg') }}" alt="Company 9">
+                        <img src="{{ asset('assets/img/logos/client-3.svg') }}" alt="Company 10">
+                        <img src="{{ asset('assets/img/logos/client-4.svg') }}" alt="Company 11">
+                        <img src="{{ asset('assets/img/logos/client-5.svg') }}" alt="Company 12">
+                    @endfor
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
     <section class="projects container-fluid" id="portfolio">
         <div class="projects-wrapper">
@@ -440,18 +618,12 @@
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">Lifenow_nicola</h1>
+                                    <h1 class="testimonial-name">quentincarteron</h1>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
                                     <p>
-                                        It was a pleasure working with the team on my branding refresh. I shared lots of
-                                        information about what I needed, and we had some communication back and forth to
-                                        ensure that my requirements were properly understood. They shared an initial set
-                                        of templates to check for alignment, on which I gave some feedback. They then
-                                        asked for a video call to talk through everything, which was a massive help and
-                                        made sure we understood everything I wanted correctly. The finished order was of
-                                        a high standard and very much appreciated.
+                                    Not the first time I work with him and his incredible team. Although, this time it was a much bigger project. However nothing disapointed me, as usual. Let's highlight the importance that Tareq place in understanding its clients need and deliver something very accurate ! Thanks guys è
                                     </p>
                                 </div>
                                 <div class="testimonial-name">
@@ -464,16 +636,12 @@
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">nafizimtiaz2578</h1>
+                                    <h1 class="testimonial-name">coachmegs</h1>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
                                     <p>
-                                        AyNaur's social media management impressed me just like the Fiverr review
-                                        describes - high-quality, creative images that perfectly captured my brand
-                                        identity at a great price. Their attention to detail is fantastic, and I'm
-                                        confident this is the start of a long-term partnership to elevate my social
-                                        media presence.
+                                    I recently worked with Tareq on a project, and I couldn’t be happier with the results! The templates he created were not only visually fresh and on-brand but also incredibly versatile and easy to adjust for my needs. What I appreciated most was how he brought a new look and feel to the designs while still keeping everything cohesive. It’s clear that Tareq has a great eye for creativity and branding! I’m already planning to work with him again in the near future for another batch of templates to keep my content fresh and engaging. If you’re looking for someone who can deliver quality, flexibility, and professionalism, I highly recommend Tareq. I can’t wait to collaborate with him again!
                                     </p>
                                 </div>
                                 <div class="testimonial-name">
@@ -486,17 +654,12 @@
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">Missmth</h1>
+                                    <h1 class="testimonial-name">robin21x</h1>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
                                     <p>
-                                        I am beyond impressed and happy with the work delivered by the team. Brand
-                                        alignment, color palettes, open communication, very quick turnaround, open to
-                                        new suggestions - could not have asked for more. I was not stressed at all
-                                        during the process and trusted my social media templates would be delivered with
-                                        exceptional quality.
-                                    </p>
+                                    Tareq does exceptional work—he is truly amazing! His communication was professional, timely, and clear throughout the entire process, making collaboration seamless.( even though my bought with Pneumonia and then a short relapse it was Tareq that kept my project going! As a professional sales and marketing strategist, I am extremely particular about the quality of work. For me to trust someone with delivering a final product—especially my own personal project—they have to be exceptional. That person is Tareq. I highly recommend him for his professionalism, skill, and dedication! A+ ⭐️⭐️⭐️⭐️⭐️ Robin A. Barnette SoCal                                    </p>
                                 </div>
                                 <div class="testimonial-name">
 
@@ -508,15 +671,12 @@
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">jjcasa</h1>
+                                    <h1 class="testimonial-name">king_lauren</h1>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
                                     <p>
-                                        Extremely professional, the best on Fiverr! If you need a social media manager
-                                        and content creator, this is the best team! Wow, I am very impressed by the
-                                        quality of work. I will continue to hire them for my social channels and social
-                                        media management. I highly recommend it!
+                                    Working with Tareq was a positive experience, but unfortunately, I cannot say the same about the quality of his work. The initial templates he delivered were identical to those already available on Canva, which I recognized as a frequent user of the platform. When I requested revisions, I was disappointed by the lack of attention to detail, particularly in areas like color selection, font consistency, and overall design refinement.
                                     </p>
                                 </div>
                                 <div class="testimonial-name">
@@ -528,14 +688,12 @@
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">jjcasa</h1>
+                                    <h1 class="testimonial-name">ceochappell</h1>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
                                     <p>
-                                        The best investment I have made for my business. This team is professional and
-                                        does an amazing job with my social media. We have been working together for
-                                        several months and I am thrilled with their work. Thank Thank you so much!
+                                    Tareq did an AMAZING job with my social media design! The visuals were professional and detailed, and he was super polite and responsive throughout the process—everything went so smoothly 🙌. Definitely looking forward to working with him again!
                                     </p>
                                 </div>
                                 <div class="testimonial-name">
@@ -547,15 +705,12 @@
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">sartmon</h1>
+                                    <h1 class="testimonial-name">sade411team</h1>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
                                     <p>
-                                        Ay.naur did an AMAZING job on our social media design. The visual appeal and
-                                        brand alignment were spot on, truly exceeding our expectations! Additionally,
-                                        working with them was very pleasant – cooperative, timely, and always going
-                                        above and beyond. 👏
+                                    This was an awesome experience because I was not happy with the first draft and Tareq came back with revisions that completely embodied my vision. Would definitely use him again!
                                     </p>
                                 </div>
                                 <div class="testimonial-name">
@@ -567,13 +722,12 @@
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">lucasgrants</h1>
+                                    <h1 class="testimonial-name">axoweb</h1>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
                                     <p>
-                                        Very professional and attentive freelancer, with grreat detail for design. I
-                                        highly recommended to everyone.
+                                    I worked with Tareq and was thrilled with the results! His work was not only SUPER PROFESSIONAL and perfectly aligned with my brand, but he also delivered right on time. I definitely recommend Tareq to anyone seeking a reliable social media design expert! 👌
                                     </p>
                                 </div>
                                 <div class="testimonial-name">
@@ -585,14 +739,45 @@
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">dakotahosley396</h1>
+                                    <h1 class="testimonial-name">ltn_up_electric</h1>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
                                     <p>
-                                        She crushed it. Made 30 social media templates for us in only a few days. Will
-                                        definitely come back to her.
+                                    Tareq's work in Social Media Design is outstanding! The visuals were professionally crafted and perfectly aligned with our brand. Working with him was a breeze due to his language fluency and proactive communication. Highly recommend! 👍
                                     </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #9 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h1 class="testimonial-name">daphniealexis</h1>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                    Exceptional, no words thr work he did for my brand is fantastic, I'm coming back again.                                    </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #10 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h1 class="testimonial-name">jvickers182988</h1>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                    Fantastic! Always finishes orders very timely and professionally. Highly recommend                                    </p>
                                 </div>
                                 <div class="testimonial-name">
 
@@ -1099,6 +1284,102 @@ document.addEventListener("DOMContentLoaded", function () {
     // Reset when mouse leaves the hero section
     heroSection.addEventListener("mouseleave", () => {
         circleBackground.style.transform = `translate(-50%, -50%) scale(1.1)`;
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const logoSection = document.getElementById("company-logos");
+    const logoRows = document.querySelectorAll(".logos-row");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                const { target, intersectionRatio } = entry;
+                
+                // Apply effect gradually based on scroll progress
+                const opacity = Math.min(1, intersectionRatio * 2); // Smooth fade in/out
+                const translateY = (1 - intersectionRatio) * 50; // Moves down when leaving
+
+                if (intersectionRatio > 0) {
+                    // Gradual pop-up effect
+                    target.style.opacity = opacity;
+                    target.style.transform = `translateY(${translateY}px)`;
+                } else {
+                    // Once completely out of view, apply reverse effect smoothly
+                    target.style.opacity = "0";
+                    target.style.transform = "translateY(50px)";
+                }
+            });
+        },
+        {
+            threshold: Array.from({ length: 11 }, (_, i) => i * 0.1), // More granularity for smooth transition
+        }
+    );
+
+    logoRows.forEach((row) => observer.observe(row));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const wrapper = document.querySelector(".wrapper");
+    const body = document.body;
+    const h1Elements = document.querySelectorAll("h1");
+
+    function updateHoverEffects() {
+        h1Elements.forEach(h1 => {
+            h1.addEventListener("mouseenter", function () {
+                const wrapperBg = window.getComputedStyle(wrapper).backgroundColor;
+                const bodyBg = window.getComputedStyle(body).backgroundColor;
+
+                // If wrapper background is #e2ecf6, keep h1 color #25262f
+                if (wrapperBg === "rgb(226, 236, 246)") {
+                    h1.style.color = "#25262f";
+                }
+                // If no wrapper background but body is dark, set hover color to light
+                else if (bodyBg === "rgb(37, 38, 47)") {
+                    h1.style.color = "#e2ecf6";
+                }
+
+                // Always apply the shadow effect
+                h1.style.textShadow = "2px 2px 8px #80db66";
+            });
+
+            h1.addEventListener("mouseleave", function () {
+                // Reset to original color based on background
+                const wrapperBg = window.getComputedStyle(wrapper).backgroundColor;
+                const bodyBg = window.getComputedStyle(body).backgroundColor;
+
+                if (wrapperBg === "rgb(226, 236, 246)") {
+                    h1.style.color = "#25262f"; // Keep dark on light background
+                } else {
+                    h1.style.color = "#25262f"; // Reset for normal dark mode
+                }
+
+                // Remove shadow when mouse leaves
+                h1.style.textShadow = "none";
+            });
+        });
+    }
+
+    updateHoverEffects(); // Run on page load
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let testimonials = document.querySelectorAll(".testimonial");
+    let maxHeight = 0;
+
+    // Find the tallest testimonial box
+    testimonials.forEach((testimonial) => {
+        let height = testimonial.offsetHeight;
+        if (height > maxHeight) {
+            maxHeight = height;
+        }
+    });
+
+    // Apply the max height to all testimonial boxes
+    testimonials.forEach((testimonial) => {
+        testimonial.style.height = maxHeight + "px";
     });
 });
 

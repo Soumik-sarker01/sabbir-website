@@ -40,6 +40,8 @@
 /* ------------------------------------------------*/
 /* Urbanist font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
 
 /* ------------------------------------------------*/
 /* Fonts End */
@@ -206,7 +208,7 @@ a {
 html {
     /* width: 100%;
     height: 100%; */
-    font-family: 'Jost', sans-serif;
+    font-family: 'plus-jakarta-sans', sans-serif;
     font-size: 62.5%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -225,6 +227,7 @@ body {
     /* Ensures no unwanted color gap */
     /* color: var(--t-medium); */
     overflow-x: hidden;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* section {
@@ -234,6 +237,7 @@ body {
 
 h1 {
     text-transform: capitalize;
+    font-size: 38px;
 }
 
 a {
@@ -437,7 +441,7 @@ nav ul {
     justify-content: space-between;
     gap: 10rem;
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .phone-menu .custom-button-nav-portfolio {
@@ -817,12 +821,12 @@ nav ul {
     position: relative;
     font-size: 3.2rem;
     /* Smaller text */
-    font-weight: 400;
+    font-weight: bold;
     color: #80db66;
     /* Ensure visibility */
     margin-bottom: 5px;
     left: 5px;
-    font-family: 'Jost', sans-serif;
+    font-family: 'plus-jakarta-sans', sans-serif;
 }
 
 .profile h1 {
@@ -831,7 +835,7 @@ nav ul {
     font-weight: 700;
     color: #e2ecf6;
     margin-top: 0;
-    font-family: 'Jost', sans-serif;
+    font-family: 'plus-jakarta-sans', sans-serif;
 }
 
 
@@ -852,7 +856,7 @@ nav ul {
 .hero .button2 {
     padding: 1.2rem 8rem;
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .hero img {
@@ -876,7 +880,7 @@ nav ul {
 
 .hero-text p {
     font-size: 2.2rem;
-    font-family: 'Jost', sans-serif;
+    font-family: 'plus-jakarta-sans', sans-serif;
     color: #fff;
     text-align: center;
     max-width: 700px;
@@ -900,9 +904,9 @@ nav ul {
     white-space: nowrap;
     position: relative;
     height: 70px;
-    left: -16px;
+    left: 56px;
     /* Ensure it's positioned correctly */
-    font-family: 'Jost', sans-serif;
+    font-family: 'plus-jakarta-sans', sans-serif;
 }
 
 /* Keep "Social Media" text fixed */
@@ -1209,6 +1213,69 @@ nav ul {
         opacity: 1;
     }
 }
+/* ============================================= */
+/* Minimal Responsive Override for Hero Layout   */
+/* ============================================= */
+
+/* 
+   1) Keep side by side on wider screens.
+   2) If the screen is too narrow, stack vertically 
+      (hero text on top, image below) and center them.
+*/
+
+/* Use your preferred breakpoint (e.g., 1200px, 992px, etc.) */
+@media only screen and (max-width: 992px) {
+    .hero-wrapper {
+      /* Stack elements vertically */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      /* Optional: add vertical spacing between text & image */
+      gap: 2rem;
+    }
+  
+    /* Ensure the hero text is centered and no large offsets remain */
+    .hero-text {
+      top: 0;           /* Remove any 'top' offsets from your original code */
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  
+    /* Center the social media container */
+    .social-media-container {
+      left: 0;          /* Remove left offset */
+      justify-content: center;
+    }
+  
+    /* If you had left margins on intro text, remove them here */
+    .intro-text p {
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    /* Center the hero image container, remove negative margins/offsets */
+    .hero-image-container {
+      margin: 0 auto;
+      left: 0;
+      top: 0;
+    }
+  
+    /* Keep the background circle centered around the image */
+    .circle-background {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    /* Reset the hero image offsets and optionally scale it down a bit */
+    .hero-image {
+      left: 0;
+      top: 0;
+      transform: scale(0.9);
+    }
+  }
+  
 
 /* ------------------------------------------------*/
 /* Block Hero Styles ends */
@@ -1245,7 +1312,7 @@ nav ul {
 .infograph-wrapper .container-lg .orders .order-number h1,
 .infograph-wrapper .container-lg .reviews .review-number h1,
 .infograph-wrapper .container-lg .clients .clients-number h1 {
-    font-weight: 700;
+    font-weight: bold;
     /* Use 700, 800, or 900 for extra boldness */
     font-size: 5.5rem;
     /* Adjust size if needed */
@@ -1288,7 +1355,7 @@ nav ul {
 
 .order-number h1 {
     font-size: 5rem;
-    font-weight: 400;
+    font-weight: bold;
 }
 
 .order-types {
@@ -1405,7 +1472,7 @@ nav ul {
 
 .review-number h1 {
     font-size: 5rem;
-    font-weight: 400;
+    font-weight: bold;
 }
 
 .reviews-top img {
@@ -1442,8 +1509,8 @@ nav ul {
 }
 
 .clients h1 {
-    font-size: 5rem;
-    font-weight: 400;
+    font-size: 38px;
+    font-weight: bold;
 }
 
 .clients-img {
@@ -1644,8 +1711,8 @@ nav ul {
 
 
 .projects-wrapper h1 {
-    font-size: 4.2rem;
-    font-weight: 500;
+    font-size: 38px;
+    font-weight: bold;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -1803,7 +1870,7 @@ nav ul {
 
 .aim-item h1 {
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: bold;
     color: #80db66;
     margin-bottom: 20px;
 }
@@ -1837,9 +1904,10 @@ nav ul {
 
 .aim-title {
     font-size: 4.2rem;
-    font-weight: 500;
+    font-weight: bold;
     text-align: center;
     margin-bottom: 3rem;
+    color:#e2ecf6;
 }
 
 /* Alternating Box Background Colors */
@@ -1972,7 +2040,7 @@ nav ul {
     text-align: center;
     margin-bottom: 5rem;
     font-size: 4.2rem;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 800px) {
@@ -2211,7 +2279,7 @@ nav ul {
 
 .step-icon h1 {
     color: #80db66;
-    font-size: 3.4rem;
+    font-size: 38px;
 
     margin-bottom: 0;
 }
@@ -2235,173 +2303,6 @@ nav ul {
 /* Block steps Styles ends */
 /* ------------------------------------------------*/
 /* ------------------------------------------------*/
-/* Block package Styles starts */
-/* ------------------------------------------------*/
-.packages {
-    padding-left: 3rem;
-    padding-right: 3rem;
-    margin-top: 20px;
-}
-
-@media only screen and (max-width: 800px) {
-    .packages {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .packages .container-fluid {
-        padding: unset;
-    }
-}
-
-.packages-wrapper {
-    background-color: #feefee;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    border-radius: 20px;
-}
-
-@media only screen and (max-width: 800px) {
-    .packages-wrapper {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-}
-
-.package-header {
-    font-size: 4.2rem;
-    text-align: center;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-@media only screen and (max-width: 800px) {
-    .package-header {
-        font-size: 2.6rem;
-    }
-}
-
-.package-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    padding-left: 7rem;
-    padding-right: 7rem;
-}
-
-@media only screen and (max-width: 800px) {
-    .package-list {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
-
-.package-item ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-    font-size: 1.4rem;
-}
-
-.package-item ul i {
-    color: #80db66;
-    margin-right: 5px;
-}
-
-.package-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 40px;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    border-radius: 40px;
-    padding: 3rem;
-    align-items: center;
-    background-color: #fff;
-
-}
-
-@media only screen and (max-width: 800px) {
-    .package-item {
-        gap: 20px;
-        padding: 2rem;
-    }
-}
-
-/* .package-item div {
-    text-align: center;
-} */
-
-.package-item p {
-    font-size: 1.4rem;
-}
-
-.package-info h1 {
-    font-size: 2.8rem;
-    font-weight: 500;
-}
-
-.package-price {
-    font-size: 3.6rem;
-    font-weight: 500;
-}
-
-
-.packages .button2 {
-    font-size: 1.8rem;
-    padding: 1.6rem 4.6rem;
-    margin: auto;
-    margin-top: 50px;
-    background-color: #80db66;
-}
-
-.package-item-title {
-    text-align: center;
-}
-
-.package-info {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-/* Stylish Pricing Tag */
-.price-tag {
-    display: inline-block;
-    background: linear-gradient(45deg, #80db66, #ff6a89);
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(233, 55, 101, 0.3);
-    animation: pulseGlow 1.8s infinite alternate ease-in-out;
-}
-
-/* Subtle Glowing Animation */
-@keyframes pulseGlow {
-    0% {
-        transform: scale(1);
-        box-shadow: 0px 4px 10px rgba(233, 55, 101, 0.3);
-    }
-
-    100% {
-        transform: scale(1.05);
-        box-shadow: 0px 6px 15px rgba(233, 55, 101, 0.5);
-    }
-}
-
-
-/* ------------------------------------------------*/
-/* Block package Styles ends */
-/* ------------------------------------------------*/
-/* ------------------------------------------------*/
 /* Block testimonials Styles starts */
 /* ------------------------------------------------*/
 #testimonial {
@@ -2418,7 +2319,12 @@ nav ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-shadow: none !important;
     gap: 40px;
+    transition: none !important;
+    text-decoration: none !important;
+    transform: none !important;
+    color: inherit !important;
 }
 
 @media only screen and (max-width: 800px) {
@@ -2431,13 +2337,21 @@ nav ul {
 .testimonial {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Aligns content at the top */
     padding: 20px;
     border: 1px solid #80db66;
     border-radius: 10px;
     background-color: transparent;
-    margin-bottom: 20px;
-    min-height: 320px;
+    min-height: 320px; /* Set based on the biggest review */
+    text-align: left;
+    flex-grow: 1; /* Allows all reviews to match the tallest */
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Ensures top alignment */
+    gap: 20px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -2453,21 +2367,22 @@ nav ul {
 .testimonial-text p {
     font-size: 17px;
     color: #e2ecf6;
-    min-height: 200px;
+    min-height: 200px; /* Ensures all reviews maintain a consistent start */
     display: flex;
-    align-items: flex-start;
-    /* aligns content at the top */
+    align-items: flex-start; /* Aligns text at the top */
     justify-content: center;
     text-align: justify;
     text-justify: inter-word;
-    padding-top: 20px;
-    /* optional: add some top padding */
+    padding-top: 5px; /* Adjust spacing */
+    flex-grow: 1; /* Allows the content to expand within the box */
+    margin-top: 15px;
+    line-height: 1.5; /* Improves readability */
 }
 
 .testimonial-head h1 {
     text-align: center;
     margin-bottom: 7rem;
-    font-size: 4.6rem;
+    font-size: 38px;
     font-weight: bold;
 }
 
@@ -2540,6 +2455,26 @@ nav ul {
     /* Icons become white on hover */
 }
 
+@media (max-width: 768px) {
+    .testimonial-container {
+        flex-direction: column; /* Stack reviews in one column */
+        align-items: center; /* Center reviews */
+    }
+
+    .testimonial {
+        width: 90%; /* Make it responsive */
+        min-height: auto; /* Allow the height to adjust naturally */
+        max-width: 400px; /* Prevent it from becoming too wide */
+    }
+
+    .testimonial-text p {
+        min-height: auto; /* Remove fixed height for better text flow */
+        text-align: justify; /* Maintain readability */
+        font-size: 16px; /* Adjust font size for better mobile reading */
+    }
+}
+
+
 /* ------------------------------------------------*/
 /* Block testimonials Styles ends */
 /* ------------------------------------------------*/
@@ -2578,8 +2513,8 @@ nav ul {
 }
 
 .about-text h1 {
-    font-size: 4.6rem;
-    font-weight: 500;
+    font-size: 38px;
+    font-weight: bold;
     margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: bold;
@@ -2707,7 +2642,7 @@ footer img {
 
 .cta-card .card-title {
     font-size: 4.6rem;
-    font-weight: 500;
+    font-weight: bold;
     color: #ffff;
     margin-bottom: 1rem;
 }
@@ -2890,9 +2825,6 @@ footer img {
     }
 }
 
-
-
-
 .steps {
     background-color: #e2ecf6;
     border-radius: 20px;
@@ -2952,7 +2884,6 @@ footer img {
     z-index: 0;
     transition: height 1s ease-in-out;
 }
-
 
 .step {
     display: flex;
@@ -3152,7 +3083,6 @@ footer img {
     }
 }
 
-
 /* Fix Hero Section for Mobile View */
 @media (max-width: 1024px) {
     .hero {
@@ -3190,12 +3120,12 @@ footer img {
         text-align: center;
         font-size: 2.0rem;
         /* Smaller text */
-        font-weight: 400;
+        font-weight: bold;
         color: #80db66;
         /* Ensure visibility */
         margin-bottom: 5px;
         left: 5px;
-        font-family: 'Jost-medium-font';
+        font-family: 'plus-jakarta-sans-medium-font';
     }
 
     .profile h1 {
@@ -3204,7 +3134,7 @@ footer img {
         font-weight: 800;
         color: #e2ecf6;
         margin-top: -10;
-        font-family: 'Jost';
+        font-family: 'plus-jakarta-sans';
     }
 
     .hero-text .button2 {
@@ -3245,9 +3175,8 @@ footer img {
     .hero .button2 {
         padding: 1.2rem 8rem;
         font-size: 1.6rem;
-        font-weight: 500;
+        font-weight: bold;
     }
-
 
     .hero-text {
         display: flex;
@@ -3260,7 +3189,6 @@ footer img {
         width: 100%;
         top: 150px;
     }
-
 
     .intro-text {
         position: relative;
@@ -3290,12 +3218,13 @@ footer img {
         flex-wrap: nowrap;
         text-align: left;
         font-size: 100px;
+        font-weight: bold;
         white-space: nowrap;
         position: relative;
         height: 70px;
         left: 100px;
         top: -30px;
-        font-family: 'Jost', sans-serif;
+        font-family: 'plus-jakarta-sans', sans-serif;
     }
 
     /* Keep "Social Media" text fixed */
@@ -3387,7 +3316,6 @@ footer img {
         display: none;
     }
 
-
     /* Container for image and circle */
     .hero-image-container {
         position: relative;
@@ -3397,7 +3325,6 @@ footer img {
         width: var(--circle-size);
         height: var(--circle-size);
         margin-left: -95px;
-        /* Shift slightly left */
     }
 
     /* Background Circle - Static but Zooms on Hover */
@@ -3437,7 +3364,7 @@ footer img {
         object-fit: contain;
         transition: transform 0.3s ease-in-out;
         left: 50px;
-        top: 100px;
+        top: 150px;
     }
 
     :root {
@@ -3459,7 +3386,7 @@ footer img {
         justify-content: space-between;
         gap: 10rem;
         font-size: 2rem;
-        font-weight: 500;
+        font-weight: bold;
     }
 
     .phone-menu .custom-button-nav-portfolio {
@@ -3562,8 +3489,8 @@ footer img {
 
 
     .projects-wrapper h1 {
-        font-size: 4.2rem;
-        font-weight: 500;
+        font-size: 38px;
+        font-weight: bold;
         text-transform: uppercase;
         font-weight: bold;
     }
