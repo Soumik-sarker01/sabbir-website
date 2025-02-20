@@ -5,9 +5,8 @@
             <div class="large-menu">
                 <ul>
                     <li><a href="/" class="nav-link active">Home</a></li>
-                    <li><a href="/#pricing" class="nav-link">Pricing</a></li>
                     <li><a href="/#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="/#about" class="nav-link">About us</a></li>
+                    <li><a href="/#about" class="nav-link">About Me</a></li>
                 </ul>
             </div>
             <div class="nav-action">
@@ -25,7 +24,6 @@
         <div class="phone-menu">
             <ul>
                 <li><a href="/" class="phone-link nav-link active">Home</a></li>
-                <li><a href="/#pricing" class="phone-link nav-link">Pricing</a></li>
                 <li><a href="/#portfolio" class="phone-link nav-link">Portfolio</a></li>
                 <li><a href="/#about" class="phone-link nav-link">About us</a></li>
             </ul>

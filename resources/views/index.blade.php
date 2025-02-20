@@ -164,7 +164,7 @@ h1:hover {
                         <h1>Sabbir Tareq</h1>
                     </div>
                     <div class="social-media-container">
-                        <span class="social-media-text">A Pationate Social Media</span>
+                        <span class="social-media-text">A Passionate Social Media</span>
                         <div class="typing-container">
                             <span class="typing-text"></span>
                             <span class="cursor">|</span>
@@ -202,6 +202,7 @@ h1:hover {
     <section class="infograph">
         <div class="container-fluid">
             <div class="infograph-wrapper">
+
                 <div class="container-lg">
                     <div>
                         <div class="orders">
@@ -293,17 +294,31 @@ h1:hover {
     {{-- Company Logos Section --}}
 <section id="company-logos" class="company-logos my-5">
     <div class="container">
-    <h1 class="company-logo-title">Our Clients</h1>
+    <h1 class="company-logo-title">My Clients</h1>
 
         <div class="logos-wrapper">
             {{-- Row 1 (Right to Left) --}}
             <div class="logos-row right-to-left hidden">
                 <div class="logos-track">
                     @for($i = 0; $i < 2; $i++)
-                        <img src="{{ asset('assets/img/logos/client-1.svg') }}" alt="Company 1">
-                        <img src="{{ asset('assets/img/logos/2.jpg') }}" alt="Company 2">
-                        <img src="{{ asset('assets/img/logos/3.jpg') }}" alt="Company 3">
-                        <img src="{{ asset('assets/img/logos/client-5.svg') }}" alt="Company 4">
+                        <img src="{{ asset('assets/img/logos/1.png') }}" alt="Company 1">
+                        <img src="{{ asset('assets/img/logos/2.png') }}" alt="Company 2">
+                        <img src="{{ asset('assets/img/logos/3.png') }}" alt="Company 3">
+                        <img src="{{ asset('assets/img/logos/4.png') }}" alt="Company 4">
+                        <img src="{{ asset('assets/img/logos/5.png') }}" alt="Company 5">
+                        <img src="{{ asset('assets/img/logos/6.png') }}" alt="Company 6">
+                        <img src="{{ asset('assets/img/logos/7.png') }}" alt="Company 7">
+                        <img src="{{ asset('assets/img/logos/8.png') }}" alt="Company 8">
+                        <img src="{{ asset('assets/img/logos/9.png') }}" alt="Company 9">
+                        <img src="{{ asset('assets/img/logos/10.png') }}" alt="Company 10">
+                        <img src="{{ asset('assets/img/logos/11.png') }}" alt="Company 11">
+                        <img src="{{ asset('assets/img/logos/12.png') }}" alt="Company 12">
+                        <img src="{{ asset('assets/img/logos/13.png') }}" alt="Company 13">
+                        <img src="{{ asset('assets/img/logos/14.png') }}" alt="Company 14">
+                        <img src="{{ asset('assets/img/logos/15.png') }}" alt="Company 15">
+                        <img src="{{ asset('assets/img/logos/16.png') }}" alt="Company 16">
+                        <img src="{{ asset('assets/img/logos/17.png') }}" alt="Company 17">
+                        <img src="{{ asset('assets/img/logos/18.png') }}" alt="Company 18">
                     @endfor
                 </div>
             </div>
@@ -312,10 +327,24 @@ h1:hover {
             <div class="logos-row left-to-right hidden">
                 <div class="logos-track">
                     @for($i = 0; $i < 2; $i++)
-                        <img src="{{ asset('assets/img/logos/5.jpg') }}" alt="Company 5">
-                        <img src="{{ asset('assets/img/logos/6.jpg') }}" alt="Company 6">
-                        <img src="{{ asset('assets/img/logos/client-1.svg') }}" alt="Company 7">
-                        <img src="{{ asset('assets/img/logos/client-1.svg') }}" alt="Company 8">
+                        <img src="{{ asset('assets/img/logos/19.png') }}" alt="Company 19">
+                        <img src="{{ asset('assets/img/logos/20.png') }}" alt="Company 20">
+                        <img src="{{ asset('assets/img/logos/21.png') }}" alt="Company 21">
+                        <img src="{{ asset('assets/img/logos/22.png') }}" alt="Company 22">
+                        <img src="{{ asset('assets/img/logos/23.png') }}" alt="Company 23">
+                        <img src="{{ asset('assets/img/logos/24.png') }}" alt="Company 24">
+                        <img src="{{ asset('assets/img/logos/25.png') }}" alt="Company 25">
+                        <img src="{{ asset('assets/img/logos/26.png') }}" alt="Company 26">
+                        <img src="{{ asset('assets/img/logos/27.png') }}" alt="Company 27">
+                        <img src="{{ asset('assets/img/logos/28.png') }}" alt="Company 28">
+                        <img src="{{ asset('assets/img/logos/29.png') }}" alt="Company 29">
+                        <img src="{{ asset('assets/img/logos/30.png') }}" alt="Company 30">
+                        <img src="{{ asset('assets/img/logos/31.png') }}" alt="Company 31">
+                        <img src="{{ asset('assets/img/logos/32.png') }}" alt="Company 32">
+                        <img src="{{ asset('assets/img/logos/33.png') }}" alt="Company 33">
+                        <img src="{{ asset('assets/img/logos/34.png') }}" alt="Company 34">
+                        <img src="{{ asset('assets/img/logos/35.png') }}" alt="Company 35">
+                        <img src="{{ asset('assets/img/logos/36.png') }}" alt="Company 36">
                     @endfor
                 </div>
             </div>
@@ -324,10 +353,22 @@ h1:hover {
             <div class="logos-row right-to-left hidden">
                 <div class="logos-track">
                     @for($i = 0; $i < 2; $i++)
-                        <img src="{{ asset('assets/img/logos/client-2.svg') }}" alt="Company 9">
-                        <img src="{{ asset('assets/img/logos/client-3.svg') }}" alt="Company 10">
-                        <img src="{{ asset('assets/img/logos/client-4.svg') }}" alt="Company 11">
-                        <img src="{{ asset('assets/img/logos/client-5.svg') }}" alt="Company 12">
+                        <img src="{{ asset('assets/img/logos/37.png') }}" alt="Company 37">
+                        <img src="{{ asset('assets/img/logos/38.png') }}" alt="Company 38">
+                        <img src="{{ asset('assets/img/logos/39.png') }}" alt="Company 39">
+                        <img src="{{ asset('assets/img/logos/40.png') }}" alt="Company 40">
+                        <img src="{{ asset('assets/img/logos/41.png') }}" alt="Company 41">
+                        <img src="{{ asset('assets/img/logos/42.png') }}" alt="Company 42">
+                        <img src="{{ asset('assets/img/logos/43.png') }}" alt="Company 43">
+                        <img src="{{ asset('assets/img/logos/44.png') }}" alt="Company 44">
+                        <img src="{{ asset('assets/img/logos/45.png') }}" alt="Company 45">
+                        <img src="{{ asset('assets/img/logos/46.png') }}" alt="Company 46">
+                        <img src="{{ asset('assets/img/logos/47.png') }}" alt="Company 47">
+                        <img src="{{ asset('assets/img/logos/48.png') }}" alt="Company 48">
+                        <img src="{{ asset('assets/img/logos/49.png') }}" alt="Company 49">
+                        <img src="{{ asset('assets/img/logos/50.png') }}" alt="Company 50">
+                        <img src="{{ asset('assets/img/logos/51.png') }}" alt="Company 51">
+                        <img src="{{ asset('assets/img/logos/52.png') }}" alt="Company 52">
                     @endfor
                 </div>
             </div>
@@ -1289,36 +1330,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const logoSection = document.getElementById("company-logos");
     const logoRows = document.querySelectorAll(".logos-row");
+
+    // Ensure logos start visible with a slow transition effect
+    logoRows.forEach((row) => {
+        row.style.opacity = "1";
+        row.style.transform = "translateY(0px)";
+        row.style.transition = "opacity 3s ease-out, transform 3s ease-out"; // Slower transition
+    });
 
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
                 const { target, intersectionRatio } = entry;
-                
-                // Apply effect gradually based on scroll progress
-                const opacity = Math.min(1, intersectionRatio * 2); // Smooth fade in/out
-                const translateY = (1 - intersectionRatio) * 50; // Moves down when leaving
+
+                // Smoother fade-in and movement effect
+                const opacity = Math.min(1, intersectionRatio * 1.5);
+                const translateY = (1 - intersectionRatio) * 15; // Less movement for better readability
 
                 if (intersectionRatio > 0) {
-                    // Gradual pop-up effect
                     target.style.opacity = opacity;
                     target.style.transform = `translateY(${translateY}px)`;
                 } else {
-                    // Once completely out of view, apply reverse effect smoothly
-                    target.style.opacity = "0";
-                    target.style.transform = "translateY(50px)";
+                    target.style.opacity = "1"; // Keep it visible
+                    target.style.transform = "translateY(0px)";
                 }
             });
         },
         {
-            threshold: Array.from({ length: 11 }, (_, i) => i * 0.1), // More granularity for smooth transition
+            threshold: Array.from({ length: 20 }, (_, i) => i * 0.05), // More granularity for ultra-smooth effects
         }
     );
 
     logoRows.forEach((row) => observer.observe(row));
 });
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const wrapper = document.querySelector(".wrapper");
