@@ -9,11 +9,14 @@
                     <li><a href="/#about" class="nav-link">About Me</a></li>
                 </ul>
             </div>
+
             <div class="nav-action">
-            <a href="#portfolio">
-                            <button class="custom-button-nav-portfolio">SHOW PORTFOLIO</button>
-                        </a>
+                <!-- Fiverr Profile Button in Navbar (Initially Hidden) -->
+                <a href="https://www.fiverr.com/sabbir_tareq" target="_blank" id="nav-fiverr">
+                    <button class="custom-button-nav-hero">FIVERR PROFILE</button>
+                </a>
             </div>
+
             <div id="burger-icon"><i class="fa-solid fa-bars"></i></div>
         </div>
     </nav>
@@ -28,10 +31,12 @@
                 <li><a href="/#about" class="phone-link nav-link">About us</a></li>
             </ul>
             <div class="nav-action">
-                <a href="https://www.fiverr.com/sabbir_tareq" target="_blank" class="phone-link">
-                    <div class="custom-button-nav-portfolio">Show Portfolio</div>
-                </a>
-            </div>
+    <!-- Fiverr Profile Button in Navbar -->
+    <a href="https://www.fiverr.com/sabbir_tareq" target="_blank" id="nav-fiverr">
+        <button class="custom-button-fiverr">FIVERR PROFILE</button>
+    </a>
+</div>
+
         </div>
     </div>
 </div>
@@ -95,5 +100,42 @@
     updateNavbarStyle();
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const heroSection = document.querySelector(".hero");
+    const heroFiverr = document.getElementById("hero-fiverr");
+    const navFiverr = document.getElementById("nav-fiverr");
+
+    function updateNavbar() {
+        const heroRect = heroSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        // Determine if any part of the hero section is visible:
+        if (heroRect.bottom > 0) {
+            // Hero is visible – show the Fiverr button in the hero section
+            heroFiverr.style.display = "inline-block";
+            heroFiverr.style.opacity = "1";
+            heroFiverr.style.transform = "translateY(0)";
+        } else {
+            // Hero is completely out of view – hide the hero button
+            heroFiverr.style.display = "none";
+        }
+
+        // For the navbar's Fiverr button, we want it to start fading in when the hero's bottom is less than a threshold.
+        const fadeThreshold = viewportHeight * 0.2; // 20% of viewport height
+        if (heroRect.bottom > fadeThreshold) {
+            // Hero is still mostly visible – hide the navbar button
+            navFiverr.style.opacity = "0";
+            navFiverr.style.pointerEvents = "none";
+        } else {
+            // Calculate fade progress: when heroRect.bottom reaches 0, opacity becomes 1.
+            let fadeProgress = 1 - (heroRect.bottom / fadeThreshold);
+            navFiverr.style.opacity = fadeProgress.toString();
+            navFiverr.style.pointerEvents = "auto";
+        }
+    }
+
+    window.addEventListener("scroll", updateNavbar);
+    updateNavbar(); // Initial check on page load
+});
 
 </script>

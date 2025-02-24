@@ -444,7 +444,7 @@ nav ul {
     font-weight: bold;
 }
 
-.phone-menu .custom-button-nav-portfolio {
+.phone-menu .custom-button-nav-hero {
     font-size: 1.6rem;
     background-color: #80db66;
     color: #ffff;
@@ -481,7 +481,7 @@ nav ul {
         display: none;
     }
 
-    nav .custom-button-nav-portfolio {
+    nav .custom-button-nav-hero {
         display: none;
     }
 }
@@ -579,7 +579,6 @@ nav ul {
     justify-content: left;
 }
 
-/* Hover effect: Transparent background */
 /* Hover effect: White transparent background */
 .custom-button:hover {
     background: rgba(255, 255, 255, 1);
@@ -593,7 +592,18 @@ nav ul {
     margin-left: 10px;
 }
 
-/* Left-align hero button */
+/* Ensure hero buttons are aligned correctly */
+.hero-buttons {
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap;
+    padding-left: 0; /* Ensure there's no extra padding */
+    margin-left: -100px; /* Adjust this value to move more to the left */
+}
+
+/* Style both buttons equally */
 .custom-button-hero {
     display: inline-block;
     padding: 12px 40px;
@@ -609,24 +619,87 @@ nav ul {
     text-transform: uppercase;
     min-width: 200px;
     text-align: center;
-    justify-content: left;
-    margin-left: -260px;
-    /* Ensure alignment */
+    /* Remove any extra margins */
+    margin: 0;
 }
 
-/* Hover effect: Transparent background */
+/* Hover effect */
 .custom-button-hero:hover {
     background: rgba(255, 255, 255, 1);
     color: #25262f;
     border: 1px solid #fff;
 }
 
-
-/* Ensure buttons have equal width */
-.custom-button-hero+.custom-button-hero {
-    margin-left: 10px;
+/* Ensure equal spacing between the buttons */
+.custom-button-hero + .custom-button-hero {
+    margin-left: 15px; /* Adjust spacing between buttons */
 }
 
+
+/* Ensure hero buttons are aligned correctly */
+.about-buttons {
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap;
+    padding-left: 0; /* Ensure there's no extra padding */
+    margin-left: -15px; /* Adjust this value to move more to the left */
+}
+
+/* Style both buttons equally */
+.custom-button-about {
+    display: inline-block;
+    padding: 12px 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: #80db66;
+    color: #25262f;
+    border: 2px solid #80db66;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    min-width: 200px;
+    text-align: center;
+    /* Remove any extra margins */
+    margin: 0;
+}
+
+/* Hover effect */
+.custom-button-about:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #25262f;
+    border: 1px solid #fff;
+}
+
+/* Ensure equal spacing between the buttons */
+.custom-button-about + .custom-button-about {
+    margin-left: 15px; /* Adjust spacing between buttons */
+}
+
+/* Navbar Fiverr Button */
+.nav-action {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#nav-fiverr button {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    background-color: #80db66;
+    border-radius: 50px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav-fiverr button:hover {
+    background-color: #6bb356;
+    transform: scale(1.05);
+}
 .custom-button-starter {
     display: inline-block;
     padding: 12px 40px;
@@ -675,13 +748,13 @@ nav ul {
 }
 
 /* Left-align hero button */
-.custom-button-nav-portfolio {
+.custom-button-nav-hero {
     display: inline-block;
     padding: 12px 40px;
     font-size: 1.4rem;
     font-weight: 600;
     background: #80db66;
-    color: #25262f;
+    color: #25262f !important;
     border: 2px solid #80db66;
     border-radius: 25px;
     text-decoration: none;
@@ -690,22 +763,15 @@ nav ul {
     text-transform: uppercase;
     min-width: 200px;
     text-align: center;
-    justify-content: left;
-    margin-left: -260px;
-    /* Ensure alignment */
+    /* Remove any extra margins */
+    margin: 0;
 }
 
 /* Hover effect: Transparent background */
-.custom-button-nav-portfolio:hover {
+.custom-button-nav-hero:hover {
     background: rgba(255, 255, 255, 1);
-    color: #25262f;
+    color: #25262f !important;
     border: 1px solid #fff;
-}
-
-
-/* Ensure buttons have equal width */
-.custom-button-nav-portfolio+.custom-button-nav-portfolio {
-    margin-left: 10px;
 }
 
 .custom-button-starter {
@@ -825,7 +891,7 @@ nav ul {
     color: #80db66;
     /* Ensure visibility */
     margin-bottom: 5px;
-    left: 5px;
+    left: -125px;
     font-family: 'plus-jakarta-sans', sans-serif;
 }
 
@@ -835,6 +901,7 @@ nav ul {
     font-weight: 700;
     color: #e2ecf6;
     margin-top: 0;
+    left: -125px;
     font-family: 'plus-jakarta-sans', sans-serif;
 }
 
@@ -889,53 +956,55 @@ nav ul {
 /* Left-align social media container */
 .social-media-container {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: flex-start;
     /* Align left */
-    gap: 6px;
+    gap: 3px;
     flex-wrap: nowrap;
     text-align: left;
     font-size: 3.2rem;
     white-space: nowrap;
     position: relative;
     height: 70px;
-    left: 66px;
+    left: 11px;
+    top: 20px;
     /* Ensure it's positioned correctly */
     font-family: 'plus-jakarta-sans', sans-serif;
 }
 
 /* Keep "Social Media" text fixed */
 .social-media-text {
-    flex-shrink: 0;
-    min-width: fit-content;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Optional spacing between text and typing container */
     color: #e2ecf6;
+    font-size: 2.2rem;
+    line-height: 2.2rem; /* Match font size */
 }
 
 /* Ensure the container has a fixed width to prevent shifting */
 .typing-container {
-    display: inline-flex;
     align-items: center;
     position: relative;
     white-space: nowrap;
     font-size: inherit;
     width: 270px;
-    /* Adjust as needed */
+    align-items: baseline;
     overflow: hidden;
     text-align: left;
+    font-size: 3.2rem; /* Typing text is larger */
+    line-height: 3.2rem; /* Match the text height */
+    top: 0.2px;
 }
 
 /* Typing text grows without shifting "Social Media" */
 .typing-text {
     font-weight: bold;
     color: #80db66;
-    display: inline-block;
     overflow: hidden;
     min-width: fit-content;
-    padding-right: -10px;
-    /* Ensures cursor sticks to last letter */
-    margin-right: -15px;
-    /* Adjust this if needed */
+    padding-right: 0;
+    margin-right: -3px; /* Fine-tune spacing */
 }
 
 /* Cursor positioning */
@@ -943,58 +1012,15 @@ nav ul {
     font-size: inherit;
     color: #80db66;
     display: inline-block;
-    position: absolute;
-    /* Changed from relative */
-    left: 0;
     animation: blink 1.3s infinite;
-    /* Adjusted speed */
-}
-
-/* Abstracts - Move & Float */
-.abstract-image-1,
-.abstract-image-2,
-.abstract-image-3 {
-    position: absolute;
-    transition: transform 0.1s ease-out;
-    /* Smooth movement */
-    will-change: transform;
-    animation: floating 5s infinite ease-in-out alternate;
-}
-
-/* Apply unique animations */
-.abstract-image-1 {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    left: -80px;
-    top: 65px;
-    animation: floating-1 3s infinite ease-in-out;
-}
-
-.abstract-image-2 {
-    position: absolute;
-    width: 65px;
-    height: 65px;
-    left: 510px;
-    top: 65px;
-    animation: floating-2 3s infinite ease-in-out;
-}
-
-.abstract-image-3 {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    left: 600px;
-    top: 590px;
-    animation: floating-3 3s infinite ease-in-out;
-}
-
-@media (max-width: 768px) {
-    .abstract-image-1 {
-        width: 50%;
-        max-width: 20em;
-    }
-}
+    position: absolute; /* Keep absolute for correct positioning */
+    left: 2px; /* Fine-tune spacing to get it closer */
+    margin-left: -2px; /* Reduce gap between last letter and cursor */
+    top: 50%; /* Center it properly */
+    transform: translateY(-50%); /* Ensure it doesn't shift vertically */
+    animation: blink 1.3s infinite;
+    font-weight: bold;
+} 
 
 @keyframes floating-1 {
     0% {
@@ -1052,6 +1078,53 @@ nav ul {
     }
 }
 
+
+/* Abstracts - Move & Float */
+.abstract-image-1,
+.abstract-image-2,
+.abstract-image-3 {
+    position: absolute;
+    transition: transform 0.1s ease-out;
+    /* Smooth movement */
+    will-change: transform;
+    animation: floating 5s infinite ease-in-out alternate;
+}
+
+/* Apply unique animations */
+.abstract-image-1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: -80px;
+    top: 65px;
+    animation: floating-1 3s infinite ease-in-out;
+}
+
+.abstract-image-2 {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    left: 510px;
+    top: 65px;
+    animation: floating-2 3s infinite ease-in-out;
+}
+
+.abstract-image-3 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 600px;
+    top: 590px;
+    animation: floating-3 3s infinite ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .abstract-image-1 {
+        width: 50%;
+        max-width: 20em;
+    }
+}
+
 :root {
     --image-width: 950px;
     /* Image size increased */
@@ -1072,20 +1145,36 @@ nav ul {
     /* Shift slightly left */
 }
 
-/* Background Circle - Static but Zooms on Hover */
-.circle-background {
+@keyframes breathing {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.2;
+    }
+  }
+  
+  .circle-background {
     position: absolute;
     width: 620px;
     height: 620px;
     background: rgba(128, 128, 128, 0.2);
-    /* Gray transparent */
     border-radius: 50%;
     z-index: 0;
     left: 30%;
     top: 50%;
     transform: translate(-50%, -50%);
-    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
-}
+    /* Remove the hover transition if you want the breathing to be continuous */
+    /* transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out; */
+    animation: breathing 4s ease-in-out infinite;
+  }
+  
 
 /* Hover Effect - Enlarge Circle */
 .hero-image-container:hover .circle-background {
@@ -1132,6 +1221,49 @@ nav ul {
 }
 
 
+/* Social Media Icons - Fixed to Right Side */
+.social-icons-fixed {
+    position: fixed;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.social-icons-fixed a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 22px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.social-icons-fixed a:hover {
+    background: #80db66;
+    color: #25262f;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+    .social-icons-fixed {
+        right: 10px;
+    }
+
+    .social-icons-fixed a {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
 
 
 
@@ -1778,7 +1910,7 @@ nav ul {
 
 /* Ensure logos scale correctly */
 .clients-img img {
-    width: 80px;
+    width: 120px;
     /* Default logo size */
     height: auto;
     opacity: 0.9;
@@ -3575,7 +3707,7 @@ footer img {
     }
 
 
-    nav .custom-button-nav-portfolio {
+    nav .custom-button-nav-hero {
         display: none;
     }
 
@@ -3589,7 +3721,7 @@ footer img {
         font-weight: bold;
     }
 
-    .phone-menu .custom-button-nav-portfolio {
+    .phone-menu .custom-button-nav-hero {
         display: inline-block;
         padding: 12px 40px;
         font-size: 1.4rem;
@@ -4047,5 +4179,3 @@ h1 {
   h1:hover::after {
     transform: scaleX(1);
   }
-  
-  
