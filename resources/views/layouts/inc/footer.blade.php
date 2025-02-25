@@ -1,199 +1,122 @@
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <!-- Contact Info Section -->
-            <div class="footer-info">
-                <h2>Contact Info</h2>
-                <p>Reach out via email or phone for a quick response.</p>
-                <div class="contact-details">
-                    <p><i class="fas fa-phone"></i> <a href="tel:+8801303934047">+8801303934047</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:collab@sabbirtareq.com">collab@sabbirtareq.com</a></p>
-                </div>
+<!-- Include Bootstrap CSS (CDN example) -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+/>
+<!-- Include Font Awesome for icons (CDN example) -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+/>
+
+<!-- Contact Section with #e2ecf6 background -->
+<div class="py-5" style="background-color: #e2ecf6;">
+  <div class="container-xxl">
+    <!-- Main Heading -->
+    <h2 class="display-5 fw-bold mb-4" style="color: #25262f;">
+    Let's <span style="color: #80db66;">Discuss</span>
+    </h2>
+    <div class="row align-items-start g-5">
+      <!-- Left Column: Contact Form -->
+      <div class="col-12 col-lg-7">
+        <div class="card border-0 p-4" style="background-color: #fff;">
+          <form>
+            <!-- Name & Email Row -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label fw-semibold" style="color: #25262f; font-size: 1.1rem;">Name</label>
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  style="color: #25262f;"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label fw-semibold" style="color: #25262f; font-size: 1.1rem;">Email</label>
+                <input
+                  type="email"
+                  class="form-control form-control-lg"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  style="color: #25262f;"
+                  required
+                />
+              </div>
             </div>
-            
-            <!-- Contact Form Section -->
-            <div class="footer-contact">
-                <h2 class="highlighted">Let's Connect</h2>
-                <p>We’re here to help! Drop us a message and let’s start a conversation.</p>
-                <form id="contactForm" action="#" method="POST">
-                    <div class="form-group animated-input">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group animated-input">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group animated-input">
-                        <input type="text" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group animated-input">
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-                <p id="formMessage" class="hidden">Your message has been sent successfully!</p>
+            <!-- Subject -->
+            <div class="mb-3">
+              <label for="subject" class="form-label fw-semibold" style="color: #25262f; font-size: 1.1rem;">Subject</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                id="subject"
+                name="subject"
+                placeholder="Subject"
+                style="color: #25262f;"
+                required
+              />
             </div>
-            
-            <!-- Social Media Links -->
-            <div class="footer-social">
-                <h2>Follow Us</h2>
-                <p>Stay connected through our social media channels.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/ay.naur/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/aynaur" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.facebook.com/aynaur" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                </div>
+            <!-- Message -->
+            <div class="mb-3">
+              <label for="message" class="form-label fw-semibold" style="color: #25262f; font-size: 1.1rem;">Message</label>
+              <textarea
+                class="form-control form-control-lg"
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Write your message here..."
+                style="color: #25262f;"
+                required
+              ></textarea>
             </div>
+            <!-- Send Message Button -->
+            <button
+              type="submit"
+              class="btn fw-bold px-4 py-2 mt-2"
+              style="background-color: #80db66; color: #25262f; border: none; font-size: 1.1rem;"
+            >
+              SEND MESSAGE
+            </button>
+          </form>
         </div>
+      </div>
+
+      <!-- Right Column: Contact Info Cards -->
+      <div class="col-12 col-lg-5">
+        <!-- Phone -->
+        <div class="card border-0 shadow-sm mb-3 p-3">
+          <h5 class="fw-bold mb-2" style="color: #25262f; font-size: 1.2rem;">
+            <i class="fa fa-phone me-2" style="color: #80db66;"></i> Phone
+          </h5>
+          <p class="mb-0">
+            <a href="tel:+8801303934047" style="color: #25262f; text-decoration: none;">
+            +8801303934047
+            </a>
+          </p>
+        </div>
+        <!-- Email -->
+        <div class="card border-0 shadow-sm mb-3 p-3">
+          <h5 class="fw-bold mb-2" style="color: #25262f; font-size: 1.2rem;">
+            <i class="fa fa-envelope me-2" style="color: #80db66;"></i> Email Address
+          </h5>
+          <p class="mb-0">
+            <a href="mailto:collab@sabbirtareq.com" style="color: #25262f; text-decoration: none;">
+            collab@sabbirtareq.com
+            </a>
+          </p>
+        </div>
+        
+      </div>
     </div>
-</footer>
+  </div>
+</div>
 
-<style>
-.footer {
-    background: #e2ecf6;
-    padding: 100px 50px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-.container {
-    max-width: 1400px;
-    width: 100%;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    align-items: center;
-    width: 100%;
-}
-
-@media (min-width: 1024px) {
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 80px;
-    }
-}
-
-.footer-contact, .footer-info, .footer-social {
-    max-width: 400px;
-    text-align: left;
-    flex: 1;
-    animation: slideIn 1.5s ease-in-out;
-}
-
-@keyframes slideIn {
-    0% { opacity: 0; transform: translateX(-20px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
-
-.footer h2 {
-    font-size: 2.6rem;
-    color: #25262f;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.footer h2.highlighted {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-.footer h2.highlighted::after {
-    content: "";
-    width: 80px;
-    height: 4px;
-    background: #80db66;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    border-radius: 2px;
-}
-
-.footer p, .footer a {
-    font-size: 1.2rem;
-    color: #25262f;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-.animated-input input, .animated-input textarea {
-    width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    font-size: 1rem;
-    background: #ffffff;
-    color: #25262f;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.animated-input input:focus, .animated-input textarea:focus {
-    box-shadow: 0px 6px 15px rgba(128, 219, 102, 0.5);
-}
-
-textarea {
-    min-height: 120px;
-}
-
-.submit-btn {
-    display: inline-block;
-    padding: 14px 50px;
-    font-size: 1.4rem;
-    font-weight: 600;
-    background: #80db66;
-    color: white;
-    border-radius: 30px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.submit-btn:hover {
-    background: white;
-    color: #25262f;
-    box-shadow: 0px 6px 15px rgba(37, 38, 47, 0.2);
-}
-
-.social-links {
-    display: flex;
-    gap: 20px;
-}
-
-.social-links a {
-    font-size: 2rem;
-    color: #25262f;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.social-links a:hover {
-    color: #80db66;
-    transform: scale(1.15);
-}
-
-.hidden {
-    display: none;
-    color: #80db66;
-    font-size: 1.2rem;
-    margin-top: 15px;
-}
-</style>
+<!-- Include Bootstrap JS + Popper (CDN example) -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+></script>

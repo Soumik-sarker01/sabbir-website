@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Discover AyNaur, your go-to team for high-quality social media design, content creation, and management. With expertise in creating engaging Canva templates, captivating Instagram posts, and tailored marketing strategies, we transform your ideas into reality. Our services are customized to meet your needs, ensuring satisfaction with fast delivery and unlimited revisions. Elevate your online presence with AyNaur—where passion meets excellence. Contact us today!" />
 
     <!-- Open Graph Protocol -->
