@@ -36,6 +36,14 @@
         /* Always add green glow effect */
     }
 
+    h2 {
+  transition: transform 0.3s ease-in-out;
+}
+
+h2:hover {
+  transform: scale(1.1);
+}
+
 
 
     .company-logo-title {
@@ -178,16 +186,16 @@
                     <div class="spacer"></div>
 
                     <div class="hero-buttons">
-    <!-- Get Started button (Left Side) -->
-    <a href="https://wa.me/+8801303934047" id="hero-started">
-        <button class="custom-button-hero">Hire Me</button>
-    </a>
+                        <!-- Get Started button (Left Side) -->
+                        <a href="https://wa.me/+8801303934047" id="hero-started">
+                            <button class="custom-button-hero">Hire Me</button>
+                        </a>
 
-    <!-- Fiverr Profile button (Right Side) -->
-    <a href="https://www.fiverr.com/sabbir_tareq" target="_blank" id="hero-fiverr">
-        <button class="custom-button-hero">FIVERR PROFILE</button>
-    </a>
-</div>
+                        <!-- Fiverr Profile button (Right Side) -->
+                        <a href="https://www.fiverr.com/sabbir_tareq" target="_blank" id="hero-fiverr">
+                            <button class="custom-button-hero">FIVERR PROFILE</button>
+                        </a>
+                    </div>
 
 
                 </div>
@@ -220,7 +228,7 @@
                     <div>
                         <div class="orders">
                             <div class="order-number">
-                                <h1>250+</h1>
+                                <h2>250+</h2>
                                 <p>Orders Completed</p>
                             </div>
                             <div class="order-types">
@@ -257,7 +265,7 @@
                                 <img src="{{asset('assets/img/stars.svg')}}" alt="stars">
                             </div>
                             <div class="review-number">
-                                <h1>120+</h1>
+                                <h2>120+</h2>
                                 <p>Reviews</p>
                             </div>
                             <div class="review-img">
@@ -278,7 +286,7 @@
                     <div>
                         <div class="clients">
                             <div class="clients-number">
-                                <h1>300+</h1>
+                                <h2>300+</h2>
                                 <p>Clients</p>
                             </div>
                             <!-- New wrapper for scrolling -->
@@ -319,8 +327,7 @@
                 {{-- Row 1 (Right to Left) --}}
                 <div class="logos-row right-to-left hidden">
                     <div class="logos-track">
-                        @for($i = 0; $i < 2; $i++) 
-                        <img src="{{ asset('assets/img/logos/1.png') }}" alt="Company 1">
+                        @for($i = 0; $i < 2; $i++) <img src="{{ asset('assets/img/logos/1.png') }}" alt="Company 1">
                             <img src="{{ asset('assets/img/logos/2.png') }}" alt="Company 2">
                             <img src="{{ asset('assets/img/logos/3.png') }}" alt="Company 3">
                             <img src="{{ asset('assets/img/logos/4.png') }}" alt="Company 4">
@@ -483,7 +490,7 @@
                     </div> <!-- End project-list -->
                 </div>
                 <!-- VIEW ALL BUTTON -->
-                <a href="<?php echo config('app.url'); ?>projects">
+                <a href="<?php echo rtrim(config('app.url'), '/') . '/projects'; ?>">
                     <button class="custom-button">
                         View All <i class="fa-solid fa-arrow-right"></i>
                     </button>
@@ -497,128 +504,57 @@
             <h1 class="aim-title" style="color:#e2ecf6;">My Area of Expertise</h1>
             <div class="aim-wrapper">
                 <div class="aim-item">
-                    <div class="aim-icon"><i class="fa-solid fa-comments"></i></div>
-                    <h1>Unique & Engaging Content</h1>
-                    <p>Capture your audience with unique and eye-catching content.</p>
+                    <h1>Social Media Post Design</h1>
                 </div>
 
                 <div class="aim-item">
-                    <div class="aim-icon"><i class="fa-solid fa-chart-bar"></i></div>
-                    <h1>Strong Brand Identity</h1>
-                    <p>Stand out from the competition with a well-defined brand presence.</p>
+                    <h1>Social Media Ads Design</h1>
                 </div>
 
                 <div class="aim-item">
-                    <div class="aim-icon"><i class="fa-solid fa-microphone"></i></div>
-                    <h1>Broadcast Your Message</h1>
-                    <p>Communicate your vision effectively through social media.</p>
+                    <h1>Thumbnail Design</h1>
                 </div>
 
                 <div class="aim-item">
-                    <div class="aim-icon"><i class="fa-solid fa-handshake"></i></div>
-                    <h1>Boost Audience Engagement</h1>
-                    <p>Increase organic reach and engagement with strategic content.</p>
+                    <h1>Ebook Design</h1>
                 </div>
 
                 <div class="aim-item">
-                    <div class="aim-icon"><i class="fa-solid fa-palette"></i></div>
-                    <h1>Tailored Ad Campaigns</h1>
-                    <p>Customize ads to target the right audience efficiently.</p>
+                    <h1>Video Editing</h1>
                 </div>
 
                 <div class="aim-item">
-                    <div class="aim-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
-                    <h1>Transparent Communication</h1>
-                    <p>Stay connected with clear and effective messaging.</p>
+                    <h1>Content Strategy</h1>
+                </div>
+                <div class="aim-item">
+                    <h1>Drinking Tea</h1>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="services-included container-lg">
-        <h1 class="section-title">My Service Includes</h1>
-        <div class="services-wrapper">
-            <div class="service-item">
-                <div class="service-icon"><i class="fa-solid fa-paint-brush"></i></div>
-                <h1>Custom Social Media Designs</h1>
-                <p>Visually appealing and brand-focused designs.</p>
-            </div>
-
-            <div class="service-item">
-                <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
-                <h1>Engaging Captions</h1>
-                <p>Creative captions that encourage interaction.</p>
-            </div>
-
-            <div class="service-item">
-                <div class="service-icon"><i class="fa-solid fa-hashtag"></i></div>
-                <h1>SEO-Friendly Hashtags</h1>
-                <p>Boost visibility with high-ranking hashtags.</p>
-            </div>
-
-            <div class="service-item">
-                <div class="service-icon"><i class="fa-solid fa-calendar-check"></i></div>
-                <h1>Scheduled Posting</h1>
-                <p>Maintain consistency with automated posting.</p>
-            </div>
-
-            <div class="service-item">
-                <div class="service-icon"><i class="fa-solid fa-cogs"></i></div>
-                <h1>Profile Optimization</h1>
-                <p>Optimize your profile for maximum engagement.</p>
-            </div>
-
-            <div class="service-item">
-                <div class="service-icon"><i class="fa-solid fa-life-ring"></i></div>
-                <h1>Weekly Strategy Meetings</h1>
-                <p>Continuous improvements based on data insights.</p>
-            </div>
+    <h1 class="section-title">My Service Includes</h1>
+    <div class="services-wrapper">
+        <div class="service-item">
+            <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+            <h1>Social Media Post Design</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sunt minus iusto possimus, nam nostrum ad, illum quasi sint omnis velit debitis mollitia excepturi quae at ipsa facilis. Dicta, autem?</p>
         </div>
-    </section>
 
-
-
-
-
-    <section class="steps" id="growth-section">
-        <div class="container-lg">
-            <h1 class="steps-title">My 3 Simple Steps Process</h1>
-            <div class="steps-wrapper">
-                <div class="connecting-line"></div>
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h2>Select a Plan</h2>
-                        <p>Select a plan tailored to your specific post requirements. Options include pre-written posts
-                            with captions or our complete posting service.</p>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h2>Place an Order</h2>
-                        <p>Place a Fiverr order to access progress updates and delivered content. All communication
-                            happens on the Fiverr platform.</p>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h2>Receive & Approve Content</h2>
-                        <p>Review the content and request changes if needed. Once approved, we'll start posting as
-                            scheduled.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="service-item">
+            <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <h1>Social Media Ads Design</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus perspiciatis excepturi cumque error nobis quo aliquam provident, laudantium, deleniti numquam sapiente quos maiores minima nulla voluptatum eius nemo eum.</p>
         </div>
-    </section>
 
-
-
-
-
+        <div class="service-item">
+            <div class="service-icon"><i class="fa-solid fa-film"></i></div>
+            <h1>Video Editing</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur molestias nobis velit delectus hic et amet repellat atque repellendus, architecto cum quasi cupiditate nihil, deserunt beatae distinctio doloremque expedita placeat?</p>
+        </div>
+    </div>
+</section>
 
 
     <section id="about">
@@ -639,16 +575,16 @@
                 <div>
                     <p><b>Ready to take your brand to the next level?</b></p> <br>
                     <div class="about-buttons">
-    <!-- Get Started button (Left Side) -->
-    <a href="https://wa.me/+8801303934047" target="_blank" id="hero-started">
-        <button class="custom-button-about">Hire Me</button>
-    </a>
+                        <!-- Get Started button (Left Side) -->
+                        <a href="https://wa.me/+8801303934047" target="_blank" id="hero-started">
+                            <button class="custom-button-about">Hire Me</button>
+                        </a>
 
-    <!-- Fiverr Profile button (Right Side) -->
-    <a href="https://www.fiverr.com/sabbir_tareq" target="_blank" id="hero-fiverr">
-        <button class="custom-button-about">FIVERR PROFILE</button>
-    </a>
-</div>
+                        <!-- Fiverr Profile button (Right Side) -->
+                        <a href="https://www.fiverr.com/sabbir_tareq" target="_blank" id="hero-fiverr">
+                            <button class="custom-button-about">FIVERR PROFILE</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1034,9 +970,9 @@
         }
 
         // Get the number elements
-        const orderNumber = document.querySelector(".order-number h1");
-        const reviewNumber = document.querySelector(".review-number h1");
-        const clientNumber = document.querySelector(".clients-number h1");
+        const orderNumber = document.querySelector(".order-number h2");
+        const reviewNumber = document.querySelector(".review-number h2");
+        const clientNumber = document.querySelector(".clients-number h2");
 
         // Flag to ensure the counters animate only once per scroll-into-view
         let isVisible = false;
@@ -1052,9 +988,9 @@
                     clientNumber.textContent = "0+";
 
                     // Animate the numbers
-                    animateCounter(orderNumber, 200, 1000); // Count to 200 in 1 second
-                    animateCounter(reviewNumber, 100, 600); // Count to 100 in 0.6 seconds
-                    animateCounter(clientNumber, 160, 700); // Count to 160 in 0.7 seconds
+                    animateCounter(orderNumber, 250, 1000); // Count to 200 in 1 second
+                    animateCounter(reviewNumber, 120, 600); // Count to 100 in 0.6 seconds
+                    animateCounter(clientNumber, 300, 700); // Count to 160 in 0.7 seconds
 
                     // Set flag to prevent re-animation while in view
                     isVisible = true;
@@ -1301,7 +1237,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         const typingText = document.querySelector(".typing-text");
         const cursor = document.querySelector(".cursor");
-        const words = ["Content Creator", "Designer", "Manager"];
+        const words = ["Content Creator", "Designer", "Freelancer", "Video Editor"];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -1394,7 +1330,7 @@
                     // Smoother fade-in and movement effect
                     const opacity = Math.min(1, intersectionRatio * 1.5);
                     const translateY = (1 - intersectionRatio) *
-                    15; // Less movement for better readability
+                        15; // Less movement for better readability
 
                     if (intersectionRatio > 0) {
                         target.style.opacity = opacity;
@@ -1480,7 +1416,7 @@
     });
 
 
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
         event.preventDefault();
         alert('Your message has been sent successfully!');
     });
