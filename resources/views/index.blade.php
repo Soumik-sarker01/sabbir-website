@@ -37,12 +37,12 @@
     }
 
     h2 {
-  transition: transform 0.3s ease-in-out;
-}
+        transition: transform 0.3s ease-in-out;
+    }
 
-h2:hover {
-  transform: scale(1.1);
-}
+    h2:hover {
+        transform: scale(1.1);
+    }
 
 
 
@@ -177,7 +177,7 @@ h2:hover {
                         <h1>Sabbir <br> Tareq</h1>
                     </div>
                     <div class="social-media-container">
-                        <span class="social-media-text">A Passionate Social Media</span>
+                        <span class="social-media-text">A Passionate</span>
                         <div class="typing-container">
                             <span class="typing-text"></span>
                             <span class="cursor">_</span>
@@ -213,9 +213,10 @@ h2:hover {
 
         <!-- Social Media Icons Fixed on Right Side -->
         <div class="social-icons-fixed">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagra​​m.com/designedbytareq/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/sabbirhossain48/" target="_blank"><i
+                    class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/+8801303934047" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
     </section>
 
@@ -321,7 +322,7 @@ h2:hover {
     {{-- Company Logos Section --}}
     <section id="company-logos" class="company-logos my-5">
         <div class="container">
-            <h1 class="company-logo-title">My Clients</h1>
+            <h1 class="company-logo-title" style="font-size: 45px;">My Clients</h1>
 
             <div class="logos-wrapper">
                 {{-- Row 1 (Right to Left) --}}
@@ -363,7 +364,6 @@ h2:hover {
                             <img src="{{ asset('assets/img/logos/27.png') }}" alt="Company 27">
                             <img src="{{ asset('assets/img/logos/28.png') }}" alt="Company 28">
                             <img src="{{ asset('assets/img/logos/29.png') }}" alt="Company 29">
-                            <img src="{{ asset('assets/img/logos/30.png') }}" alt="Company 30">
                             <img src="{{ asset('assets/img/logos/31.png') }}" alt="Company 31">
                             <img src="{{ asset('assets/img/logos/32.png') }}" alt="Company 32">
                             <img src="{{ asset('assets/img/logos/33.png') }}" alt="Company 33">
@@ -501,60 +501,114 @@ h2:hover {
 
     <section class="aim">
         <div class="container-lg">
-            <h1 class="aim-title" style="color:#e2ecf6;">My Area of Expertise</h1>
+            <h1 class="aim-title" style="color:#e2ecf6; font-size: 45px;">My Area of Expertise</h1>
             <div class="aim-wrapper">
                 <div class="aim-item">
-                    <h1>Social Media Post Design</h1>
+                    <h2>Social Media Post Design</h2>
                 </div>
 
                 <div class="aim-item">
-                    <h1>Social Media Ads Design</h1>
+                    <h2>Social Media Ads Design</h2>
                 </div>
 
                 <div class="aim-item">
-                    <h1>Thumbnail Design</h1>
+                    <h2>Thumbnail Design</h2>
                 </div>
 
                 <div class="aim-item">
-                    <h1>Ebook Design</h1>
+                    <h2>Ebook Design</h2>
                 </div>
 
                 <div class="aim-item">
-                    <h1>Video Editing</h1>
+                    <h2>Video Editing</h2>
                 </div>
 
                 <div class="aim-item">
-                    <h1>Content Strategy</h1>
+                    <h2>Content Strategy</h2>
                 </div>
                 <div class="aim-item">
-                    <h1>Drinking Tea</h1>
+                    <h2>Drinking Tea</h2>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="services-included container-lg">
-    <h1 class="section-title">My Service Includes</h1>
-    <div class="services-wrapper">
-        <div class="service-item">
-            <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
-            <h1>Social Media Post Design</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sunt minus iusto possimus, nam nostrum ad, illum quasi sint omnis velit debitis mollitia excepturi quae at ipsa facilis. Dicta, autem?</p>
-        </div>
+        <h1 class="section-title">My Service Includes</h1>
+        <div class="services-wrapper">
+            <!-- Service Item 1 -->
+            <div class="service-item">
+                <div class="service-item-inner">
+                    <!-- Front Side: Only Icon and Title -->
+                    <div class="service-front">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h2>Social Media Post Design</h2>
+                    </div>
+                    <!-- Back Side: Icon, Title, and Paragraph -->
+                    <div class="service-back">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h2>Social Media Post Design</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sunt minus iusto
+                            possimus, nam nostrum ad, illum quasi sint omnis velit debitis mollitia excepturi quae at
+                            ipsa facilis. Dicta, autem?
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="service-item">
-            <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
-            <h1>Social Media Ads Design</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus perspiciatis excepturi cumque error nobis quo aliquam provident, laudantium, deleniti numquam sapiente quos maiores minima nulla voluptatum eius nemo eum.</p>
-        </div>
+            <!-- Service Item 2 (repeat structure for additional items) -->
+            <div class="service-item">
+                <div class="service-item-inner">
+                    <div class="service-front">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h2>Social Media Ads Design</h2>
+                    </div>
+                    <div class="service-back">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h2>Social Media Ads Design</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus perspiciatis
+                            excepturi cumque error nobis quo aliquam provident, laudantium, deleniti numquam sapiente
+                            quos maiores minima nulla voluptatum eius nemo eum.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="service-item">
-            <div class="service-icon"><i class="fa-solid fa-film"></i></div>
-            <h1>Video Editing</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur molestias nobis velit delectus hic et amet repellat atque repellendus, architecto cum quasi cupiditate nihil, deserunt beatae distinctio doloremque expedita placeat?</p>
+            <!-- Service Item 3 -->
+            <div class="service-item">
+                <div class="service-item-inner">
+                    <div class="service-front">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-film"></i>
+                        </div>
+                        <h2>Video Editing</h2>
+                    </div>
+                    <div class="service-back">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-film"></i>
+                        </div>
+                        <h2>Video Editing</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur molestias nobis velit
+                            delectus hic et amet repellat atque repellendus, architecto cum quasi cupiditate nihil,
+                            deserunt beatae distinctio doloremque expedita placeat?
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
 
 
     <section id="about">
@@ -616,7 +670,7 @@ h2:hover {
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">quentincarteron</h1>
+                                    <h3 class="testimonial-name">quentincarteron</h3>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
@@ -637,7 +691,7 @@ h2:hover {
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">coachmegs</h1>
+                                    <h3 class="testimonial-name">coachmegs</h3>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
@@ -663,7 +717,7 @@ h2:hover {
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">robin21x</h1>
+                                    <h3 class="testimonial-name">robin21x</h3>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
@@ -710,7 +764,7 @@ h2:hover {
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">ceochappell</h1>
+                                    <h3 class="testimonial-name">ceochappell</h3>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
@@ -730,7 +784,7 @@ h2:hover {
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">sade411team</h1>
+                                    <h3 class="testimonial-name">sade411team</h3>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
@@ -749,7 +803,7 @@ h2:hover {
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">axoweb</h1>
+                                    <h3 class="testimonial-name">axoweb</h3>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
@@ -769,7 +823,7 @@ h2:hover {
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">ltn_up_electric</h1>
+                                    <h3 class="testimonial-name">ltn_up_electric</h3>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
@@ -789,7 +843,7 @@ h2:hover {
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">daphniealexis</h1>
+                                    <h3 class="testimonial-name">daphniealexis</h3>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
@@ -806,7 +860,7 @@ h2:hover {
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">jvickers182988</h1>
+                                    <h3 class="testimonial-name">jvickers182988</h3>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
@@ -1237,7 +1291,7 @@ h2:hover {
     document.addEventListener("DOMContentLoaded", function () {
         const typingText = document.querySelector(".typing-text");
         const cursor = document.querySelector(".cursor");
-        const words = ["Content Creator", "Designer", "Freelancer", "Video Editor"];
+        const words = ["Content Creator", "Social Media Designer", "Freelancer", "Video Editor"];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -1421,7 +1475,19 @@ h2:hover {
         alert('Your message has been sent successfully!');
     });
 
-</script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const serviceItems = document.querySelectorAll('.service-item');
 
+        serviceItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                // Prevent any unintended propagation if needed
+                e.stopPropagation();
+                // Toggle the flipped class on a single tap/click
+                this.classList.toggle('flipped');
+            });
+        });
+    });
+
+</script>
 
 @endsection

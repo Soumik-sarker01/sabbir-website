@@ -49,6 +49,10 @@
 /* ------------------------------------------------*/
 /* Variables Start */
 /* ------------------------------------------------*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }  
+
 :root {
     --_size: 1.6rem;
     --_font-default: "Poppins", sans-serif;
@@ -208,7 +212,7 @@ a {
 html {
     /* width: 100%;
     height: 100%; */
-    font-family: 'plus-jakarta-sans', sans-serif;
+    font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
     font-size: 62.5%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -887,7 +891,7 @@ nav ul {
     /* Ensure visibility */
     margin-bottom: 5px;
     left: -125px;
-    font-family: 'plus-jakarta-sans', sans-serif;
+    font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
 }
 
 .profile h1 {
@@ -897,7 +901,7 @@ nav ul {
     color: #e2ecf6;
     margin-top: 0;
     left: -125px;
-    font-family: 'plus-jakarta-sans', sans-serif;
+    font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
 }
 
 @media only screen and (max-width: 800px) {
@@ -931,18 +935,7 @@ nav ul {
     top: 200px;
 }
 
-.hero-text p {
-    font-size: 2.2rem;
-    font-family: 'plus-jakarta-sans', sans-serif;
-    color: #fff;
-    text-align: center;
-    max-width: 700px;
-    /* Adjust width */
-    width: 100%;
-    /* Ensures it doesn't exceed parent width */
-    margin-top: 10px;
-    /* Add some spacing */
-}
+
 
 /* Left-align social media container */
 .social-media-container {
@@ -957,10 +950,10 @@ nav ul {
     white-space: nowrap;
     position: relative;
     height: 70px;
-    left: 11px;
+    left: -17px;
     top: 20px;
     /* Ensure it's positioned correctly */
-    font-family: 'plus-jakarta-sans', sans-serif;
+    font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
 }
 
 /* Keep "Social Media" text fixed */
@@ -981,7 +974,7 @@ nav ul {
     position: relative;
     white-space: nowrap;
     font-size: inherit;
-    width: 270px;
+    width: 350px;
     align-items: baseline;
     overflow: hidden;
     text-align: left;
@@ -1228,16 +1221,16 @@ nav ul {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(128, 219, 102, 0.5);
     border-radius: 50%;
-    color: #ffffff;
+    color: #e2ecf6;
     font-size: 22px;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
 }
 
 .social-icons-fixed a:hover {
-    background: #80db66;
+    background: #e2ecf6;
     color: #25262f;
 }
 
@@ -1247,8 +1240,8 @@ nav ul {
 /* Responsive Adjustments for Every Screen/Device */
 /* ------------------------------------------------*/
 
-/* ----- For Screens 1024px to 1199px ----- */
-@media only screen and (max-width: 1500px) and (min-width: 1025px) {
+/* ----- For Screens 1500px to 1200px ----- */
+@media only screen and (max-width: 1664px) and (min-width: 1501px) {
     :root {
         --image-width: 900px;
         --image-height: 900px;
@@ -1264,7 +1257,7 @@ nav ul {
         /* Ensure visibility */
         margin-bottom: 5px;
         left: 5px;
-        font-family: 'plus-jakarta-sans', sans-serif;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
     }
 
     .profile h1 {
@@ -1273,7 +1266,7 @@ nav ul {
         font-weight: 700;
         color: #e2ecf6;
         margin-top: 0;
-        font-family: 'plus-jakarta-sans', sans-serif;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
     }
 
     /* Container for image and circle */
@@ -1284,7 +1277,7 @@ nav ul {
         align-items: center;
         width: var(--circle-size);
         height: var(--circle-size);
-        margin-top: -65px;
+        margin-top: 40px;
         /* Shift slightly left */
     }
 
@@ -1370,7 +1363,7 @@ nav ul {
         height: 70px;
         left: 85px;
         /* Ensure it's positioned correctly */
-        font-family: 'plus-jakarta-sans', sans-serif;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
     }
 
     /* Keep "Social Media" text fixed */
@@ -1512,7 +1505,7 @@ nav ul {
         /* Ensure visibility */
         margin-bottom: 5px;
         left: -125px;
-        font-family: 'plus-jakarta-sans', sans-serif;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
     }
 
     .profile h1 {
@@ -1522,7 +1515,7 @@ nav ul {
         color: #e2ecf6;
         margin-top: 0;
         left: -125px;
-        font-family: 'plus-jakarta-sans', sans-serif;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
     }
 
     .hero-text {
@@ -1539,7 +1532,390 @@ nav ul {
 
     .hero-text p {
         font-size: 2.2rem;
-        font-family: 'plus-jakarta-sans', sans-serif;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        color: #fff;
+        text-align: center;
+        max-width: 700px;
+        /* Adjust width */
+        width: 100%;
+        /* Ensures it doesn't exceed parent width */
+        margin-top: 10px;
+        /* Add some spacing */
+    }
+
+    /* Left-align social media container */
+    .social-media-container {
+        display: flex;
+        align-items: baseline;
+        justify-content: flex-start;
+        /* Align left */
+        gap: 3px;
+        flex-wrap: nowrap;
+        text-align: left;
+        font-size: 3.2rem;
+        white-space: nowrap;
+        position: relative;
+        height: 70px;
+        left: -53px;
+        top: 20px;
+        /* Ensure it's positioned correctly */
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    /* Keep "Social Media" text fixed */
+    .social-media-text {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        /* Optional spacing between text and typing container */
+        color: #e2ecf6;
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+        /* Match font size */
+    }
+
+    /* Ensure the container has a fixed width to prevent shifting */
+    .typing-container {
+        align-items: center;
+        position: relative;
+        white-space: nowrap;
+        font-size: inherit;
+        width: 270px;
+        align-items: baseline;
+        overflow: hidden;
+        text-align: left;
+        font-size: 3.2rem;
+        /* Typing text is larger */
+        line-height: 3.2rem;
+        /* Match the text height */
+        top: 0.2px;
+    }
+
+    /* Typing text grows without shifting "Social Media" */
+    .typing-text {
+        font-weight: bold;
+        color: #80db66;
+        overflow: hidden;
+        min-width: fit-content;
+        padding-right: 0;
+        margin-right: -3px;
+        /* Fine-tune spacing */
+    }
+
+    /* Cursor positioning */
+    .cursor {
+        font-size: inherit;
+        color: #80db66;
+        display: inline-block;
+        animation: blink 1.3s infinite;
+        position: absolute;
+        /* Keep absolute for correct positioning */
+        left: 2px;
+        /* Fine-tune spacing to get it closer */
+        margin-left: -2px;
+        /* Reduce gap between last letter and cursor */
+        top: 50%;
+        /* Center it properly */
+        transform: translateY(-50%);
+        /* Ensure it doesn't shift vertically */
+        animation: blink 1.3s infinite;
+        font-weight: bold;
+    }
+
+}
+/* ----- For Screens 1500px to 1200px ----- */
+@media only screen and (max-width: 1500px) and (min-width: 1200px) {
+    :root {
+        --image-width: 900px;
+        --image-height: 900px;
+        --circle-size: 900px;
+    }
+
+    .profile h4 {
+        position: relative;
+        font-size: 2.6rem;
+        /* Smaller text */
+        font-weight: bold;
+        color: #80db66;
+        /* Ensure visibility */
+        margin-bottom: 5px;
+        left: 5px;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    .profile h1 {
+        font-size: 7.0rem;
+        /* Larger name */
+        font-weight: 700;
+        color: #e2ecf6;
+        margin-top: 0;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    /* Container for image and circle */
+    .hero-image-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--circle-size);
+        height: var(--circle-size);
+        margin-top: 30px;
+        /* Shift slightly left */
+    }
+
+    /* Background Circle - Static but Zooms on Hover */
+    .circle-background {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: rgba(128, 128, 128, 0.2);
+        /* Gray transparent */
+        border-radius: 50%;
+        z-index: 0;
+        left: 60%;
+        top: 55%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    /* Hover Effect - Enlarge Circle */
+    .hero-image-container:hover .circle-background {
+        transform: translate(-50%, -50%) scale(1.1);
+        /* Zoom without moving */
+        opacity: 0.4;
+    }
+
+    /* IMAGE - Force it to increase */
+    .hero-image {
+        width: var(--image-width) !important;
+        /* FORCE BIGGER IMAGE */
+        height: var(--image-height) !important;
+        max-width: none !important;
+        /* Prevents constraints */
+        max-height: none !important;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+        /* Above circle */
+        object-fit: contain;
+        transition: transform 0.3s ease-in-out;
+        left: 10%;
+        top: -40px;
+    }
+
+
+    .intro-text {
+        position: relative;
+    }
+
+    .intro-text p {
+        text-align: left;
+        /* Left-align text */
+        font-size: 1.3rem;
+        /* Adjust font size as needed */
+        max-width: 600px;
+        /* Ensures proper width */
+        width: 100%;
+        margin-left: 92px;
+        /* Ensure no left margin */
+        padding-left: 0;
+        /* Ensure no padding is pushing the text */
+    }
+
+
+
+    .hero .button2 {
+        padding: 1.2rem 8rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    /* Left-align social media container */
+    .social-media-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        /* Align left */
+        gap: 6px;
+        flex-wrap: nowrap;
+        text-align: left;
+        font-size: 3.2rem;
+        white-space: nowrap;
+        position: relative;
+        height: 70px;
+        left: -50px !important;
+        /* Ensure it's positioned correctly */
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    /* Keep "Social Media" text fixed */
+    .social-media-text {
+        font-size: 2.6rem;
+        flex-shrink: 0;
+        min-width: fit-content;
+        text-align: left;
+        color: #e2ecf6;
+    }
+
+    /* Ensure the container has a fixed width to prevent shifting */
+    .typing-container {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        white-space: nowrap;
+        font-size: inherit;
+        width: 270px;
+        /* Adjust as needed */
+        overflow: hidden;
+        text-align: left;
+    }
+
+    /* Typing text grows without shifting "Social Media" */
+    .typing-text {
+        font-weight: bold;
+        color: #80db66;
+        display: inline-block;
+        overflow: hidden;
+        min-width: fit-content;
+        padding-right: -10px;
+        /* Ensures cursor sticks to last letter */
+        margin-right: -15px;
+        /* Adjust this if needed */
+    }
+
+    /* Cursor positioning */
+    .cursor {
+        font-size: inherit;
+        color: #80db66;
+        display: inline-block;
+        position: absolute;
+        /* Changed from relative */
+        left: 0;
+        animation: blink 1.3s infinite;
+        /* Adjusted speed */
+    }
+
+    /* Abstracts - Move & Float */
+    .abstract-image-1,
+    .abstract-image-2,
+    .abstract-image-3 {
+        position: absolute;
+        transition: transform 0.1s ease-out;
+        /* Smooth movement */
+        will-change: transform;
+        animation: floating 5s infinite ease-in-out alternate;
+    }
+
+    /* Apply unique animations */
+    .abstract-image-1 {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        left: 230px;
+        top: 275px;
+        animation: floating-1 3s infinite ease-in-out;
+    }
+
+    .abstract-image-2 {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        left: 780px;
+        top: 275px;
+        animation: floating-2 3s infinite ease-in-out;
+    }
+
+    .abstract-image-3 {
+        display: none;
+    }
+
+    /* Ensure hero buttons are aligned correctly */
+    .hero-buttons {
+        display: flex;
+        justify-content: flex-start;
+        /* Align to the left */
+        align-items: center;
+        gap: 20px;
+        /* Space between buttons */
+        flex-wrap: wrap;
+        padding-left: 0;
+        /* Ensure there's no extra padding */
+        margin-left: -100px;
+        /* Adjust this value to move more to the left */
+    }
+
+    /* Left-align hero button */
+    .custom-button-hero {
+        display: inline-block;
+        padding: 12px 40px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        background: #80db66;
+        color: #25262f;
+        border: 2px solid #80db66;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-transform: uppercase;
+        min-width: 200px;
+        text-align: center;
+        /* Remove any extra margins */
+        margin: 0;
+    }
+
+    /* Hover effect: Transparent background */
+    .custom-button-hero:hover {
+        background: rgba(255, 255, 255, 1);
+        color: #25262f;
+        border: 1px solid #fff;
+    }
+
+
+    /* Ensure buttons have equal width */
+    .custom-button-hero+.custom-button-hero {
+        margin-left: 15px;
+        /* Adjust spacing between buttons */
+    }
+
+    .profile h4 {
+        position: relative;
+        font-size: 3.2rem;
+        /* Smaller text */
+        font-weight: bold;
+        color: #80db66;
+        /* Ensure visibility */
+        margin-bottom: 5px;
+        left: -125px;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    .profile h1 {
+        font-size: 8.8rem;
+        /* Larger name */
+        font-weight: 700;
+        color: #e2ecf6;
+        margin-top: 0;
+        left: -125px;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        max-width: 600px;
+        position: relative;
+        width: 100%;
+        top: 200px;
+    }
+
+    .hero-text p {
+        font-size: 2.2rem;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
         color: #fff;
         text-align: center;
         max-width: 700px;
@@ -1566,7 +1942,390 @@ nav ul {
         left: 11px;
         top: 20px;
         /* Ensure it's positioned correctly */
-        font-family: 'plus-jakarta-sans', sans-serif;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    /* Keep "Social Media" text fixed */
+    .social-media-text {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        /* Optional spacing between text and typing container */
+        color: #e2ecf6;
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+        /* Match font size */
+    }
+
+    /* Ensure the container has a fixed width to prevent shifting */
+    .typing-container {
+        align-items: center;
+        position: relative;
+        white-space: nowrap;
+        font-size: inherit;
+        width: 270px;
+        align-items: baseline;
+        overflow: hidden;
+        text-align: left;
+        font-size: 3.2rem;
+        /* Typing text is larger */
+        line-height: 3.2rem;
+        /* Match the text height */
+        top: 0.2px;
+    }
+
+    /* Typing text grows without shifting "Social Media" */
+    .typing-text {
+        font-weight: bold;
+        color: #80db66;
+        overflow: hidden;
+        min-width: fit-content;
+        padding-right: 0;
+        margin-right: -3px;
+        /* Fine-tune spacing */
+    }
+
+    /* Cursor positioning */
+    .cursor {
+        font-size: inherit;
+        color: #80db66;
+        display: inline-block;
+        animation: blink 1.3s infinite;
+        position: absolute;
+        /* Keep absolute for correct positioning */
+        left: 2px;
+        /* Fine-tune spacing to get it closer */
+        margin-left: -2px;
+        /* Reduce gap between last letter and cursor */
+        top: 50%;
+        /* Center it properly */
+        transform: translateY(-50%);
+        /* Ensure it doesn't shift vertically */
+        animation: blink 1.3s infinite;
+        font-weight: bold;
+    }
+
+}
+/* ----- For Screens 1024px to 1199px ----- */
+@media only screen and (max-width: 1199px) and (min-width: 1024px) {
+    :root {
+        --image-width: 900px;
+        --image-height: 900px;
+        --circle-size: 900px;
+    }
+
+    .profile h4 {
+        position: relative;
+        font-size: 2.6rem;
+        /* Smaller text */
+        font-weight: bold;
+        color: #80db66;
+        /* Ensure visibility */
+        margin-bottom: 5px;
+        left: 5px;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    .profile h1 {
+        font-size: 7.0rem;
+        /* Larger name */
+        font-weight: 700;
+        color: #e2ecf6;
+        margin-top: 0;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    /* Container for image and circle */
+    .hero-image-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--circle-size);
+        height: var(--circle-size);
+        margin-top: -70px;
+        /* Shift slightly left */
+    }
+
+    /* Background Circle - Static but Zooms on Hover */
+    .circle-background {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: rgba(128, 128, 128, 0.2);
+        /* Gray transparent */
+        border-radius: 50%;
+        z-index: 0;
+        left: 60%;
+        top: 55%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    /* Hover Effect - Enlarge Circle */
+    .hero-image-container:hover .circle-background {
+        transform: translate(-50%, -50%) scale(1.1);
+        /* Zoom without moving */
+        opacity: 0.4;
+    }
+
+    /* IMAGE - Force it to increase */
+    .hero-image {
+        width: var(--image-width) !important;
+        /* FORCE BIGGER IMAGE */
+        height: var(--image-height) !important;
+        max-width: none !important;
+        /* Prevents constraints */
+        max-height: none !important;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+        /* Above circle */
+        object-fit: contain;
+        transition: transform 0.3s ease-in-out;
+        left: 10%;
+        top: -40px;
+    }
+
+
+    .intro-text {
+        position: relative;
+    }
+
+    .intro-text p {
+        text-align: left;
+        /* Left-align text */
+        font-size: 1.3rem;
+        /* Adjust font size as needed */
+        max-width: 600px;
+        /* Ensures proper width */
+        width: 100%;
+        margin-left: 92px;
+        /* Ensure no left margin */
+        padding-left: 0;
+        /* Ensure no padding is pushing the text */
+    }
+
+
+
+    .hero .button2 {
+        padding: 1.2rem 8rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    /* Left-align social media container */
+    .social-media-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        /* Align left */
+        gap: 6px;
+        flex-wrap: nowrap;
+        text-align: left;
+        font-size: 3.2rem;
+        white-space: nowrap;
+        position: relative;
+        height: 70px;
+        left: 85px;
+        /* Ensure it's positioned correctly */
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    /* Keep "Social Media" text fixed */
+    .social-media-text {
+        font-size: 2.6rem;
+        flex-shrink: 0;
+        min-width: fit-content;
+        text-align: left;
+        color: #e2ecf6;
+    }
+
+    /* Ensure the container has a fixed width to prevent shifting */
+    .typing-container {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        white-space: nowrap;
+        font-size: inherit;
+        width: 270px;
+        /* Adjust as needed */
+        overflow: hidden;
+        text-align: left;
+    }
+
+    /* Typing text grows without shifting "Social Media" */
+    .typing-text {
+        font-weight: bold;
+        color: #80db66;
+        display: inline-block;
+        overflow: hidden;
+        min-width: fit-content;
+        padding-right: -10px;
+        /* Ensures cursor sticks to last letter */
+        margin-right: -15px;
+        /* Adjust this if needed */
+    }
+
+    /* Cursor positioning */
+    .cursor {
+        font-size: inherit;
+        color: #80db66;
+        display: inline-block;
+        position: absolute;
+        /* Changed from relative */
+        left: 0;
+        animation: blink 1.3s infinite;
+        /* Adjusted speed */
+    }
+
+    /* Abstracts - Move & Float */
+    .abstract-image-1,
+    .abstract-image-2,
+    .abstract-image-3 {
+        position: absolute;
+        transition: transform 0.1s ease-out;
+        /* Smooth movement */
+        will-change: transform;
+        animation: floating 5s infinite ease-in-out alternate;
+    }
+
+    /* Apply unique animations */
+    .abstract-image-1 {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        left: 230px;
+        top: 275px;
+        animation: floating-1 3s infinite ease-in-out;
+    }
+
+    .abstract-image-2 {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        left: 780px;
+        top: 275px;
+        animation: floating-2 3s infinite ease-in-out;
+    }
+
+    .abstract-image-3 {
+        display: none;
+    }
+
+    /* Ensure hero buttons are aligned correctly */
+    .hero-buttons {
+        display: flex;
+        justify-content: flex-start;
+        /* Align to the left */
+        align-items: center;
+        gap: 20px;
+        /* Space between buttons */
+        flex-wrap: wrap;
+        padding-left: 0;
+        /* Ensure there's no extra padding */
+        margin-left: -100px;
+        /* Adjust this value to move more to the left */
+    }
+
+    /* Left-align hero button */
+    .custom-button-hero {
+        display: inline-block;
+        padding: 12px 40px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        background: #80db66;
+        color: #25262f;
+        border: 2px solid #80db66;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-transform: uppercase;
+        min-width: 200px;
+        text-align: center;
+        /* Remove any extra margins */
+        margin: 0;
+    }
+
+    /* Hover effect: Transparent background */
+    .custom-button-hero:hover {
+        background: rgba(255, 255, 255, 1);
+        color: #25262f;
+        border: 1px solid #fff;
+    }
+
+
+    /* Ensure buttons have equal width */
+    .custom-button-hero+.custom-button-hero {
+        margin-left: 15px;
+        /* Adjust spacing between buttons */
+    }
+
+    .profile h4 {
+        position: relative;
+        font-size: 3.2rem;
+        /* Smaller text */
+        font-weight: bold;
+        color: #80db66;
+        /* Ensure visibility */
+        margin-bottom: 5px;
+        left: -125px;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    .profile h1 {
+        font-size: 8.8rem;
+        /* Larger name */
+        font-weight: 700;
+        color: #e2ecf6;
+        margin-top: 0;
+        left: -125px;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        max-width: 600px;
+        position: relative;
+        width: 100%;
+        top: 200px;
+    }
+
+    .hero-text p {
+        font-size: 2.2rem;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        color: #fff;
+        text-align: center;
+        max-width: 700px;
+        /* Adjust width */
+        width: 100%;
+        /* Ensures it doesn't exceed parent width */
+        margin-top: 10px;
+        /* Add some spacing */
+    }
+
+    /* Left-align social media container */
+    .social-media-container {
+        display: flex;
+        align-items: baseline;
+        justify-content: flex-start;
+        /* Align left */
+        gap: 3px;
+        flex-wrap: nowrap;
+        text-align: left;
+        font-size: 3.2rem;
+        white-space: nowrap;
+        position: relative;
+        height: 70px;
+        left: -50px;
+        top: 20px;
+        /* Ensure it's positioned correctly */
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
     }
 
     /* Keep "Social Media" text fixed */
@@ -1688,10 +2447,26 @@ nav ul {
     .hero-image-container {
         margin-left: 0;
     }
-    /* Optionally adjust intro-text margin */
-    .intro-text p {
-        margin-left: 20px;
-    }
+
+        /* Cursor positioning */
+        .cursor {
+            font-size: inherit;
+            color: #80db66;
+            display: inline-block;
+            animation: blink 1.3s infinite;
+            position: absolute;
+            /* Keep absolute for correct positioning */
+            left: 3px;
+            /* Fine-tune spacing to get it closer */
+            margin-left: -2px;
+            /* Reduce gap between last letter and cursor */
+            top: 30%;
+            /* Center it properly */
+            transform: translateY(-50%);
+            /* Ensure it doesn't shift vertically */
+            animation: blink 1.3s infinite;
+            font-weight: bold;
+        }
 }
 
 
@@ -1732,6 +2507,229 @@ nav ul {
     }
 }
 
+/* ----- For Extra Small Devices (Max-width: 480px) ----- */
+@media only screen and (max-width: 436px) and (min-width: 275px){
+    .profile h4 {
+        font-size: 1.8rem;
+    }
+    .profile h1 {
+        font-size: 4.5rem;
+    }
+    .hero p {
+        font-size: 1.4rem;
+        max-width: 90%;
+    }
+    .hero .button2 {
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+    }
+    .hero-text {
+        top: 100px;
+        max-width: 90%;
+    }
+    .hero-text p {
+        font-size: 1.6rem;
+        max-width: 90%;
+    }
+    .social-media-container {
+        font-size: 2rem;
+        left: 5px;
+        top: 10px;
+    }
+    .typing-container {
+        width: 200px;
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        /* Adjust margin and left values to move the container */
+        margin: 20px 0 0 100px;   /* Reduced left margin */
+        left: 50px;               /* Reduced left offset */
+    }    
+
+    .custom-button-hero {
+        display: inline-block;
+        padding: 8px 30px !important;        /* Reduced padding */
+        font-size: 1.2rem !important;        /* Smaller font size */
+        font-weight: 600;
+        background: #80db66;
+        color: #25262f;
+        border: 2px solid #80db66;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-transform: uppercase;
+        min-width: 150px !important;         /* Smaller minimum width */
+        text-align: center;
+        margin: 0;
+    }
+
+        /* Container for image and circle */
+        .hero-image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: var(--circle-size);
+            height: var(--circle-size);
+            margin-top: -70px;
+            /* Shift slightly left */
+        }
+    
+        /* Background Circle - Static but Zooms on Hover */
+        .circle-background {
+            position: absolute;
+            width: 300px !important; 
+            height: 300px !important;
+            background: rgba(128, 128, 128, 0.2);
+            /* Gray transparent */
+            border-radius: 50%;
+            z-index: 0;
+            left: 42.5% !important;
+            top: 55%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+        }
+    
+        /* Hover Effect - Enlarge Circle */
+        .hero-image-container:hover .circle-background {
+            transform: translate(-50%, -50%) scale(1.1);
+            /* Zoom without moving */
+            opacity: 0.4;
+        }
+    
+        /* IMAGE - Force it to increase */
+        .hero-image {
+            width: 400px !important;
+            height: 400px !important;
+            max-width: none !important;
+            /* Prevents constraints */
+            max-height: none !important;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+            /* Above circle */
+            object-fit: contain;
+            transition: transform 0.3s ease-in-out;
+            left: 42.5% !important;
+            top: -40px;
+        }   
+
+        :root {
+            --image-width: 400px !important;
+            --image-height: 400px !important;
+            --circle-size: 500px !important;
+        }
+}
+
+/* ----- For Mac Screens (Min-width: 1440px, Min-height: 900px) ----- */
+@media only screen and (min-width: 1440px) and (min-height: 900px) {
+    .hero-wrapper {
+        margin-top: 12vh;
+        grid-template-columns: 1fr 1.2fr 1fr;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        /* Adjust gap if needed */
+    }
+    
+    .profile h1 {
+        font-size: 9.5rem;  /* Slightly larger */
+        left: -100px;       /* Reduced left offset */
+    }
+    
+    .profile h4 {
+        font-size: 3.4rem;  /* Slightly larger */
+        left: -100px;       /* Reduced left offset */
+    }
+    
+    .hero-text {
+        top: 220px;        /* Adjust vertical position */
+    }
+    
+    .hero-image-container {
+        margin-left: -250px; /* Adjust horizontal shift */
+        width: var(--circle-size);
+        height: var(--circle-size);
+    }
+    
+    .hero-image {
+        left: -10%;       /* Adjust image positioning */
+        top: -10px;
+        width: var(--image-width) !important;
+        height: var(--image-height) !important;
+    }
+    
+    .social-media-container {
+        left: 11px;      /* Fine-tune social icons position */
+        top: 25px;
+    }
+
+    /* Background Circle - Static but Zooms on Hover */
+    .circle-background {
+        position: absolute;
+        width: 500px !important; 
+        height: 500px !important;
+        background: rgba(128, 128, 128, 0.2);
+        /* Gray transparent */
+        border-radius: 50%;
+        z-index: 0;
+        left: 42.5% !important;
+        top: 55%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    /* Abstracts - Move & Float */
+    .abstract-image-1,
+    .abstract-image-2,
+    .abstract-image-3 {
+        position: absolute;
+        transition: transform 0.1s ease-out;
+        /* Smooth movement */
+        will-change: transform;
+        animation: floating 5s infinite ease-in-out alternate;
+    }
+
+    /* Apply unique animations */
+    .abstract-image-1 {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        left: 30px;
+        top: 235px;
+        animation: floating-1 3s infinite ease-in-out;
+    }
+
+    .abstract-image-2 {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        left: 580px;
+        top: 235px;
+        animation: floating-2 3s infinite ease-in-out;
+    }
+
+    .abstract-image-3 {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        left: 680px;
+        top: 735px;
+        animation: floating-3 3s infinite ease-in-out;
+    }
+    
+    .typing-container {
+        width: 370px;     /* Slightly wider for larger screens */
+        top: 0;
+    }
+}
 
 
 /* ------------------------------------------------*/
@@ -1826,11 +2824,15 @@ nav ul {
     overflow: hidden;
     white-space: nowrap;
     display: flex;
+    height: 70px;
 }
 
 .sliding-badges {
     display: flex;
     animation: slide 30s linear infinite;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .order-badge {
@@ -2516,9 +3518,6 @@ nav ul {
 /* ------------------------------------------------*/
 /* Block aim Styles starts */
 /* ------------------------------------------------*/
-/* ------------------------------------------------*/
-/* Block aim Base Styles                           */
-/* ------------------------------------------------*/
 
 .aim {
     margin-top: 100px;
@@ -2589,7 +3588,7 @@ nav ul {
 /* Section header (larger size) */
 .aim h1 {
     font-size: 38px;
-    font-weight: 800;
+    font-weight: bold;
     margin-bottom: 20px;
     color: #e2ecf6;
 }
@@ -2628,13 +3627,21 @@ nav ul {
         grid-template-columns: repeat(3, 1fr);
         padding: 6rem 8rem;
         gap: 30px;
+        justify-content: center;
+        align-items: center;
     }
     .aim h1 {
         font-size: 36px;
     }
     .aim-item {
         /* Increase height slightly for mid-sized screens */
-        height: 200px;
+        height: 80px;
+        width: 700px;
+
+    }
+    .aim-item h2 {
+        /* Increase height slightly for mid-sized screens */
+        font-size: 18px;
     }
 }
 
@@ -2650,7 +3657,7 @@ nav ul {
         font-size: 34px;
     }
     .aim-item {
-        height: 180px;
+        height: 50px;
     }
 }
 
@@ -2666,7 +3673,7 @@ nav ul {
         font-size: 28px;
     }
     .aim-item {
-        height: 160px;
+        height: 60px;
     }
     .aim-item h1 {
         font-size: 14px;
@@ -2725,94 +3732,231 @@ nav ul {
     }
 }
 
+/* Container sets perspective; no background or shadow */
 .service-item {
-    background: white;
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
+    perspective: 1000px;
+    margin: 20px;
+    background: transparent;
+  }
+  
+  /* Inner container that flips – remains transparent while flipping */
+  .service-item-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
     border-radius: 20px;
-    padding: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+  }
+  
+  /* Pseudo-element for the rounded box-shadow */
+  .service-item-inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    opacity: 0; /* no shadow while flipping */
+    transition: opacity 0.3s ease 0.6s; /* fade in after 0.6s (flip duration) */
+  }
+  
+  /* When the card is settled (either front or back), show the shadow */
+  .service-item:hover .service-item-inner::before,
+  .service-item:not(:hover) .service-item-inner::before {
+    opacity: 1;
+    transition-delay: 0.6s;
+  }
+  
+  /* Flip the card on hover */
+  .service-item:hover .service-item-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Also flip the card when the 'flipped' class is added */
+  .service-item.flipped .service-item-inner {
+    transform: rotateY(180deg);
+  }
+  
+  
+  /* Both faces of the card */
+  .service-front,
+  .service-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 400px;
-    /* Fixed Height */
-    width: 100%;
-    /* Ensures uniform width */
-    max-width: 350px;
-    /* Limits maximum size */
-}
-
-.service-item i {
-    font-size: 2.6rem;
-    color: #bd83ce;
-}
-
-.service-item h1 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    /* color: #fff; */
-}
-
-.service-item p {
-    font-size: 1.4rem;
-    color: #41464f;
-    /* color: #fff; */
-}
-
-/* Alternating Box Background Colors */
-.service-item:nth-child(odd) {
-    background: #FFEEF0;
-}
-
-.service-item:nth-child(even) {
-    background: #E3EBF5;
-}
-
-/* Hover Effect */
-.service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* ICONS WITH BACKGROUND */
-.service-icon {
-    width: 40px;
-    height: 100px;
+    padding: 25px;
+  }
+  
+  /* Front face – icon and title */
+  .service-front {
+    background: #e2ecf6;
+  }
+  
+  /* Back face – icon, title, and paragraph; rotated so it appears after the flip */
+  .service-back {
+    background: #80db66;
+    color: #e2ecf6;
+    transform: rotateY(180deg);
+    text-align: center;
+  }
+  
+  /* ICON STYLING */
+  .service-icon {
+    width: clamp(50px, 8vw, 40px) !important;
+    height: clamp(50px, 8vw, 40px) !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100%;
-    margin-bottom: -5px;
-    animation: pulseEffect 1.5s infinite ease-in-out;
-}
-
-.service-icon i {
-    font-size: 30px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .service-icon i {
+    font-size: clamp(50px, 5vw, 30px) !important;
     color: #80db66;
-}
-
-/* SECTION HEADER (Larger Size) */
-.services-included h1 {
-    font-size: 38px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: #e2ecf6;
-}
-
-/* BOX HEADER (Smaller Size) */
-.service-item h1 {
-    font-size: 16px;
-    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  /* On hover (back face), change icon color */
+  .service-item:hover .service-back .service-icon i {
+    color: #25262f;
+    font-size: 40px !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Headings on both faces */
+  .service-front h2,
+  .service-back h2 {
+    font-size: clamp(3.2rem, 2vw, 1.8rem) !important;
+    font-weight: 700;
+    margin-top: 30px;
     margin-bottom: 10px;
     color: #25262f;
-}
-
-/* TEXT */
-.service-item p {
-    font-size: 15px;
-    color: #555;
+  }
+  
+  /* Paragraph on back face */
+  .service-back p {
+    font-size: clamp(1.5rem, 1.5vw, 1.4rem) !important;
+    color: #25262f;
     max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .services-included h1 {
+    color: #e2ecf6;
 }
+  
+  /* ------------------------------------------------ */
+  /* Responsive Media Queries */
+  
+  /* Extra Small Devices (max-width: 480px) */
+  @media only screen and (max-width: 480px) {
+    .service-item {
+      height: 350px;
+      max-width: 90%;
+      margin: 10px auto;
+    }
+    .service-front h2,
+    .service-back h2 {
+      font-size: 1.6rem;
+    }
+    .service-back p {
+      font-size: 1.2rem;
+    }
+    .service-icon {
+      width: 30px;
+      height: 30px;
+    }
+    .service-icon i {
+      font-size: 24px;
+    }
+  }
+  
+  /* Small Devices (min-width: 481px) and (max-width: 768px) */
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    .service-item {
+      height: 370px;
+      max-width: 300px;
+      margin: 15px auto;
+    }
+    .service-front h2,
+    .service-back h2 {
+      font-size: 1.7rem;
+    }
+    .service-back p {
+      font-size: 1.3rem;
+    }
+    .service-icon {
+      width: 35px;
+      height: 35px;
+    }
+    .service-icon i {
+      font-size: 26px;
+    }
+  }
+  
+  /* Medium Devices (min-width: 769px) and (max-width: 1024px) */
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .service-item {
+      height: 400px;
+      max-width: 320px;
+      margin: 20px auto;
+    }
+    .service-front h2,
+    .service-back h2 {
+      font-size: 1.8rem;
+    }
+    .service-back p {
+      font-size: 1.4rem;
+    }
+    .service-icon {
+      width: 40px;
+      height: 40px;
+    }
+    .service-icon i {
+      font-size: 30px;
+    }
+  }
+  
+  /* Large Devices (min-width: 1025px) */
+  @media only screen and (min-width: 1025px) {
+    .service-item {
+      height: 400px;
+      max-width: 350px;
+      margin: 20px;
+    }
+    .service-front h2,
+    .service-back h2 {
+      font-size: 1.8rem;
+    }
+    .service-back p {
+      font-size: 1.4rem;
+    }
+    .service-icon {
+      width: 40px;
+      height: 40px;
+    }
+    .service-icon i {
+      font-size: 30px;
+    }
+  }
+  
+  
 
 /* RESPONSIVENESS */
 @media (max-width: 1024px) {
@@ -2856,8 +4000,7 @@ nav ul {
 /* ------------------------------------------------*/
 
 /* General Hover Shadow Effect */
-.aim-item:hover,
-.service-item:hover {
+.aim-item:hover{
     box-shadow: 0 5px 15px #80db66 !important;
 }
 
@@ -3274,45 +4417,6 @@ footer img {
 }
 
 
-/* call to actions section */
-
-.cta-section {
-    /* background: linear-gradient(45deg, #80db66, #ffb6c1); */
-    /* padding: 3rem 0; */
-    margin-bottom: 100px;
-}
-
-.cta-card {
-    background-color: #fff;
-    border-radius: 15px;
-    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);  */
-    padding: 12rem 2rem;
-    background-image: url(../../assets/img/contact.png);
-}
-
-.cta-card .card-title {
-    font-size: 4.6rem;
-    font-weight: bold;
-    color: #ffff;
-    margin-bottom: 1rem;
-}
-
-
-.cta-card .card-text {
-    font-size: 1.6rem;
-    color: #fff;
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin: auto;
-    margin-top: 20px;
-}
-
-.cta-card .button2:hover {
-    background-color: #fff;
-    color: #80db66;
-    border: 1px solid #fff;
-}
-
 
 /* ========== HERO SECTION FIXES ========== */
 @media (max-width: 1024px) {
@@ -3651,7 +4755,7 @@ footer img {
         /* Ensure visibility */
         margin-bottom: 5px;
         left: 5px;
-        font-family: 'plus-jakarta-sans-medium-font';
+        font-family: 'plus-jakarta-sans', sans-serif;
     }
 
     .profile h1 {
@@ -3660,7 +4764,7 @@ footer img {
         font-weight: 800;
         color: #e2ecf6;
         margin-top: -10;
-        font-family: 'plus-jakarta-sans';
+        font-family: 'plus-jakarta-sans', sans-serif;
     }
 
     .hero-text .button2 {
@@ -3737,7 +4841,7 @@ footer img {
         height: 70px;
         left: 100px;
         top: -30px;
-        font-family: 'plus-jakarta-sans', sans-serif;
+        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
     }
 
     /* Keep "Social Media" text fixed */
@@ -4355,7 +5459,7 @@ footer img {
 h1 {
     position: relative;
     color: #e2ecf6;
-    /* Base text color */
+    font-family: 'plus-jakarta-sans', sans-serif;
     transition: transform 0.5s ease, letter-spacing 0.5s ease, color 0.5s ease;
     text-shadow: none !important;
 }
@@ -4386,4 +5490,15 @@ h1:hover {
 /* Reveal the gradient underline on hover */
 h1:hover::after {
     transform: scaleX(1);
+}
+
+
+.company-logo-title,
+.container-lg h1,
+.section-title,
+.aim-title,
+.about-text h1,
+.testimonial-head h1{
+    font-size: 45px;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
