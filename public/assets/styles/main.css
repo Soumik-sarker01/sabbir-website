@@ -1556,7 +1556,7 @@ nav ul {
         white-space: nowrap;
         position: relative;
         height: 70px;
-        left: -53px;
+        left: 3px;
         top: 20px;
         /* Ensure it's positioned correctly */
         font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
@@ -1580,7 +1580,7 @@ nav ul {
         position: relative;
         white-space: nowrap;
         font-size: inherit;
-        width: 270px;
+        width: 370px;
         align-items: baseline;
         overflow: hidden;
         text-align: left;
@@ -1723,8 +1723,6 @@ nav ul {
         /* Ensure no padding is pushing the text */
     }
 
-
-
     .hero .button2 {
         padding: 1.2rem 8rem;
         font-size: 1.6rem;
@@ -1765,7 +1763,7 @@ nav ul {
         position: relative;
         white-space: nowrap;
         font-size: inherit;
-        width: 270px;
+        width: 370px;
         /* Adjust as needed */
         overflow: hidden;
         text-align: left;
