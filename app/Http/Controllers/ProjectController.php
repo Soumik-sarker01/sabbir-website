@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -11,9 +10,9 @@ class ProjectController extends Controller
 {
     public function index(Request $request)
     {
-        // 1) Gather ALL projects from the filesystem
+        // Use correct path for Hostinger (public_html/assets/projects)
         $projectDirectory = public_path('assets/projects/');
-        $allProjects = []; // We'll store all projects here
+        $allProjects = [];
 
         if (File::exists($projectDirectory)) {
             $folders = File::directories($projectDirectory);
@@ -95,8 +94,8 @@ class ProjectController extends Controller
                     'name' => $folderName,
                     'slug' => urlencode($folderName),
                     'thumbnail' => $thumbnail
-                        ? 'assets/projects/' . $folderName . '/' . $thumbnail->getFilename()
-                        : 'assets/no-image.jpg',
+                        ? asset('assets/projects/' . $folderName . '/' . $thumbnail->getFilename())
+                        : asset('assets/no-image.jpg'),
                     'tagline' => $tagline
                 ];
             }
@@ -151,15 +150,38 @@ class ProjectController extends Controller
             abort(404);
         }
 
+        // Collect image paths
         $images = File::files($projectPath);
         $imagePaths = [];
-
         foreach ($images as $image) {
             if (in_array($image->getExtension(), ['jpg', 'jpeg', 'png', 'webp'])) {
-                $imagePaths[] = 'assets/projects/' . $folderName . '/' . $image->getFilename();
+                $imagePaths[] = asset('assets/projects/' . $folderName . '/' . $image->getFilename());
             }
         }
 
-        return view('project-details', compact('folderName', 'imagePaths'));
+        // Load metadata from meta.json if available; otherwise, use defaults.
+        $metaFile = $projectPath . '/meta.json';
+        if (File::exists($metaFile)) {
+            $metaData = json_decode(File::get($metaFile), true);
+            $description = $metaData['description'] ?? "Default project description.";
+            $review      = $metaData['review'] ?? "Default client review.";
+            $clientName  = $metaData['client_name'] ?? "Default Client";
+            $rating      = $metaData['client_rating'] ?? "★★★★★ (5.0)";
+        } else {
+            $description = "Default project description.";
+            $review      = "Default client review.";
+            $clientName  = "Default Client";
+            $rating      = "★★★★★ (5.0)";
+        }
+
+        return view('project-details', compact(
+            'folderName',
+            'imagePaths',
+            'description',
+            'review',
+            'clientName',
+            'rating'
+        ));
     }
+
 }

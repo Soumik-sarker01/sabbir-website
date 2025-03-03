@@ -78,6 +78,7 @@
     background: #80db66 !important;
     color: #25262f !important;
   }
+
   /* Projects grid: 3 projects per row */
   .projects-container {
     display: grid;
@@ -85,27 +86,31 @@
     gap: 30px;
     width: 100%;
   }
+
   .project-card {
     text-decoration: none;
     color: inherit;
     border-radius: 10px;
     overflow: hidden;
   }
+
   /* Image container with hover zoom */
   .image-container {
     position: relative;
-    height: 450px;
+    /* Remove fixed height so it can shrink automatically */
+    width: 100%;
     overflow: hidden;
   }
   .project-card img {
     width: 100%;
-    height: 100%;
+    height: auto; /* Let the image define its own aspect ratio */
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
   }
   .project-card:hover img {
     transform: scale(1.05);
   }
+
   /* Overlay with project name */
   .overlay {
     position: absolute;
@@ -125,6 +130,7 @@
     font-weight: bold;
     color: #000;
   }
+
   /* Tagline styling */
   .project-tagline {
     font-size: 14px;
@@ -135,6 +141,7 @@
     font-weight: 600;
     margin-top: 5px;
   }
+
   /* Pagination styling */
   .pagination {
     display: flex;
@@ -159,6 +166,46 @@
     background: #80db66;
     color: #25262f;
     border-color: #80db66;
+  }
+
+  /* =========================
+     MEDIA QUERIES
+     ========================= */
+
+  /* 1) At smaller widths, reduce from 3 columns to 2 */
+  @media (max-width: 992px) {
+    .projects-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .project-tagline {
+      font-size: 13px; /* Slightly smaller tagline */
+    }
+  }
+
+  /* 2) At even smaller widths, make the sidebar go on top,
+     and the projects in 1 column. */
+  @media (max-width: 768px) {
+    .main-content {
+      flex-direction: column;
+    }
+    .sidebar {
+      width: 100%;
+      max-height: none;
+      position: static;
+      margin-bottom: 20px;
+    }
+    .sidebar ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .projects-container {
+      grid-template-columns: 1fr;
+    }
+    .project-tagline {
+      font-size: 12px; /* Smaller text on mobile */
+    }
   }
 </style>
 

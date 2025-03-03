@@ -5468,7 +5468,6 @@ h1::after {
     width: 100%;
     height: 3px;
     /* Thickness of the underline */
-    background: linear-gradient(90deg, #80db66, #25262f);
     /* Gradient using your palette */
     transform: scaleX(0);
     transform-origin: left;

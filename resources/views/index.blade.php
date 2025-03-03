@@ -161,6 +161,102 @@
         transition: opacity 1.5s ease-out, transform 1.5s ease-out;
     }
 
+    /* ================================
+   HERO SHORT-VIEWPORT OVERRIDES
+   Place these after your main.css
+================================ */
+
+    /* Generic hero constraints */
+    .hero {
+        position: relative;
+        overflow: hidden;
+        /* ensure no overlap scrolling */
+    }
+
+    /* ================================
+   HERO IMAGE & CIRCLE OVERRIDES
+   (Add after your main.css)
+================================ */
+
+    /* Base: ensure the container for image + circle is relatively positioned */
+    .hero-image-container {
+        position: relative;
+        /* If not already set */
+    }
+
+    /* The circle background behind the hero image */
+    .circle-background {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        z-index: -1;
+        /* behind the hero image */
+        width: 350px;
+        height: 350px;
+        transform: translate(0, -50%);
+        transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    }
+
+    /* The hero image itself */
+    .hero-image {
+        display: block;
+        max-height: 70vh;
+        /* limit image so it doesn’t overflow short screens */
+        height: auto;
+        width: auto;
+        object-fit: contain;
+        /* or cover if you prefer */
+        margin: 0 auto;
+        transition: transform 0.3s ease, max-height 0.3s ease;
+    }
+
+    /* For screens that are short but not too small (height < 800px) */
+    @media (max-height: 800px) {
+
+        /* Slightly shift the image container upward if needed */
+        .hero-image-container {
+            margin-top: -2rem;
+            /* move it up so it doesn’t collide with infograph */
+        }
+
+        /* Shrink circle and reposition */
+        .circle-background {
+            width: 300px;
+            height: 300px;
+            top: 15%;
+            right: 5%;
+        }
+
+        /* Reduce max-height of image so it fits above infograph */
+        .hero-image {
+            max-height: 60vh;
+        }
+    }
+
+    /* For very short screens (height < 600px) */
+    @media (max-height: 600px) {
+
+        /* Move container further up if necessary */
+        .hero-image-container {
+            margin-top: -3rem;
+        }
+
+        .circle-background {
+            width: 240px;
+            height: 240px;
+            top: 10%;
+            right: 5%;
+        }
+
+        /* Scale down the hero image more */
+        .hero-image {
+            max-height: 50vh;
+            transform: scale(0.9);
+            /* optional scaling */
+            transform-origin: center bottom;
+        }
+    }
+
 </style>
 
 <div class="site-content">
@@ -737,29 +833,27 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Slide #4 -->
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h1 class="testimonial-name">king_lauren</h1>
+                                    <h3 class="testimonial-name">thales_ab</h3>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
                                     <p>
-                                        Working with Tareq was a positive experience, but unfortunately, I cannot say
-                                        the same about the quality of his work. The initial templates he delivered were
-                                        identical to those already available on Canva, which I recognized as a frequent
-                                        user of the platform. When I requested revisions, I was disappointed by the lack
-                                        of attention to detail, particularly in areas like color selection, font
-                                        consistency, and overall design refinement.
-                                    </p>
+                                        Tareq is professional and delivers with the quality proposed. His delivery is
+                                        aligned with the expectations and the price is a fair price. His communication
+                                        is well done, he delivered on time and the files are good. Thanks Tareqq for
+                                        your delivery.</p>
                                 </div>
                                 <div class="testimonial-name">
 
                                 </div>
                             </div>
                         </div>
+
+
                         <!-- Slide #5 -->
                         <div class="swiper-slide">
                             <div class="testimonial">
@@ -867,6 +961,612 @@
                                     <p>
                                         Fantastic! Always finishes orders very timely and professionally. Highly
                                         recommend </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #11 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Sade411team</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        This was an awesome experience because I was not happy with the first draft and
+                                        Tareq came back with revisions that completely embodied my vision. Would
+                                        definitely use him again! </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #12 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Modernwealthllc</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq did an INCREDIBLE job! His designs were visually stunning, creative, and
+                                        professional, and working with him was an absolute pleasure—he was polite, super
+                                        responsive, and went the extra mile. Highly recommend! 🙌</p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #13 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Sandacioloca</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq was very nice to work with, he delivered very quickly and very well, with
+                                        multiple check-ins to make sure he was on the right track, very polite and good
+                                        communication too, I definitely recommend.</p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #14 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Ltn_up_electric</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq's work in Social Media Design is outstanding! The visuals were
+                                        professionally crafted and perfectly aligned with our brand. Working with him
+                                        was a breeze due to his language fluency and proactive communication. Highly
+                                        recommend! 👍</p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #15 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Chelion_au</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq did an OUTSTANDING job in presentation design, exceeding expectations with
+                                        impeccable attention to detail and seamless brand alignment. Working with him
+                                        was a pleasure, thanks to his proactive communication and flawless language
+                                        fluency. Highly recommend for anyone in need of top-tier presentation design! 👏
+                                    </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #16 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Bryankinneberg</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Best experience yet on Fiverr. Great job in delivering quality work quickly. I
+                                        will definitely use Tareq again. </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #17 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Renata_ortega</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        I am very pleased with the final product! </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #18 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Gabiela_mair</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        I had the pleasure of working with Tareq on several design projects, and I
+                                        couldn’t be happier with the results. The designs were not only of outstanding
+                                        quality but also perfectly aligned with my brand’s needs and vision. Throughout
+                                        the process, he demonstrated a keen eye for detail, creativity, and a strong
+                                        commitment to delivering excellence. Communication was smooth and timely, making
+                                        it easy to refine ideas together and achieve exactly what I was looking for. I
+                                        highly recommend Tareq to anyone looking for professional, top-notch design
+                                        work. Thank you for your fantastic work! </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #19 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">jvickers182988</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Fantastic! Always finishes orders very timely and professionally. Highly
+                                        recommend </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #20 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Content_marcel</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        I am more then happy with the results everything was like i wanted it and even
+                                        better. I will work defintily in the future again with you for other projects.
+                                        Thanks a lot wish you all the best. </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #21 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Ccantu007</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Great freelancer, excellent work making several YouTube shorts! Creative and
+                                        good communication. Will work together again soon! </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #22 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Gabiela_mair</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        I’m incredibly impressed with the professional quality of the work. The design
+                                        exceeded my expectations in both creativity and attention to detail. The
+                                        freelancer truly understood my vision and turned it into a polished, impactful
+                                        presentation that perfectly suits my needs. Communication was smooth and prompt,
+                                        and the entire process was handled with great professionalism. Highly
+                                        recommended for anyone looking to elevate their work to the next level! </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #23 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Abcsupp</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        I highly recommend Tareq for any design need you have. From our first exchange
+                                        to our last Tareq has been very professional and understanding of our
+                                        expectations. He has been reliable and effective in his work. After reviewing
+                                        his first drafts, he completely understood our expectations and integrated them
+                                        perfectly into his designs. </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #24 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Emilyharlequin1</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq did an AMAZING job with our social media marketing! His professionalism
+                                        shined through in his work, and he was polite, quick to respond, and extremely
+                                        cooperative throughout the process. Highly recommend! 👍 </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #25 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Laura_rocks</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        The designs and templates that Tareq has created are perfect and exactly what I
+                                        was looking for. It provides me with a solid suite of designs to use for my
+                                        social media posts, that I can adapt as needed. He delivered on time and I will
+                                        be using him again. </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #26 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Nawabz0r</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Absolutely oustanding designs and very impressive how these designs are created
+                                        based on an idea. Super polite communication, perfect match with my brand voice
+                                        and the designs are easy to recreate for further purposes. Very satisfied with
+                                        the work delivered, communication and speed. All wishes were processed
+                                        immediately and great designs are created. Couldn't have asked for a better
+                                        designer, thank you very much! Tareq isn’t just a social media designer for me,
+                                        but someone who truly understands marketing and brands. Thanks! </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #27 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Timo_stephan</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Very professional designer. Although my own expectations and the first
+                                        deliveries were way apart, Tareq give us revisions until we were satisfied. He
+                                        overdelivered in the end and sent us more design options than requested. Thanks
+                                        for your service. </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #28 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Robin21x</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq’s work is nothing short of brilliant! He truly understood my vision and
+                                        brought it to life with exceptional skill and creativity. I am beyond impressed
+                                        with the results and will be entrusting him with all of my future projects. In
+                                        fact, I’m already planning to book him for the next one! Thank You </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #29 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Adamsph</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq exceeded my expectations with his CREATIVE social media designs perfectly
+                                        aligned with our brand. His attention to detail was impeccable, and working with
+                                        him was a pleasure thanks to his deep understanding and politeness. He truly
+                                        went above and beyond—HIGHLY recommend! Thank you very much Tareq and team! 🙌
+                                    </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #30 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Richieisnow</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq is probably the best freelancer I have ever worked with. He really went
+                                        above and beyond and was determined to make sure I was happy. The work was of a
+                                        very high quality and his English level was native. </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #31 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Kassandracasti</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq was very cooperative and patient with client caused delays. He always kept
+                                        communication open and was very polite and cooperative. Would alwasy recommend
+                                        him </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #32 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Wintelligencehq</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq and his team were terrific. They have a brilliant attention to detail and
+                                        were so responsive and adaptive to what I required for more designs. They
+                                        captured exactly the visions I had and exceeded my expectations well and truly
+                                        with their own spin/take on my designs. Brilliant to work with them. Highly
+                                        recommend. </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #33 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">jenilbag</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        I worked with Tareq for the second time, and once again, the experience was
+                                        fantastic. This time, we collaborated on a brochure and brand guideline, and the
+                                        results exceeded my expectations. He understood my vision perfectly and
+                                        delivered high-quality work with great attention to detail. I highly recommend
+                                        Tareq for any design projects! </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #34 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Chetnaaa1</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        I enjoyed working with Tareq on a social media graphics project, and I couldn't
+                                        be more impressed. His level of cooperation was outstanding—he was always
+                                        willing to make adjustments and collaborate closely to ensure the final product
+                                        met my vision. What truly stood out was Tareq went above and beyond to deliver
+                                        high-quality graphics, and he did so within an impressive delivery time. If
+                                        you're looking for someone who is quick, reliable, and exceptionally talented,
+                                        Tareq is your guy. I highly recommend his services! </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #35 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Segaps</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq truly excelled in delivering top-notch social media marketing with
+                                        strategic thinking and professional work. Collaborating with him was seamless
+                                        due to his deep understanding and exemplary cooperation. Highly recommended! 👍
+                                    </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #36 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Marte_riley</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Hi Tareq I cannot thank you enough for your top notch work on these Canva
+                                        templates. I shall be proud to post them. Thank you for being so responsive to
+                                        feedback. I already have two more projects for you. </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #37 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Jairomateord</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        An outstanding seller with great attention to deal and a high sense of
+                                        commitment to quality and great design. I recommend him because he's a hard
+                                        worker and an artist in what he does. </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #38 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Colourfulsherri</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        The designs were very good and I even ended up receiving way more designs than
+                                        requested, so that was a lovely surprise. Thank you, Tareq. I enjoyed working
+                                        with you. </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #39 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Kassandracasti</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        I have been relying on Tareq for various projects that are part of bigger
+                                        projects and he is very organized and professional, communicates well and always
+                                        exceeds expectations. I will continue to work with him, he makes my freelancing
+                                        life so much easier! </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #40 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Expatalientax</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Amazing experience with Tareq, he is extremely professional, well spoken,
+                                        perfect in English, kind, friendly, and humble. I highly recommend him. I will
+                                        definitely work with him again. Thank you Tareq, wishing you all the success you
+                                        deserve 🙌 </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #41 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Josueortga</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Would work with again in the future! Tareq was very kind and polite all the
+                                        time. He over delivered and I loved his designs!!! This would sure make my job
+                                        easier! It will save me a lot of time when posting!!! My designs are very good
+                                        looking!!! </p>
+                                </div>
+                                <div class="testimonial-name">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide #42 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial">
+                                <div class="testimonial-info">
+                                    <h3 class="testimonial-name">Rachellauen</h3>
+                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>
+                                        Tareq truly SHINED in social media design, delivering work that was both
+                                        visually appealing and highly professional. Communication was seamless and
+                                        proactive, and he handled revisions quickly and precisely as requested. Great
+                                        work all around—will definitely use again! 🙌 </p>
                                 </div>
                                 <div class="testimonial-name">
 
