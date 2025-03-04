@@ -36,28 +36,34 @@
     gap: 30px;
     margin: 50px auto;
     max-width: 90%;
+    padding: 20px 250px;
   }
-  /* Sidebar: Sticky and scrollable */
+  /* Sidebar: Sticky and scrollable with right border */
   .sidebar {
     width: 220px;
     flex-shrink: 0;
     padding: 15px;
     border-radius: 6px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 20px;
     max-height: 600px;
     overflow-y: auto;
+    border-right: 3px solid #80db66;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .sidebar::-webkit-scrollbar {
+    display: none;
   }
   .sidebar ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
     margin: 0;
   }
   .sidebar li {
     margin-bottom: 8px;
   }
-  /* Filter buttons */
   .filter-button {
     color: #fff;
     border: none;
@@ -73,37 +79,69 @@
   .filter-button:hover {
     background: #1565c0;
   }
-  /* Highlight the active filter */
   .active-tagline {
     background: #80db66 !important;
     color: #25262f !important;
   }
 
-  /* Projects grid: 3 projects per row */
+  /* Mobile Dropdown (hidden on larger screens) */
+  .mobile-dropdown {
+    display: none;
+    margin: 20px auto;
+    max-width: 300px;
+  }
+  .mobile-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+
+  /* Projects grid:
+     Base: 1 column (for laptop/smaller screens)
+     Desktop (min-width: 992px): 2 columns */
   .projects-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 30px;
     width: 100%;
   }
+  @media (min-width: 992px) {
+    .projects-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 
+  /* Project card styling */
   .project-card {
     text-decoration: none;
     color: inherit;
     border-radius: 10px;
     overflow: hidden;
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
   }
-
-  /* Image container with hover zoom */
+  /* Card content container */
+  .card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Image container with fixed aspect ratio */
   .image-container {
     position: relative;
-    /* Remove fixed height so it can shrink automatically */
     width: 100%;
+    aspect-ratio: 1/1;
     overflow: hidden;
+    border-radius: 8px;
   }
   .project-card img {
     width: 100%;
-    height: auto; /* Let the image define its own aspect ratio */
+    height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
   }
@@ -111,27 +149,18 @@
     transform: scale(1.05);
   }
 
-  /* Overlay with project name */
-  .overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+  /* Project details styling */
+  .project-details {
+    margin-top: 5px;
+    padding: 10px;
+    text-align: center;
   }
-  .project-card:hover .overlay {
-    opacity: 1;
-  }
-  .overlay-title {
+  .project-name {
     font-size: 18px;
     font-weight: bold;
-    color: #000;
+    color: #e2ecf6;
+    margin-bottom: 5px;
   }
-
-  /* Tagline styling */
   .project-tagline {
     font-size: 14px;
     color: #e2ecf6;
@@ -140,6 +169,7 @@
     border-radius: 6px;
     font-weight: 600;
     margin-top: 5px;
+    text-align: center;
   }
 
   /* Pagination styling */
@@ -168,51 +198,59 @@
     border-color: #80db66;
   }
 
-  /* =========================
-     MEDIA QUERIES
-     ========================= */
-
-  /* 1) At smaller widths, reduce from 3 columns to 2 */
-  @media (max-width: 992px) {
-    .projects-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .project-tagline {
-      font-size: 13px; /* Slightly smaller tagline */
-    }
-  }
-
-  /* 2) At even smaller widths, make the sidebar go on top,
-     and the projects in 1 column. */
-  @media (max-width: 768px) {
+  /* Responsive adjustments for smaller devices */
+  @media (max-width: 991px) {
     .main-content {
       flex-direction: column;
+      padding: 20px;
+      margin: 30px auto;
     }
+    /* Hide sidebar in mobile view */
     .sidebar {
-      width: 100%;
-      max-height: none;
-      position: static;
-      margin-bottom: 20px;
+      display: none;
     }
-    .sidebar ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
+    /* Show dropdown in mobile view */
+    .mobile-dropdown {
+      display: block;
     }
-    .projects-container {
-      grid-template-columns: 1fr;
+    .project-name {
+      font-size: 16px;
     }
     .project-tagline {
-      font-size: 12px; /* Smaller text on mobile */
+      font-size: 13px;
+    }
+  }
+  @media (max-width: 480px) {
+    .projects-container {
+      gap: 20px;
+      padding: 0 10px;
+    }
+    .project-name {
+      font-size: 14px;
+    }
+    .project-tagline {
+      font-size: 12px;
+      padding: 2px 4px;
     }
   }
 </style>
 
 <h2 style="text-align: center; margin-bottom: 20px;">Our Projects</h2>
 
+<!-- Mobile Dropdown for Tagline Selection (visible on mobile only) -->
+<div class="mobile-dropdown">
+  <select id="taglineDropdown" onchange="if(this.value) window.location.href=this.value;">
+    <option value="{{ route('projects.index') }}" @if($selectedTagline === 'all') selected @endif>All</option>
+    @foreach($uniqueTaglines as $tagline)
+      <option value="{{ route('projects.index', ['tagline' => $tagline]) }}" @if($selectedTagline === $tagline) selected @endif>
+        {{ $tagline }}
+      </option>
+    @endforeach
+  </select>
+</div>
+
 <div class="main-content">
-  <!-- LEFT SIDEBAR: Tagline Filter Menu -->
+  <!-- LEFT SIDEBAR: Tagline Filter Menu (visible on desktop only) -->
   <div class="sidebar">
     <ul>
       <li>
@@ -234,7 +272,6 @@
   <div class="projects-container">
     @foreach($projectsPaginated as $project)
       @php
-        // Find matching color or fallback
         $tagColor = '#1976d2';
         foreach ($tagColors as $keyword => $color) {
           if (stripos($project['tagline'], $keyword) !== false) {
@@ -245,15 +282,17 @@
       @endphp
 
       <a href="{{ route('projects.show', $project['slug']) }}" class="project-card">
-        <div class="image-container">
-          <img src="{{ asset($project['thumbnail']) }}" alt="{{ $project['name'] }}">
-          <div class="overlay">
-            <div class="overlay-title">{{ $project['name'] }}</div>
+        <div class="card-content">
+          <div class="image-container">
+            <img src="{{ asset($project['thumbnail']) }}" alt="{{ $project['name'] }}">
           </div>
-        </div>
-        <div class="project-details" style="margin-top: 5px;">
-          <div class="project-tagline" style="background: {{ $tagColor }};">
-            {{ $project['tagline'] }}
+          <div class="project-details">
+            <div class="project-name">
+              {{ $project['name'] }}
+            </div>
+            <div class="project-tagline" style="background: {{ $tagColor }};">
+              {{ $project['tagline'] }}
+            </div>
           </div>
         </div>
       </a>

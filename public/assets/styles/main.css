@@ -567,6 +567,7 @@ nav ul {
     justify-content: left;
 }
 
+
 /* Hover effect: White transparent background */
 .custom-button:hover {
     background: rgba(255, 255, 255, 1);
@@ -2967,7 +2968,7 @@ nav ul {
     padding: 3rem 5rem;
     display: flex;
     gap: 40px;
-    width: 100%;
+    width: 61%;
     margin-top: 40px;
     justify-content: space-between;
     align-items: center;
@@ -3217,6 +3218,35 @@ nav ul {
         width: 50px;
     }
 }
+
+/* New wrapper for Clients and Designs */
+.client-designs-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+/* Styles for the Designs box */
+.designs {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 3rem 5rem;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.designs-number h2 {
+    font-weight: bold;
+    font-size: 5.5rem;
+    letter-spacing: 1px;
+}
+
+.designs-number p {
+    font-size: 2rem;
+}
+
 
 /* ------------------------------------------------*/
 /* Block infograph Styles ends */
@@ -5440,7 +5470,7 @@ footer img {
 
 
 .logos-wrapper {
-    max-width: 1325px;
+    max-width: 100% !important;
     /* Adjust this value as needed */
     margin: 0 auto;
     /* Center the wrapper */

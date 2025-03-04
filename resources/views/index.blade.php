@@ -47,119 +47,177 @@
 
 
     .company-logo-title {
-        font-size: 38px;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 3rem;
-        color: #e2ecf6;
-    }
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #e2ecf6;
+}
 
-    /* Styling for the logo section */
-    .company-logos {
-        overflow: hidden;
-        position: relative;
-        padding: 20px 0;
-    }
+/* Ensure the container is positioned relatively */
+.company-logos {
+  position: relative !important;
+  overflow: hidden !important;
+}
 
-    .logos-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
+/* Overlays to create fade effect on left/right edges */
+.logos-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 80px !important;  /* Adjust width for fade strength */
+  pointer-events: none !important;
+  z-index: 9999 !important;
+}
 
-    /* Hidden class for the initial state */
-    .hidden {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: opacity 1s ease-out, transform 1s ease-out;
-    }
+/* Left fade overlay: placed at the left edge */
+.logos-overlay.left {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 80px !important;  /* Adjust width as needed */
+  pointer-events: none !important;
+  z-index: 9999 !important;
+  background: linear-gradient(to right, #25262f 0%, rgba(37,38,47,0) 100%) !important;
+}
 
-    /* Visible class (Triggered when in viewport) */
-    .visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Reverse effect when leaving the screen */
-    .reverse {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-
-    /* Logo Row Styling */
-    .logos-row {
-        display: flex;
-        overflow: hidden;
-        width: 100%;
-        position: relative;
-        padding: 15px 0;
-        opacity: 0;
-        transform: translateY(50px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    /* Track for smooth infinite scrolling */
-    .logos-track {
-        display: flex;
-        width: max-content;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-    }
-
-    /* Right to Left Scrolling */
-    .right-to-left .logos-track {
-        animation-name: scroll-right-left;
-        animation-duration: 15s;
-    }
-
-    @keyframes scroll-right-left {
-        from {
-            transform: translateX(0);
-        }
-
-        to {
-            transform: translateX(-50%);
-        }
-    }
-
-    /* Left to Right Scrolling */
-    .left-to-right .logos-track {
-        animation-name: scroll-left-right;
-        animation-duration: 15s;
-    }
-
-    @keyframes scroll-left-right {
-        from {
-            transform: translateX(-50%);
-        }
-
-        to {
-            transform: translateX(0);
-        }
-    }
-
-    /* Logo Styling */
-    .logos-track img {
-        width: 180px;
-        /* Increased size */
-        height: auto;
-        margin: 0 30px;
-    }
+/* Right fade overlay: placed at the right edge */
+.logos-overlay.right {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  width: 80px !important;  /* Adjust width as needed */
+  pointer-events: none !important;
+  z-index: 9999 !important;
+  background: linear-gradient(to left, #25262f 0%, rgba(37,38,47,0) 100%) !important;
+}
 
 
-    /* When visible */
-    .logos-row.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.company-logos::before,
+.company-logos::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 80px !important; /* Adjust fade width as needed */
+  pointer-events: none !important;
+  z-index: 9999 !important;
+}
 
-    /* When leaving - gradually fades away */
-    .logos-row.fade-out {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-    }
+/* Left fade: from the background color (#25262f) to transparent */
+.company-logos::before {
+  left: 0 !important;
+  background: linear-gradient(to right, #25262f 0%, rgba(37,38,47,0) 100%) !important;
+}
+
+/* Right fade: from the background color (#25262f) to transparent */
+.company-logos::after {
+  right: 0 !important;
+  background: linear-gradient(to left, #25262f 0%, rgba(37,38,47,0) 100%) !important;
+}
+
+
+
+
+/* Outer wrapper for all rows */
+.logos-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* less vertical gap between rows */
+}
+
+/* Hidden class for the initial state */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Visible class (Triggered when in viewport) */
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reverse effect when leaving the screen */
+.reverse {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Logo Row Styling */
+.logos-row {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 10px 0; /* reduce vertical spacing within each row */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Track for smooth infinite scrolling */
+.logos-track {
+  display: flex;
+  width: max-content;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Right to Left Scrolling */
+.right-to-left .logos-track {
+  animation-name: scroll-right-left;
+  animation-duration: 30s; /* slower movement */
+}
+
+@keyframes scroll-right-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Left to Right Scrolling */
+.left-to-right .logos-track {
+  animation-name: scroll-left-right;
+  animation-duration: 30s; /* slower movement */
+}
+
+@keyframes scroll-left-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Logo Styling */
+.logos-track img {
+  width: 150px; /* smaller for less horizontal gap, adjust as needed */
+  height: auto;
+  margin: 0 15px; /* reduce horizontal gap between logos */
+}
+
+/* When visible */
+.logos-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* When leaving - gradually fades away */
+.logos-row.fade-out {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
 
     /* ================================
    HERO SHORT-VIEWPORT OVERRIDES
@@ -257,6 +315,17 @@
         }
     }
 
+  /* Smooth expansion/collapse for FAQ answers */
+  .faq-answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+  .faq-answer.open {
+    max-height: 500px; /* a large enough height to reveal text */
+    opacity: 1;
+  }
 </style>
 
 <div class="site-content">
@@ -284,7 +353,7 @@
                     <div class="hero-buttons">
                         <!-- Get Started button (Left Side) -->
                         <a href="https://wa.me/+8801303934047" id="hero-started">
-                            <button class="custom-button-hero">Hire Me</button>
+                            <button class="custom-button-hero">Start a Project</button>
                         </a>
 
                         <!-- Fiverr Profile button (Right Side) -->
@@ -318,183 +387,192 @@
 
 
     <section class="infograph">
-        <div class="container-fluid">
-            <div class="infograph-wrapper">
-
-                <div class="container-lg">
-                    <div>
-                        <div class="orders">
-                            <div class="order-number">
-                                <h2>250+</h2>
-                                <p>Orders Completed</p>
-                            </div>
-                            <div class="order-types">
-                                <div class="sliding-badges">
-                                    <div class="order-badge">Custom Templates</div>
-                                    <div class="order-badge">Social Management</div>
-                                    <div class="order-badge">Content Creation</div>
-                                    <div class="order-badge">Brand Identity</div>
-                                    <div class="order-badge">Audience Engagement</div>
-                                    <div class="order-badge">Visual Design</div>
-                                    <div class="order-badge">Platform Strategy</div>
-                                    <div class="order-badge">Analytics</div>
-                                    <div class="order-badge">Organic Growth</div>
-                                    <div class="order-badge">Multi-Platform</div>
-
-                                    <!-- Duplicate the badges for the endless loop effect -->
-                                    <div class="order-badge">Custom Templates</div>
-                                    <div class="order-badge">Social Management</div>
-                                    <div class="order-badge">Content Creation</div>
-                                    <div class="order-badge">Brand Identity</div>
-                                    <div class="order-badge">Audience Engagement</div>
-                                    <div class="order-badge">Visual Design</div>
-                                    <div class="order-badge">Platform Strategy</div>
-                                    <div class="order-badge">Analytics</div>
-                                    <div class="order-badge">Organic Growth</div>
-                                    <div class="order-badge">Multi-Platform</div>
-                                </div>
-                            </div>
-
+    <div class="container-fluid">
+        <div class="infograph-wrapper">
+            <div class="container-lg">
+                <div>
+                    <div class="orders">
+                        <div class="order-number">
+                            <h2>250+</h2>
+                            <p>Orders Completed</p>
                         </div>
-                        <div class="reviews" onclick="location.href='#testimonial';" style="cursor: pointer;">
-                            <div class="reviews-top">
-                                <img src="{{asset('assets/img/fiver.svg')}}" alt="fiver">
-                                <img src="{{asset('assets/img/stars.svg')}}" alt="stars">
-                            </div>
-                            <div class="review-number">
-                                <h2>120+</h2>
-                                <p>Reviews</p>
-                            </div>
-                            <div class="review-img">
-                                <img src="{{asset('assets/img/review-1.jpg')}}" alt="client">
-                                <img style="margin-left: -10px;" src="{{asset('assets/img/review-2.jpg')}}"
-                                    alt="client">
-                                <img style="margin-left: -10px;" src="{{asset('assets/img/review-3.jpg')}}"
-                                    alt="client">
-                                <img style="margin-left: -10px;" src="{{asset('assets/img/review-4.jpg')}}"
-                                    alt="client">
-                                <img style="margin-left: -10px;" src="{{asset('assets/img/review-5.jpg')}}"
-                                    alt="client">
-                                <img style="margin-left: -10px;" src="{{asset('assets/img/review-6.jpg')}}"
-                                    alt="client">
+                        <div class="order-types">
+                            <div class="sliding-badges">
+                                <div class="order-badge">Custom Templates</div>
+                                <div class="order-badge">Social Management</div>
+                                <div class="order-badge">Content Creation</div>
+                                <div class="order-badge">Brand Identity</div>
+                                <div class="order-badge">Audience Engagement</div>
+                                <div class="order-badge">Visual Design</div>
+                                <div class="order-badge">Platform Strategy</div>
+                                <div class="order-badge">Analytics</div>
+                                <div class="order-badge">Organic Growth</div>
+                                <div class="order-badge">Multi-Platform</div>
+
+                                <!-- Duplicate the badges for the endless loop effect -->
+                                <div class="order-badge">Custom Templates</div>
+                                <div class="order-badge">Social Management</div>
+                                <div class="order-badge">Content Creation</div>
+                                <div class="order-badge">Brand Identity</div>
+                                <div class="order-badge">Audience Engagement</div>
+                                <div class="order-badge">Visual Design</div>
+                                <div class="order-badge">Platform Strategy</div>
+                                <div class="order-badge">Analytics</div>
+                                <div class="order-badge">Organic Growth</div>
+                                <div class="order-badge">Multi-Platform</div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="clients">
-                            <div class="clients-number">
-                                <h2>300+</h2>
-                                <p>Clients</p>
-                            </div>
-                            <!-- New wrapper for scrolling -->
-                            <div class="clients-scroll-container">
-                                <div class="clients-img">
-                                    <img src="{{ asset('assets/img/logos-black/1.png') }}" alt="Company 1">
-                                    <img src="{{ asset('assets/img/logos-black/2.png') }}" alt="Company 2">
-                                    <img src="{{ asset('assets/img/logos-black/3.png') }}" alt="Company 3">
-                                    <img src="{{ asset('assets/img/logos-black/4.png') }}" alt="Company 4">
-                                    <img src="{{ asset('assets/img/logos-black/5.png') }}" alt="Company 5">
-                                    <img src="{{ asset('assets/img/logos-black/6.png') }}" alt="Company 6">
-                                    <img src="{{ asset('assets/img/logos-black/7.png') }}" alt="Company 7">
-                                    <img src="{{ asset('assets/img/logos-black/8.png') }}" alt="Company 8">
-                                    <img src="{{ asset('assets/img/logos-black/9.png') }}" alt="Company 9">
-                                    <img src="{{ asset('assets/img/logos-black/10.png') }}" alt="Company 10">
-                                    <img src="{{ asset('assets/img/logos-black/11.png') }}" alt="Company 11">
-                                    <img src="{{ asset('assets/img/logos-black/12.png') }}" alt="Company 12">
-                                    <img src="{{ asset('assets/img/logos-black/13.png') }}" alt="Company 13">
-                                    <img src="{{ asset('assets/img/logos-black/14.png') }}" alt="Company 14">
-                                    <img src="{{ asset('assets/img/logos-black/15.png') }}" alt="Company 15">
-                                    <img src="{{ asset('assets/img/logos-black/16.png') }}" alt="Company 16">
-                                    <img src="{{ asset('assets/img/logos-black/17.png') }}" alt="Company 17">
-                                    <img src="{{ asset('assets/img/logos-black/18.png') }}" alt="Company 18">
-                                </div>
-                            </div>
+                    <div class="reviews" onclick="location.href='#testimonial';" style="cursor: pointer;">
+                        <div class="reviews-top">
+                            <img src="{{asset('assets/img/fiver.svg')}}" alt="fiver">
+                            <img src="{{asset('assets/img/stars.svg')}}" alt="stars">
+                        </div>
+                        <div class="review-number">
+                            <h2>120+</h2>
+                            <p>Reviews</p>
+                        </div>
+                        <div class="review-img">
+                            <img src="{{asset('assets/img/review-1.jpg')}}" alt="client">
+                            <img style="margin-left: -10px;" src="{{asset('assets/img/review-2.jpg')}}" alt="client">
+                            <img style="margin-left: -10px;" src="{{asset('assets/img/review-3.jpg')}}" alt="client">
+                            <img style="margin-left: -10px;" src="{{asset('assets/img/review-4.jpg')}}" alt="client">
+                            <img style="margin-left: -10px;" src="{{asset('assets/img/review-5.jpg')}}" alt="client">
+                            <img style="margin-left: -10px;" src="{{asset('assets/img/review-6.jpg')}}" alt="client">
                         </div>
                     </div>
                 </div>
+                <!-- New wrapper for Clients and Designs boxes -->
+                <div class="client-designs-wrapper">
+                    <div class="clients">
+                        <div class="clients-number">
+                            <h2>300+</h2>
+                            <p>Clients</p>
+                        </div>
+                        <!-- New wrapper for scrolling -->
+                        <div class="clients-scroll-container">
+                            <div class="clients-img">
+                                <img src="{{ asset('assets/img/logos-black/1.png') }}" alt="Company 1">
+                                <img src="{{ asset('assets/img/logos-black/2.png') }}" alt="Company 2">
+                                <img src="{{ asset('assets/img/logos-black/3.png') }}" alt="Company 3">
+                                <img src="{{ asset('assets/img/logos-black/4.png') }}" alt="Company 4">
+                                <img src="{{ asset('assets/img/logos-black/5.png') }}" alt="Company 5">
+                                <img src="{{ asset('assets/img/logos-black/6.png') }}" alt="Company 6">
+                                <img src="{{ asset('assets/img/logos-black/7.png') }}" alt="Company 7">
+                                <img src="{{ asset('assets/img/logos-black/8.png') }}" alt="Company 8">
+                                <img src="{{ asset('assets/img/logos-black/9.png') }}" alt="Company 9">
+                                <img src="{{ asset('assets/img/logos-black/10.png') }}" alt="Company 10">
+                                <img src="{{ asset('assets/img/logos-black/11.png') }}" alt="Company 11">
+                                <img src="{{ asset('assets/img/logos-black/12.png') }}" alt="Company 12">
+                                <img src="{{ asset('assets/img/logos-black/13.png') }}" alt="Company 13">
+                                <img src="{{ asset('assets/img/logos-black/14.png') }}" alt="Company 14">
+                                <img src="{{ asset('assets/img/logos-black/15.png') }}" alt="Company 15">
+                                <img src="{{ asset('assets/img/logos-black/16.png') }}" alt="Company 16">
+                                <img src="{{ asset('assets/img/logos-black/17.png') }}" alt="Company 17">
+                                <img src="{{ asset('assets/img/logos-black/18.png') }}" alt="Company 18">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="designs">
+                        <div class="designs-number">
+                            <h2>2000+</h2>
+                            <p>Designs Done</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End new wrapper -->
             </div>
-    </section>
+        </div>
+    </div>
+</section>
+
 
     {{-- Company Logos Section --}}
     <section id="company-logos" class="company-logos my-5">
-        <div class="container">
-            <h1 class="company-logo-title" style="font-size: 45px;">My Clients</h1>
-
-            <div class="logos-wrapper">
-                {{-- Row 1 (Right to Left) --}}
-                <div class="logos-row right-to-left hidden">
-                    <div class="logos-track">
-                        @for($i = 0; $i < 2; $i++) <img src="{{ asset('assets/img/logos/1.png') }}" alt="Company 1">
-                            <img src="{{ asset('assets/img/logos/2.png') }}" alt="Company 2">
-                            <img src="{{ asset('assets/img/logos/3.png') }}" alt="Company 3">
-                            <img src="{{ asset('assets/img/logos/4.png') }}" alt="Company 4">
-                            <img src="{{ asset('assets/img/logos/5.png') }}" alt="Company 5">
-                            <img src="{{ asset('assets/img/logos/6.png') }}" alt="Company 6">
-                            <img src="{{ asset('assets/img/logos/7.png') }}" alt="Company 7">
-                            <img src="{{ asset('assets/img/logos/8.png') }}" alt="Company 8">
-                            <img src="{{ asset('assets/img/logos/9.png') }}" alt="Company 9">
-                            <img src="{{ asset('assets/img/logos/10.png') }}" alt="Company 10">
-                            <img src="{{ asset('assets/img/logos/11.png') }}" alt="Company 11">
-                            <img src="{{ asset('assets/img/logos/12.png') }}" alt="Company 12">
-                            <img src="{{ asset('assets/img/logos/13.png') }}" alt="Company 13">
-                            <img src="{{ asset('assets/img/logos/14.png') }}" alt="Company 14">
-                            <img src="{{ asset('assets/img/logos/15.png') }}" alt="Company 15">
-                            <img src="{{ asset('assets/img/logos/16.png') }}" alt="Company 16">
-                            <img src="{{ asset('assets/img/logos/17.png') }}" alt="Company 17">
-                            <img src="{{ asset('assets/img/logos/18.png') }}" alt="Company 18">
-                            @endfor
-                    </div>
-                </div>
-
-                {{-- Row 2 (Left to Right) --}}
-                <div class="logos-row left-to-right hidden">
-                    <div class="logos-track">
-                        @for($i = 0; $i < 2; $i++) <img src="{{ asset('assets/img/logos/19.png') }}" alt="Company 19">
-                            <img src="{{ asset('assets/img/logos/20.png') }}" alt="Company 20">
-                            <img src="{{ asset('assets/img/logos/21.png') }}" alt="Company 21">
-                            <img src="{{ asset('assets/img/logos/22.png') }}" alt="Company 22">
-                            <img src="{{ asset('assets/img/logos/23.png') }}" alt="Company 23">
-                            <img src="{{ asset('assets/img/logos/24.png') }}" alt="Company 24">
-                            <img src="{{ asset('assets/img/logos/25.png') }}" alt="Company 25">
-                            <img src="{{ asset('assets/img/logos/26.png') }}" alt="Company 26">
-                            <img src="{{ asset('assets/img/logos/27.png') }}" alt="Company 27">
-                            <img src="{{ asset('assets/img/logos/28.png') }}" alt="Company 28">
-                            <img src="{{ asset('assets/img/logos/29.png') }}" alt="Company 29">
-                            <img src="{{ asset('assets/img/logos/31.png') }}" alt="Company 31">
-                            <img src="{{ asset('assets/img/logos/32.png') }}" alt="Company 32">
-                            <img src="{{ asset('assets/img/logos/33.png') }}" alt="Company 33">
-                            <img src="{{ asset('assets/img/logos/34.png') }}" alt="Company 34">
-                            <img src="{{ asset('assets/img/logos/35.png') }}" alt="Company 35">
-                            <img src="{{ asset('assets/img/logos/36.png') }}" alt="Company 36">
-                            @endfor
-                    </div>
-                </div>
-
-                {{-- Row 3 (Right to Left) --}}
-                <div class="logos-row right-to-left hidden">
-                    <div class="logos-track">
-                        @for($i = 0; $i < 2; $i++) <img src="{{ asset('assets/img/logos/37.png') }}" alt="Company 37">
-                            <img src="{{ asset('assets/img/logos/38.png') }}" alt="Company 38">
-                            <img src="{{ asset('assets/img/logos/39.png') }}" alt="Company 39">
-                            <img src="{{ asset('assets/img/logos/40.png') }}" alt="Company 40">
-                            <img src="{{ asset('assets/img/logos/41.png') }}" alt="Company 41">
-                            <img src="{{ asset('assets/img/logos/42.png') }}" alt="Company 42">
-                            <img src="{{ asset('assets/img/logos/43.png') }}" alt="Company 43">
-                            <img src="{{ asset('assets/img/logos/44.png') }}" alt="Company 44">
-                            <img src="{{ asset('assets/img/logos/45.png') }}" alt="Company 45">
-                            <img src="{{ asset('assets/img/logos/46.png') }}" alt="Company 46">
-                            <img src="{{ asset('assets/img/logos/47.png') }}" alt="Company 47">
-                            <img src="{{ asset('assets/img/logos/48.png') }}" alt="Company 48">
-                            <img src="{{ asset('assets/img/logos/49.png') }}" alt="Company 49">
-                            <img src="{{ asset('assets/img/logos/50.png') }}" alt="Company 50">
-                            <img src="{{ asset('assets/img/logos/51.png') }}" alt="Company 51">
-                            <img src="{{ asset('assets/img/logos/52.png') }}" alt="Company 52">
-                            @endfor
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <h1 class="company-logo-title" style="font-size: 45px;">My Clients</h1>
+    <!-- Fade Overlays -->
+    <div class="logos-overlay left"></div>
+    <div class="logos-overlay right"></div>
+    <div class="logos-wrapper">
+      {{-- Row 1 (Right to Left) --}}
+      <div class="logos-row right-to-left hidden">
+        <div class="logos-track">
+          @for($i = 0; $i < 2; $i++)
+            <img src="{{ asset('assets/img/logos/1.png') }}" alt="Company 1">
+            <img src="{{ asset('assets/img/logos/2.png') }}" alt="Company 2">
+            <img src="{{ asset('assets/img/logos/3.png') }}" alt="Company 3">
+            <img src="{{ asset('assets/img/logos/4.png') }}" alt="Company 4">
+            <img src="{{ asset('assets/img/logos/5.png') }}" alt="Company 5">
+            <img src="{{ asset('assets/img/logos/6.png') }}" alt="Company 6">
+            <img src="{{ asset('assets/img/logos/7.png') }}" alt="Company 7">
+            <img src="{{ asset('assets/img/logos/8.png') }}" alt="Company 8">
+            <img src="{{ asset('assets/img/logos/9.png') }}" alt="Company 9">
+            <img src="{{ asset('assets/img/logos/10.png') }}" alt="Company 10">
+            <img src="{{ asset('assets/img/logos/11.png') }}" alt="Company 11">
+            <img src="{{ asset('assets/img/logos/12.png') }}" alt="Company 12">
+            <img src="{{ asset('assets/img/logos/13.png') }}" alt="Company 13">
+            <img src="{{ asset('assets/img/logos/14.png') }}" alt="Company 14">
+            <img src="{{ asset('assets/img/logos/15.png') }}" alt="Company 15">
+            <img src="{{ asset('assets/img/logos/16.png') }}" alt="Company 16">
+            <img src="{{ asset('assets/img/logos/17.png') }}" alt="Company 17">
+            <img src="{{ asset('assets/img/logos/18.png') }}" alt="Company 18">
+          @endfor
         </div>
-    </section>
+      </div>
+
+      {{-- Row 2 (Left to Right) --}}
+      <div class="logos-row left-to-right hidden">
+        <div class="logos-track">
+          @for($i = 0; $i < 2; $i++)
+            <img src="{{ asset('assets/img/logos/19.png') }}" alt="Company 19">
+            <img src="{{ asset('assets/img/logos/20.png') }}" alt="Company 20">
+            <img src="{{ asset('assets/img/logos/21.png') }}" alt="Company 21">
+            <img src="{{ asset('assets/img/logos/22.png') }}" alt="Company 22">
+            <img src="{{ asset('assets/img/logos/23.png') }}" alt="Company 23">
+            <img src="{{ asset('assets/img/logos/24.png') }}" alt="Company 24">
+            <img src="{{ asset('assets/img/logos/25.png') }}" alt="Company 25">
+            <img src="{{ asset('assets/img/logos/26.png') }}" alt="Company 26">
+            <img src="{{ asset('assets/img/logos/27.png') }}" alt="Company 27">
+            <img src="{{ asset('assets/img/logos/28.png') }}" alt="Company 28">
+            <img src="{{ asset('assets/img/logos/29.png') }}" alt="Company 29">
+            <img src="{{ asset('assets/img/logos/31.png') }}" alt="Company 31">
+            <img src="{{ asset('assets/img/logos/32.png') }}" alt="Company 32">
+            <img src="{{ asset('assets/img/logos/33.png') }}" alt="Company 33">
+            <img src="{{ asset('assets/img/logos/34.png') }}" alt="Company 34">
+            <img src="{{ asset('assets/img/logos/35.png') }}" alt="Company 35">
+            <img src="{{ asset('assets/img/logos/36.png') }}" alt="Company 36">
+          @endfor
+        </div>
+      </div>
+
+      {{-- Row 3 (Right to Left) --}}
+      <div class="logos-row right-to-left hidden">
+        <div class="logos-track">
+          @for($i = 0; $i < 2; $i++)
+            <img src="{{ asset('assets/img/logos/37.png') }}" alt="Company 37">
+            <img src="{{ asset('assets/img/logos/38.png') }}" alt="Company 38">
+            <img src="{{ asset('assets/img/logos/39.png') }}" alt="Company 39">
+            <img src="{{ asset('assets/img/logos/40.png') }}" alt="Company 40">
+            <img src="{{ asset('assets/img/logos/41.png') }}" alt="Company 41">
+            <img src="{{ asset('assets/img/logos/42.png') }}" alt="Company 42">
+            <img src="{{ asset('assets/img/logos/43.png') }}" alt="Company 43">
+            <img src="{{ asset('assets/img/logos/44.png') }}" alt="Company 44">
+            <img src="{{ asset('assets/img/logos/45.png') }}" alt="Company 45">
+            <img src="{{ asset('assets/img/logos/46.png') }}" alt="Company 46">
+            <img src="{{ asset('assets/img/logos/47.png') }}" alt="Company 47">
+            <img src="{{ asset('assets/img/logos/48.png') }}" alt="Company 48">
+            <img src="{{ asset('assets/img/logos/49.png') }}" alt="Company 49">
+            <img src="{{ asset('assets/img/logos/50.png') }}" alt="Company 50">
+            <img src="{{ asset('assets/img/logos/51.png') }}" alt="Company 51">
+            <img src="{{ asset('assets/img/logos/52.png') }}" alt="Company 52">
+          @endfor
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -507,7 +585,7 @@
                 <div class="scroll-container">
                     <div class="project-list">
                         <div class="project-item category-health" data-modal-target="#exampleModal-1">
-                            <img src="{{asset('assets/img/projects/16.png')}}" alt="project">
+                            <img src="{{asset('assets/projects/Austral HVAC/11.png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -521,7 +599,7 @@
 
                         <!-- #2 -->
                         <div class="project-item category-beauty" data-modal-target="#exampleModal-2">
-                            <img src="{{asset('assets/img/projects/Carousel SAP Concur V1 (3).png')}}" alt="project">
+                            <img src="{{asset('assets/projects/BLK/1.png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -534,7 +612,7 @@
 
                         <!-- #3 -->
                         <div class="project-item category-medical" data-modal-target="#exampleModal-3">
-                            <img src="{{asset('assets/img/projects/Individual Attendees (4).png')}}" alt="project">
+                            <img src="{{asset('assets/projects/Carribean Edit/Business (2).png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -547,7 +625,7 @@
 
                         <!-- #4 -->
                         <div class="project-item category-beauty" data-modal-target="#exampleModal-4">
-                            <img src="{{asset('assets/img/projects/29.png')}}" alt="project">
+                            <img src="{{asset('assets/projects/Chingu Store/3.png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -560,7 +638,7 @@
 
                         <!-- #5 -->
                         <div class="project-item category-pets" data-modal-target="#exampleModal-5">
-                            <img src="{{asset('assets/img/projects/Product Announcement.png')}}" alt="project">
+                            <img src="{{asset('assets/projects/Chispa/4.png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -573,7 +651,31 @@
 
                         <!-- #6 -->
                         <div class="project-item category-kids" data-modal-target="#exampleModal-6">
-                            <img src="{{asset('assets/img/projects/Speaker 3 (3).png')}}" alt="project">
+                            <img src="{{asset('assets/projects/Circle Fit/1.png')}}" alt="project">
+                            <div class="project-icons">
+                                <div>
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-regular fa-comment"></i>
+                                    <i class="fa-regular fa-paper-plane"></i>
+                                </div>
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                        </div>
+                        <!-- #7 -->
+                        <div class="project-item category-kids" data-modal-target="#exampleModal-7">
+                            <img src="{{asset('assets/projects/Coach Deal/1.png')}}" alt="project">
+                            <div class="project-icons">
+                                <div>
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-regular fa-comment"></i>
+                                    <i class="fa-regular fa-paper-plane"></i>
+                                </div>
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                        </div>
+                        <!-- #8 -->
+                        <div class="project-item category-kids" data-modal-target="#exampleModal-8">
+                            <img src="{{asset('assets/projects/Dembele/17.png')}}" alt="project">
                             <div class="project-icons">
                                 <div>
                                     <i class="fa-solid fa-heart"></i>
@@ -727,7 +829,7 @@
                     <div class="about-buttons">
                         <!-- Get Started button (Left Side) -->
                         <a href="https://wa.me/+8801303934047" target="_blank" id="hero-started">
-                            <button class="custom-button-about">Hire Me</button>
+                            <button class="custom-button-about">Start a Project</button>
                         </a>
 
                         <!-- Fiverr Profile button (Right Side) -->
@@ -1585,6 +1687,268 @@
             </div>
         </div>
     </section>
+
+    <section id="faq" class="py-10">
+  <div class="container mx-auto px-4">
+    <!-- Small label above the main heading -->
+    <div class="mb-4 text-center">
+      <span class="inline-block text-sm uppercase px-4 py-1 
+                   bg-transparent text-[#e2ecf6] rounded-full">
+        Frequently Asked Questions
+      </span>
+    </div>
+
+    <!-- Main Heading -->
+    <h2 class="text-center text-4xl font-bold mb-8 text-[#e2ecf6]">
+      Your Questions <span class="italic">Answered!</span>
+    </h2>
+
+    <!-- FAQ Items Wrapper -->
+    <div class="space-y-6">
+      <!-- FAQ #1 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button
+          class="faq-btn flex justify-between items-center w-full px-2 py-3 
+                 focus:outline-none transition-all duration-300"
+          onclick="toggleFaq(1)"
+        >
+          <!-- Question Text (larger font) -->
+          <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+            How Long Does a Design Project Take?
+          </span>
+
+          <!-- Icon Container (circle + arrow) -->
+          <div
+            id="faq-icon-container-1"
+            class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
+                   rounded-full flex items-center justify-center 
+                   transition-all duration-300"
+          >
+            <!-- SVG Arrow -->
+            <svg
+              id="faq-icon-1"
+              class="w-4 h-4 text-[#80db66] transform transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <!-- Answer (with transition class) -->
+        <div id="faq-answer-1" class="faq-answer">
+          <p class="text-xl font-normal text-[#e2ecf6]">
+            This can vary based on the project scope. Typically, a standard social
+            media design project might take a few days, while more complex branding
+            or web design can take several weeks.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ #2 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button
+          class="faq-btn flex justify-between items-center w-full px-2 py-3 
+                 focus:outline-none transition-all duration-300"
+          onclick="toggleFaq(2)"
+        >
+          <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+            Why are you different?
+          </span>
+          <div
+            id="faq-icon-container-2"
+            class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
+                   rounded-full flex items-center justify-center 
+                   transition-all duration-300"
+          >
+            <svg
+              id="faq-icon-2"
+              class="w-4 h-4 text-[#80db66] transform transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <div id="faq-answer-2" class="faq-answer">
+          <p class="text-xl font-normal text-[#e2ecf6]">
+            We focus on personalized solutions, unique branding, and top-tier 
+            client support. Our goal is to help your brand stand out in a crowded 
+            market with designs that truly resonate with you.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ #3 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button
+          class="faq-btn flex justify-between items-center w-full px-2 py-3 
+                 focus:outline-none transition-all duration-300"
+          onclick="toggleFaq(3)"
+        >
+          <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+            How Much Does a Design Project Cost at Your Agency?
+          </span>
+          <div
+            id="faq-icon-container-3"
+            class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
+                   rounded-full flex items-center justify-center 
+                   transition-all duration-300"
+          >
+            <svg
+              id="faq-icon-3"
+              class="w-4 h-4 text-[#80db66] transform transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <div id="faq-answer-3" class="faq-answer">
+          <p class="text-xl font-normal text-[#e2ecf6]">
+            Pricing depends on factors like scope, complexity, and turnaround time.
+            We typically provide custom quotes after discussing your project 
+            requirements.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ #4 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button
+          class="faq-btn flex justify-between items-center w-full px-2 py-3 
+                 focus:outline-none transition-all duration-300"
+          onclick="toggleFaq(4)"
+        >
+          <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+            Is your agency start-up–friendly?
+          </span>
+          <div
+            id="faq-icon-container-4"
+            class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
+                   rounded-full flex items-center justify-center 
+                   transition-all duration-300"
+          >
+            <svg
+              id="faq-icon-4"
+              class="w-4 h-4 text-[#80db66] transform transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <div id="faq-answer-4" class="faq-answer">
+          <p class="text-xl font-normal text-[#e2ecf6]">
+            Absolutely! We love working with startups to develop strong brand 
+            identities and creative strategies that help you grow quickly.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ #5 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button
+          class="faq-btn flex justify-between items-center w-full px-2 py-3 
+                 focus:outline-none transition-all duration-300"
+          onclick="toggleFaq(5)"
+        >
+          <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+            What design tools do you use?
+          </span>
+          <div
+            id="faq-icon-container-5"
+            class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
+                   rounded-full flex items-center justify-center 
+                   transition-all duration-300"
+          >
+            <svg
+              id="faq-icon-5"
+              class="w-4 h-4 text-[#80db66] transform transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <div id="faq-answer-5" class="faq-answer">
+          <p class="text-xl font-normal text-[#e2ecf6]">
+            Our go-to tools include Adobe Photoshop, Illustrator, Premiere Pro, 
+            After Effects, Figma, and Canva for quick mockups.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ #6 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button
+          class="faq-btn flex justify-between items-center w-full px-2 py-3 
+                 focus:outline-none transition-all duration-300"
+          onclick="toggleFaq(6)"
+        >
+          <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+            Do you create WordPress e-commerce sites, and develop apps?
+          </span>
+          <div
+            id="faq-icon-container-6"
+            class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
+                   rounded-full flex items-center justify-center 
+                   transition-all duration-300"
+          >
+            <svg
+              id="faq-icon-6"
+              class="w-4 h-4 text-[#80db66] transform transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <div id="faq-answer-6" class="faq-answer">
+          <p class="text-xl font-normal text-[#e2ecf6]">
+            Yes, we offer WordPress e-commerce solutions. For more advanced app 
+            development, we collaborate with trusted partners to ensure you get 
+            the best possible outcome.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
 </div>
 
 <!-- Include Google reCAPTCHA script -->
@@ -1710,56 +2074,49 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-        // Function to animate the counting effect
-        function animateCounter(element, target, duration) {
-            let start = 0;
-            let stepTime = Math.abs(Math.floor(duration / target));
-            let counter = setInterval(() => {
-                start++;
-                element.textContent = start + "+";
-                if (start >= target) {
-                    clearInterval(counter);
-                }
-            }, stepTime);
-        }
+    function animateCounter(element, target, duration) {
+        let start = 0;
+        let step = Math.ceil(target / (duration / 10));
+        let counter = setInterval(() => {
+            start += step;
+            if (start >= target) {
+                start = target;
+                clearInterval(counter);
+            }
+            element.textContent = start + "+";
+        }, 30);
+    }
 
-        // Get the number elements
-        const orderNumber = document.querySelector(".order-number h2");
-        const reviewNumber = document.querySelector(".review-number h2");
-        const clientNumber = document.querySelector(".clients-number h2");
+    const orderNumber = document.querySelector(".order-number h2");
+    const reviewNumber = document.querySelector(".review-number h2");
+    const clientNumber = document.querySelector(".clients-number h2");
+    const designNumber = document.querySelector(".designs-number h2");
 
-        // Flag to ensure the counters animate only once per scroll-into-view
-        let isVisible = false;
+    let isVisible = false;
 
-        // Create an IntersectionObserver to watch the .infograph section
-        let observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // When the section becomes visible and wasn't visible before
-                if (entry.isIntersecting && !isVisible) {
-                    // Reset the counters before starting the animation
-                    orderNumber.textContent = "0+";
-                    reviewNumber.textContent = "0+";
-                    clientNumber.textContent = "0+";
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !isVisible) {
+                orderNumber.textContent = "0+";
+                reviewNumber.textContent = "0+";
+                clientNumber.textContent = "0+";
+                designNumber.textContent = "0+";
 
-                    // Animate the numbers
-                    animateCounter(orderNumber, 250, 1000); // Count to 200 in 1 second
-                    animateCounter(reviewNumber, 120, 600); // Count to 100 in 0.6 seconds
-                    animateCounter(clientNumber, 300, 700); // Count to 160 in 0.7 seconds
+                animateCounter(orderNumber, 250, 1000);
+                animateCounter(reviewNumber, 120, 600);
+                animateCounter(clientNumber, 300, 700);
+                animateCounter(designNumber, 2000, 500); // **FASTER COUNTING**
 
-                    // Set flag to prevent re-animation while in view
-                    isVisible = true;
-                } else if (!entry.isIntersecting) {
-                    // Reset the flag when the section leaves view so it can animate again
-                    isVisible = false;
-                }
-            });
-        }, {
-            threshold: 0.5
+                isVisible = true;
+            } else if (!entry.isIntersecting) {
+                isVisible = false;
+            }
         });
+    }, { threshold: 0.5 });
 
-        // Start observing the section that contains the counters
-        observer.observe(document.querySelector(".infograph"));
-    });
+    observer.observe(document.querySelector(".infograph"));
+});
+
 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -2064,45 +2421,41 @@
 
 
     document.addEventListener("DOMContentLoaded", function () {
-        const logoRows = document.querySelectorAll(".logos-row");
+    const logoRows = document.querySelectorAll(".logos-row");
 
-        // Ensure logos start visible with a slow transition effect
-        logoRows.forEach((row) => {
-            row.style.opacity = "1";
-            row.style.transform = "translateY(0px)";
-            row.style.transition = "opacity 3s ease-out, transform 3s ease-out"; // Slower transition
-        });
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    const {
-                        target,
-                        intersectionRatio
-                    } = entry;
-
-                    // Smoother fade-in and movement effect
-                    const opacity = Math.min(1, intersectionRatio * 1.5);
-                    const translateY = (1 - intersectionRatio) *
-                        15; // Less movement for better readability
-
-                    if (intersectionRatio > 0) {
-                        target.style.opacity = opacity;
-                        target.style.transform = `translateY(${translateY}px)`;
-                    } else {
-                        target.style.opacity = "1"; // Keep it visible
-                        target.style.transform = "translateY(0px)";
-                    }
-                });
-            }, {
-                threshold: Array.from({
-                    length: 20
-                }, (_, i) => i * 0.05), // More granularity for ultra-smooth effects
-            }
-        );
-
-        logoRows.forEach((row) => observer.observe(row));
+    // Start with a slower fade/transition
+    logoRows.forEach((row) => {
+      row.style.opacity = "1";
+      row.style.transform = "translateY(0px)";
+      row.style.transition = "opacity 3s ease-out, transform 3s ease-out";
     });
+
+    // Intersection Observer for fade-in/out on scroll
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const { target, intersectionRatio } = entry;
+
+          // Smoother fade-in & movement effect
+          const opacity = Math.min(1, intersectionRatio * 1.5);
+          const translateY = (1 - intersectionRatio) * 15;
+
+          if (intersectionRatio > 0) {
+            target.style.opacity = opacity;
+            target.style.transform = `translateY(${translateY}px)`;
+          } else {
+            target.style.opacity = "1"; 
+            target.style.transform = "translateY(0px)";
+          }
+        });
+      },
+      {
+        threshold: Array.from({ length: 20 }, (_, i) => i * 0.05),
+      }
+    );
+
+    logoRows.forEach((row) => observer.observe(row));
+  });
 
 
 
@@ -2187,6 +2540,73 @@
             });
         });
     });
+
+    function toggleFaq(num) {
+    const answer = document.getElementById('faq-answer-' + num);
+    const icon = document.getElementById('faq-icon-' + num);
+    const iconContainer = document.getElementById('faq-icon-container-' + num);
+
+    // Check if answer is currently closed
+    if (!answer.classList.contains('open')) {
+      // OPEN the FAQ
+      answer.classList.add('open');
+      icon.classList.add('rotate-180');
+      // Fill the circle with #80db66, arrow becomes white
+      iconContainer.classList.add('bg-[#80db66]', 'text-white');
+      icon.classList.remove('text-[#80db66]');
+      icon.classList.add('stroke-white');
+    } else {
+      // CLOSE the FAQ
+      answer.classList.remove('open');
+      icon.classList.remove('rotate-180');
+      // Revert circle to border-only
+      iconContainer.classList.remove('bg-[#80db66]', 'text-white');
+      icon.classList.add('text-[#80db66]');
+      icon.classList.remove('stroke-white');
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+  // Select all your button elements
+  const buttons = document.querySelectorAll('.custom-button, .custom-button-hero, .custom-button-about');
+  
+  // Log number of buttons found (for debugging)
+  console.log("Found", buttons.length, "magnetic buttons");
+  
+  buttons.forEach(button => {
+    // Magnetic effect on mousemove
+    button.addEventListener('mousemove', function(e) {
+      // Get the position relative to the button using offsetX/Y
+      const x = e.offsetX;
+      const y = e.offsetY;
+      const rect = this.getBoundingClientRect();
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const dx = x - centerX;
+      const dy = y - centerY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      const maxRange = 150; // Range in pixels for the effect
+      if (distance < maxRange) {
+        // Force factor: stronger when closer
+        const force = (maxRange - distance) / maxRange;
+        // Apply a fraction of the offset (adjust divisor for effect strength)
+        const translateX = (dx * force) / 10;
+        const translateY = (dy * force) / 10;
+        this.style.transform = `translate(${translateX}px, ${translateY}px)`;
+      } else {
+        this.style.transform = 'translate(0, 0)';
+      }
+    });
+    
+    // Reset transform when mouse leaves the button
+    button.addEventListener('mouseleave', function() {
+      this.style.transform = 'translate(0, 0)';
+    });
+  });
+});
+
+
 
 </script>
 
