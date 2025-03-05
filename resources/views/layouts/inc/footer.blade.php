@@ -83,6 +83,46 @@
         /* Subtle green glow */
     }
 
+/* Custom alert box styles */
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Success message styling */
+.custom-alert.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Error message styling */
+.custom-alert.error {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Fade-out effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+
 </style>
 
 <!-- Contact Section with #e2ecf6 background -->
@@ -112,12 +152,20 @@
                                     style="background-color: #25262f; border: 2px solid #80db66; color: #e2ecf6;" />
                             </div>
                         </div>
-                        <!-- Subject -->
-                        <div class="mb-3">
+                        <!-- Subject & Phone no. -->
+                        <div class="row g-3 mb-3">
+                        <div class="col-md-6">
                             <label for="subject" class="form-label fw-semibold" style="color: #80db66;">Subject</label>
                             <input type="text" class="form-control form-control-lg" id="subject" name="subject"
                                 placeholder="Write your message here..." required
                                 style="background-color: #25262f; border: 2px solid #80db66; color: #e2ecf6;" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label fw-semibold" style="color: #80db66;">Phone No.</label>
+                            <input type="tel" class="form-control form-control-lg" id="phone" name="phone"
+                                placeholder="Enter your phone no." required
+                                style="background-color: #25262f; border: 2px solid #80db66; color: #e2ecf6;" />
+                        </div>
                         </div>
                         <!-- Message -->
                         <div class="mb-3">
@@ -127,7 +175,7 @@
                                 style="background-color: #25262f; border: 2px solid #80db66; color: #e2ecf6;"></textarea>
                         </div>
                         <!-- Send Message Button -->
-                        <button type="submit" class="btn fw-bold mt-2">
+                        <button type="submit" class="custom-button-footer">
                             SEND MESSAGE
                         </button>
                     </form>
@@ -165,3 +213,43 @@
 
 <!-- Include Bootstrap JS + Popper (CDN example) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector(".contact-section form");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Gather form data
+      const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        phone: document.getElementById("phone").value,
+        message: document.getElementById("message").value
+      };
+
+      // Replace with your actual Google Apps Script web app URL:
+      const scriptURL = "https://script.google.com/macros/s/AKfycbzOI5tIWVpB39qTwxop7AxDOFwL_2rwKW3BMhkNGd1kcOzPFQ9hr-ljU1rPLDfXrBNz/exec";
+
+      fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",  // Use no-cors mode if you don't need a response; otherwise configure CORS properly.
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        alert("Message sent successfully!");
+        form.reset();  // Optional: Reset the form after submission.
+      })
+      .catch((error) => {
+        console.error("Error!", error.message);
+        alert("There was an error sending your message.");
+      });
+    });
+  });
+</script>
+

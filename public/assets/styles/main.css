@@ -52,7 +52,10 @@
 *, *::before, *::after {
     box-sizing: border-box;
   }  
-
+    /* Hide the default cursor and use your custom PNG instead */
+    body {
+        cursor: url("{{ asset('assets/img/cursor.svg') }}") 3 3, auto;
+      }
 :root {
     --_size: 1.6rem;
     --_font-default: "Poppins", sans-serif;
@@ -578,6 +581,42 @@ nav ul {
 
 /* Ensure buttons have equal width */
 .custom-button+.custom-button {
+    margin-left: 10px;
+}
+
+/* Ensure both buttons match "View All" in size */
+.custom-button-footer {
+    display: inline-block;
+    padding: 12px 40px;
+    /* Match padding of View All */
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: #80db66;
+    /* Same as View All button */
+    color: white;
+    border: 2px solid #80db66;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    min-width: 200px;
+    /* Ensure consistent width */
+    text-align: center;
+    justify-content: left;
+}
+
+
+/* Hover effect: White transparent background */
+.custom-button-footer:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #25262f;
+    border: 1px solid #fff;
+}
+
+
+/* Ensure buttons have equal width */
+.custom-button-footer+.custom-button-footer {
     margin-left: 10px;
 }
 
@@ -3248,6 +3287,119 @@ nav ul {
 }
 
 
+
+/* 🌟 RESPONSIVE BEHAVIOR 🌟 */
+
+/* ✅ For Tablets and Mid-Sized Screens */
+@media screen and (max-width: 1024px) {
+    .clients,
+    .designs,
+    .orders,
+    .reviews {
+        width: 100%; /* Full width for better stacking */
+        padding: 2rem;
+        justify-content: left;
+        align-items: left;
+    }
+
+    .clients-number h2,
+    .designs-number h2,
+    .order-number h2,
+    .review-number h2 {
+        font-size: 4rem !important; /* Reduce font size but keep it readable */
+        font-weight: bold;
+    }
+
+    .review-number h2{
+        position: relative;
+        top: 30px;
+        left: -10px;
+    }
+    .review-number p{
+        position: relative;
+        top: 20px;
+        left: -10px;
+    }
+    .clients-number h2{
+        position: relative;
+        left: 10px;
+    }
+    .clients-number p{
+        position: relative;
+        left: 10px;
+    }
+
+    .clients-number p,
+    .designs-number p,
+    .order-number p,
+    .review-number p {
+        font-size: 1.4rem;
+    }
+}
+
+/* ✅ For Mobile Screens (Below 768px) */
+@media screen and (max-width: 768px) {
+    .designs {
+        position: relative;
+        top: -40px;
+    }
+
+    .clients,
+    .designs,
+    .orders,
+    .reviews {
+        width: 90%;
+        padding: 2rem;
+        justify-content: left;
+        align-items: left;
+    }
+
+    .clients-number h2,
+    .designs-number h2,
+    .order-number h2,
+    .review-number h2 {
+        font-size: 3.5rem !important; /* Adjust size for better mobile display */
+        font-weight: bold;
+    }
+
+    .clients-number p,
+    .designs-number p,
+    .order-number p,
+    .review-number p {
+        font-size: 1.3rem;
+    }
+}
+
+/* ✅ For Small Mobile Screens (Below 480px) */
+@media screen and (max-width: 480px) {
+    .clients,
+    .designs,
+    .orders,
+    .reviews {
+        width: 100%; /* Full width for small screens */
+        padding: 1.5rem;
+        justify-content: left;
+        align-items: left;
+    }
+
+    .clients-number h2,
+    .designs-number h2,
+    .order-number h2,
+    .review-number h2 {
+        font-size: 3rem !important; /* More compact for smaller screens */
+        font-weight: bold;
+        justify-content: left;
+    }
+
+    .clients-number p,
+    .designs-number p,
+    .order-number p,
+    .review-number p {
+        font-size: 1.2rem;
+    }
+}
+
+
 /* ------------------------------------------------*/
 /* Block infograph Styles ends */
 /* ------------------------------------------------*/
@@ -3532,6 +3684,31 @@ nav ul {
     }
     .project-item {
         width: 320px;
+    }
+}
+
+/* Adjust for Tablets */
+@media only screen and (max-width: 768px) {
+    .project-item {
+        width: 280px; /* Slightly smaller */
+        padding: 0.8rem;
+    }
+
+    .project-item img {
+        max-height: 280px; /* Adjust height */
+    }
+}
+
+/* Adjust for Mobile Screens */
+@media only screen and (max-width: 480px) {
+    .project-item {
+        width: 180px !important; /* Full width */
+        padding: 0.6rem;
+    }
+
+    .project-item img {
+        max-height: 180px; /* Smaller height */
+        max-width: 180px; /* Ensure proper scaling */
     }
 }
 

@@ -30,17 +30,60 @@
 @endphp
 
 <style>
+      /* Hide the default cursor and use your custom PNG instead */
+body {
+  cursor: url("{{ asset('assets/img/cursor.svg') }}") 3 3, auto;
+}
+  /* Header background rectangle with video */
+  .header-bg-rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 580px;
+    background: #333;
+    z-index: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+  }
+  /* Background video styling */
+  .bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%) scale(0.5);
+    object-fit: cover;
+  }
+  /* Transparent overlay for video */
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Spacer to push content below the header video */
+  .spacer {
+    height: 600px; /* Equal or slightly more than the header's height */
+  }
+  
   /* Main layout: Sidebar on left, projects on right */
   .main-content {
     display: flex;
-    gap: 30px;
-    margin: 50px auto;
+    gap: 80px;
+    margin: 0 auto 50px;
     max-width: 90%;
     padding: 20px 250px;
   }
+  
   /* Sidebar: Sticky and scrollable with right border */
   .sidebar {
-    width: 220px;
+    width: 300px; /* Increased sidebar width */
     flex-shrink: 0;
     padding: 15px;
     border-radius: 6px;
@@ -67,12 +110,12 @@
   .filter-button {
     color: #fff;
     border: none;
-    padding: 6px 12px;
+    padding: 10px 14px; /* Increased padding */
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
     text-align: left;
-    font-size: 14px;
+    font-size: 18px; /* Increased font size */
     text-decoration: none;
     display: block;
   }
@@ -87,8 +130,9 @@
   /* Mobile Dropdown (hidden on larger screens) */
   .mobile-dropdown {
     display: none;
-    margin: 20px auto;
     max-width: 300px;
+    margin: 20px auto; /* Reduced margin so it’s visible on mobile */
+    z-index: 10; /* Ensure it appears above other elements */
   }
   .mobile-dropdown select {
     width: 100%;
@@ -97,14 +141,14 @@
     border: 1px solid #ccc;
     font-size: 16px;
   }
-
+  
   /* Projects grid:
-     Base: 1 column (for laptop/smaller screens)
-     Desktop (min-width: 992px): 2 columns */
+     Base: 1 column on small screens
+     Desktop: 2 columns in a row */
   .projects-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 80px;
     width: 100%;
   }
   @media (min-width: 992px) {
@@ -112,7 +156,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
-
+  
   /* Project card styling */
   .project-card {
     text-decoration: none;
@@ -120,7 +164,7 @@
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
-    max-width: 450px;
+    max-width: 500px; /* Increased slightly from 450px */
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -148,12 +192,12 @@
   .project-card:hover img {
     transform: scale(1.05);
   }
-
+  
   /* Project details styling */
   .project-details {
     margin-top: 5px;
     padding: 10px;
-    text-align: center;
+    text-align: left;
   }
   .project-name {
     font-size: 18px;
@@ -164,14 +208,15 @@
   .project-tagline {
     font-size: 14px;
     color: #e2ecf6;
-    display: inline-block;
+    display: inline-block; /* Shrinks to fit content */
     padding: 2px 6px;
     border-radius: 6px;
     font-weight: 600;
     margin-top: 5px;
     text-align: center;
+    width: 100px; /* Keeps width based on content */
   }
-
+  
   /* Pagination styling */
   .pagination {
     display: flex;
@@ -198,12 +243,18 @@
     border-color: #80db66;
   }
 
+  @media (min-width: 992px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+  
   /* Responsive adjustments for smaller devices */
   @media (max-width: 991px) {
     .main-content {
       flex-direction: column;
       padding: 20px;
-      margin: 30px auto;
+      margin: 30px auto 50px;
     }
     /* Hide sidebar in mobile view */
     .sidebar {
@@ -233,9 +284,43 @@
       padding: 2px 4px;
     }
   }
+  .header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+  .header-text h1 {
+    font-size: 50px;
+    color: #e2ecf6;
+    margin: 0;
+  }
+  .header-text h2 {
+    font-size: 45px;
+    color: #e2ecf6;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0;
+  }
 </style>
 
-<h2 style="text-align: center; margin-bottom: 20px;">Our Projects</h2>
+<!-- Header background rectangle with video -->
+<div class="header-bg-rect">
+    <video autoplay loop muted playsinline class="bg-video">
+        <source src="{{ asset('assets/video/project_detail_bg.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+    <div class="header-text">
+      <h1>I Turn Great Ideas Into</h1>
+      <h2>Execelent Designs</h2>
+    </div>
+</div>
+
+<!-- Spacer to ensure content starts below header -->
+<div class="spacer"></div>
 
 <!-- Mobile Dropdown for Tagline Selection (visible on mobile only) -->
 <div class="mobile-dropdown">
@@ -289,9 +374,6 @@
           <div class="project-details">
             <div class="project-name">
               {{ $project['name'] }}
-            </div>
-            <div class="project-tagline" style="background: {{ $tagColor }};">
-              {{ $project['tagline'] }}
             </div>
           </div>
         </div>

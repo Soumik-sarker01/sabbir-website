@@ -25,6 +25,8 @@
         color: #25262f;
     }
 
+
+
     /* If body is dark but wrapper has no background, set h1 to light on hover */
     body.has-dark-bg h1:hover {
         color: #e2ecf6;
@@ -54,45 +56,43 @@
   color: #e2ecf6;
 }
 
-/* Ensure the container is positioned relatively */
+/* Ensure the logos container is isolated */
 .company-logos {
-  position: relative !important;
-  overflow: hidden !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Lower stacking context for logos only */
 }
 
-/* Overlays to create fade effect on left/right edges */
+/* Remove the high z-index from the overlays so they only affect logos */
 .logos-overlay {
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  width: 80px !important;  /* Adjust width for fade strength */
-  pointer-events: none !important;
-  z-index: 9999 !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 350px; /* Your desired fade area width */
+  pointer-events: none;
+  z-index: 2; /* Lower than navbar/social icons */
 }
 
-/* Left fade overlay: placed at the left edge */
-.logos-overlay.left {
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 80px !important;  /* Adjust width as needed */
-  pointer-events: none !important;
-  z-index: 9999 !important;
-  background: linear-gradient(to right, #25262f 0%, rgba(37,38,47,0) 100%) !important;
-}
-
-/* Right fade overlay: placed at the right edge */
+.logos-overlay.left,
 .logos-overlay.right {
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  right: 0 !important;
-  width: 80px !important;  /* Adjust width as needed */
-  pointer-events: none !important;
-  z-index: 9999 !important;
-  background: linear-gradient(to left, #25262f 0%, rgba(37,38,47,0) 100%) !important;
+  width: 400px !important;  /* Increased overlay width */
 }
+
+
+/* Define the left overlay (gradient from solid to transparent) */
+.logos-overlay.left {
+  left: 0;
+  background: linear-gradient(to right, #25262f 0%, rgba(37,38,47,0) 100%);
+  /* (Remove backdrop-filter so it only fades without blurring other content) */
+}
+
+/* Define the right overlay */
+.logos-overlay.right {
+  right: 0;
+  background: linear-gradient(to left, #25262f 0%, rgba(37,38,47,0) 100%);
+}
+
+
 
 
 .company-logos::before,
@@ -121,12 +121,11 @@
 
 
 
-/* Outer wrapper for all rows */
 .logos-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* less vertical gap between rows */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
 }
+
 
 /* Hidden class for the initial state */
 .hidden {
@@ -915,20 +914,15 @@
                         <div class="swiper-slide">
                             <div class="testimonial">
                                 <div class="testimonial-info">
-                                    <h3 class="testimonial-name">robin21x</h3>
+                                    <h3 class="testimonial-name">Rachellauen</h3>
                                     <div class="testimonial-stars">★★★★★ (5.0)</div>
                                 </div>
                                 <div class="testimonial-text">
                                     <p>
-                                        Tareq does exceptional work—he is truly amazing! His communication was
-                                        professional, timely, and clear throughout the entire process, making
-                                        collaboration seamless.( even though my bought with Pneumonia and then a short
-                                        relapse it was Tareq that kept my project going! As a professional sales and
-                                        marketing strategist, I am extremely particular about the quality of work. For
-                                        me to trust someone with delivering a final product—especially my own personal
-                                        project—they have to be exceptional. That person is Tareq. I highly recommend
-                                        him for his professionalism, skill, and dedication! A+ ⭐️⭐️⭐️⭐️⭐️ Robin A.
-                                        Barnette SoCal </p>
+                                        Tareq truly SHINED in social media design, delivering work that was both
+                                        visually appealing and highly professional. Communication was seamless and
+                                        proactive, and he handled revisions quickly and precisely as requested. Great
+                                        work all around—will definitely use again! 🙌 </p>
                                 </div>
                                 <div class="testimonial-name">
 
@@ -1656,25 +1650,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Slide #42 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial">
-                                <div class="testimonial-info">
-                                    <h3 class="testimonial-name">Rachellauen</h3>
-                                    <div class="testimonial-stars">★★★★★ (5.0)</div>
-                                </div>
-                                <div class="testimonial-text">
-                                    <p>
-                                        Tareq truly SHINED in social media design, delivering work that was both
-                                        visually appealing and highly professional. Communication was seamless and
-                                        proactive, and he handled revisions quickly and precisely as requested. Great
-                                        work all around—will definitely use again! 🙌 </p>
-                                </div>
-                                <div class="testimonial-name">
 
-                                </div>
-                            </div>
-                        </div>
 
                     </div> <!-- End swiper-wrapper -->
                 </div> <!-- End testimonial-swiper -->
