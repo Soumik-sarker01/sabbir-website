@@ -312,6 +312,10 @@
             line-height: 1.6;
         }
     }
+        /* Hide the default cursor and use your custom PNG instead */
+body {
+  cursor: url("{{ asset('assets/img/cursor.svg') }}") 3 3, auto;
+}
 </style>
 
 <!-- Header background rectangle with video -->

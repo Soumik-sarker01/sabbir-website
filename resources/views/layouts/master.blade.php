@@ -12,6 +12,12 @@
     <meta property="og:image:width" content="300" />
     <meta property="og:image:height" content="300" />
     
+    <style>
+            /* Hide the default cursor and use your custom PNG instead */
+body {
+  cursor: url("{{ asset('assets/img/cursor.svg') }}") 3 3, auto;
+}
+    </style>
     
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z17YT90E8M"></script>

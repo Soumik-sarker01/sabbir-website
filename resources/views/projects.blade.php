@@ -30,118 +30,193 @@
 @endphp
 
 <style>
+      /* Hide the default cursor and use your custom PNG instead */
+body {
+  cursor: url("{{ asset('assets/img/cursor.svg') }}") 3 3, auto;
+}
+  /* Header background rectangle with video */
+  .header-bg-rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 580px;
+    background: #333;
+    z-index: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+  }
+  /* Background video styling */
+  .bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%) scale(0.5);
+    object-fit: cover;
+  }
+  /* Transparent overlay for video */
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Spacer to push content below the header video */
+  .spacer {
+    height: 600px; /* Equal or slightly more than the header's height */
+  }
+  
   /* Main layout: Sidebar on left, projects on right */
   .main-content {
     display: flex;
-    gap: 30px;
-    margin: 50px auto;
+    gap: 80px;
+    margin: 0 auto 50px;
     max-width: 90%;
+    padding: 20px 250px;
   }
-  /* Sidebar: Sticky and scrollable */
+  
+  /* Sidebar: Sticky and scrollable with right border */
   .sidebar {
-    width: 220px;
+    width: 300px; /* Increased sidebar width */
     flex-shrink: 0;
     padding: 15px;
     border-radius: 6px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 20px;
     max-height: 600px;
     overflow-y: auto;
+    border-right: 3px solid #80db66;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .sidebar::-webkit-scrollbar {
+    display: none;
   }
   .sidebar ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
     margin: 0;
   }
   .sidebar li {
     margin-bottom: 8px;
   }
-  /* Filter buttons */
   .filter-button {
     color: #fff;
     border: none;
-    padding: 6px 12px;
+    padding: 10px 14px; /* Increased padding */
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
     text-align: left;
-    font-size: 14px;
+    font-size: 18px; /* Increased font size */
     text-decoration: none;
     display: block;
   }
   .filter-button:hover {
     background: #1565c0;
   }
-  /* Highlight the active filter */
   .active-tagline {
     background: #80db66 !important;
     color: #25262f !important;
   }
 
-  /* Projects grid: 3 projects per row */
+  /* Mobile Dropdown (hidden on larger screens) */
+  .mobile-dropdown {
+    display: none;
+    max-width: 300px;
+    margin: 20px auto; /* Reduced margin so it’s visible on mobile */
+    z-index: 10; /* Ensure it appears above other elements */
+  }
+  .mobile-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  /* Projects grid:
+     Base: 1 column on small screens
+     Desktop: 2 columns in a row */
   .projects-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 80px;
     width: 100%;
   }
-
+  @media (min-width: 992px) {
+    .projects-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Project card styling */
   .project-card {
     text-decoration: none;
     color: inherit;
     border-radius: 10px;
     overflow: hidden;
+    width: 100%;
+    max-width: 500px; /* Increased slightly from 450px */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
   }
-
-  /* Image container with hover zoom */
+  /* Card content container */
+  .card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Image container with fixed aspect ratio */
   .image-container {
     position: relative;
-    /* Remove fixed height so it can shrink automatically */
     width: 100%;
+    aspect-ratio: 1/1;
     overflow: hidden;
+    border-radius: 8px;
   }
   .project-card img {
     width: 100%;
-    height: auto; /* Let the image define its own aspect ratio */
+    height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
   }
   .project-card:hover img {
     transform: scale(1.05);
   }
-
-  /* Overlay with project name */
-  .overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+  
+  /* Project details styling */
+  .project-details {
+    margin-top: 5px;
+    padding: 10px;
+    text-align: left;
   }
-  .project-card:hover .overlay {
-    opacity: 1;
-  }
-  .overlay-title {
+  .project-name {
     font-size: 18px;
     font-weight: bold;
-    color: #000;
+    color: #e2ecf6;
+    margin-bottom: 5px;
   }
-
-  /* Tagline styling */
   .project-tagline {
     font-size: 14px;
     color: #e2ecf6;
-    display: inline-block;
+    display: inline-block; /* Shrinks to fit content */
     padding: 2px 6px;
     border-radius: 6px;
     font-weight: 600;
     margin-top: 5px;
+    text-align: center;
+    width: 100px; /* Keeps width based on content */
   }
-
+  
   /* Pagination styling */
   .pagination {
     display: flex;
@@ -168,51 +243,99 @@
     border-color: #80db66;
   }
 
-  /* =========================
-     MEDIA QUERIES
-     ========================= */
-
-  /* 1) At smaller widths, reduce from 3 columns to 2 */
-  @media (max-width: 992px) {
-    .projects-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .project-tagline {
-      font-size: 13px; /* Slightly smaller tagline */
-    }
+  @media (min-width: 992px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  /* 2) At even smaller widths, make the sidebar go on top,
-     and the projects in 1 column. */
-  @media (max-width: 768px) {
+}
+  
+  /* Responsive adjustments for smaller devices */
+  @media (max-width: 991px) {
     .main-content {
       flex-direction: column;
+      padding: 20px;
+      margin: 30px auto 50px;
     }
+    /* Hide sidebar in mobile view */
     .sidebar {
-      width: 100%;
-      max-height: none;
-      position: static;
-      margin-bottom: 20px;
+      display: none;
     }
-    .sidebar ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
+    /* Show dropdown in mobile view */
+    .mobile-dropdown {
+      display: block;
     }
-    .projects-container {
-      grid-template-columns: 1fr;
+    .project-name {
+      font-size: 16px;
     }
     .project-tagline {
-      font-size: 12px; /* Smaller text on mobile */
+      font-size: 13px;
     }
+  }
+  @media (max-width: 480px) {
+    .projects-container {
+      gap: 20px;
+      padding: 0 10px;
+    }
+    .project-name {
+      font-size: 14px;
+    }
+    .project-tagline {
+      font-size: 12px;
+      padding: 2px 4px;
+    }
+  }
+  .header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+  .header-text h1 {
+    font-size: 50px;
+    color: #e2ecf6;
+    margin: 0;
+  }
+  .header-text h2 {
+    font-size: 45px;
+    color: #e2ecf6;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0;
   }
 </style>
 
-<h2 style="text-align: center; margin-bottom: 20px;">Our Projects</h2>
+<!-- Header background rectangle with video -->
+<div class="header-bg-rect">
+    <video autoplay loop muted playsinline class="bg-video">
+        <source src="{{ asset('assets/video/project_detail_bg.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+    <div class="header-text">
+      <h1>I Turn Great Ideas Into</h1>
+      <h2>Execelent Designs</h2>
+    </div>
+</div>
+
+<!-- Spacer to ensure content starts below header -->
+<div class="spacer"></div>
+
+<!-- Mobile Dropdown for Tagline Selection (visible on mobile only) -->
+<div class="mobile-dropdown">
+  <select id="taglineDropdown" onchange="if(this.value) window.location.href=this.value;">
+    <option value="{{ route('projects.index') }}" @if($selectedTagline === 'all') selected @endif>All</option>
+    @foreach($uniqueTaglines as $tagline)
+      <option value="{{ route('projects.index', ['tagline' => $tagline]) }}" @if($selectedTagline === $tagline) selected @endif>
+        {{ $tagline }}
+      </option>
+    @endforeach
+  </select>
+</div>
 
 <div class="main-content">
-  <!-- LEFT SIDEBAR: Tagline Filter Menu -->
+  <!-- LEFT SIDEBAR: Tagline Filter Menu (visible on desktop only) -->
   <div class="sidebar">
     <ul>
       <li>
@@ -234,7 +357,6 @@
   <div class="projects-container">
     @foreach($projectsPaginated as $project)
       @php
-        // Find matching color or fallback
         $tagColor = '#1976d2';
         foreach ($tagColors as $keyword => $color) {
           if (stripos($project['tagline'], $keyword) !== false) {
@@ -245,15 +367,14 @@
       @endphp
 
       <a href="{{ route('projects.show', $project['slug']) }}" class="project-card">
-        <div class="image-container">
-          <img src="{{ asset($project['thumbnail']) }}" alt="{{ $project['name'] }}">
-          <div class="overlay">
-            <div class="overlay-title">{{ $project['name'] }}</div>
+        <div class="card-content">
+          <div class="image-container">
+            <img src="{{ asset($project['thumbnail']) }}" alt="{{ $project['name'] }}">
           </div>
-        </div>
-        <div class="project-details" style="margin-top: 5px;">
-          <div class="project-tagline" style="background: {{ $tagColor }};">
-            {{ $project['tagline'] }}
+          <div class="project-details">
+            <div class="project-name">
+              {{ $project['name'] }}
+            </div>
           </div>
         </div>
       </a>
