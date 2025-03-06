@@ -1,12 +1,7 @@
-{{-- resources/views/vendor/pagination/custom.blade.php --}}
 @if ($paginator->hasPages())
     <ul class="pagination" role="navigation">
-        {{-- Previous Page Link --}}
-        @if ($paginator->onFirstPage())
-            <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
-                <span class="page-link" aria-hidden="true">&laquo;</span>
-            </li>
-        @else
+        {{-- Show PREV only if NOT on page 1 --}}
+        @if ($paginator->currentPage() > 1)
             <li class="page-item">
                 <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">&laquo;</a>
             </li>
@@ -24,8 +19,8 @@
             {{-- Array Of Links --}}
             @if (is_array($element))
                 @foreach ($element as $page => $url)
+                    {{-- Active Page --}}
                     @if ($page == $paginator->currentPage())
-                        {{-- Active State --}}
                         <li class="page-item active" aria-current="page">
                             <span class="page-link">{{ $page }}</span>
                         </li>
@@ -39,74 +34,66 @@
             @endif
         @endforeach
 
-        {{-- Next Page Link --}}
+        {{-- Show NEXT only if there are more pages --}}
         @if ($paginator->hasMorePages())
             <li class="page-item">
                 <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">&raquo;</a>
-            </li>
-        @else
-            <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
-                <span class="page-link" aria-hidden="true">&raquo;</span>
             </li>
         @endif
     </ul>
 @endif
 
-
 <style>
-/* Pagination Styling */
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    list-style: none;
-    padding-left: 0;
-}
-
-/* Each <li> container */
-.pagination .page-item {
-    margin: 0 5px;
-}
-
-/* Disabled links (for first/last pages) */
-.pagination .disabled .page-link {
-    opacity: 0.5;
-    cursor: not-allowed;
-    font-size: 18px; /* Larger font size for disabled links */
-}
-
-/* The actual clickable link */
+/* Remove the circle styles from the default page links */
 .pagination .page-link {
-    background: #e2ecf6; /* Inactive button background */
-    color: #25262f;      /* Font color */
-    border: 1px solid #e2ecf6;
-    padding: 12px 20px;  /* Increased padding for a bigger button */
-    border-radius: 5px;
-    text-decoration: none;
+    border: none !important;
+    background: transparent !important;
+    color: #e2ecf6;
     font-weight: bold;
-    font-size: 18px;  /* Larger font size */
-    display: inline-block;
-    transition: background 0.2s ease;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Hover effect for inactive buttons */
+/* Hover effect for normal page links */
 .pagination .page-link:hover {
-    background: #d1e5d0; /* Slightly darker for hover effect */
-    color: #25262f;
+    color: #80db66;
 }
 
-/* Active page styling */
-.pagination .active .page-link {
-    background: #80db66; /* Active button color */
+/* Active page link gets a circle */
+.pagination .page-item.active .page-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #80db66 !important;
     color: #25262f;
-    border-color: #80db66;
-    font-size: 20px; /* Even larger font size for the active page */
+    pointer-events: none; /* disable clicks on current page */
 }
 
-/* Previous and Next buttons */
+/* Prev/Next arrows are circles, slightly larger font */
 .pagination .page-link[rel="prev"],
 .pagination .page-link[rel="next"] {
-    font-size: 22px; /* Bigger font for previous/next buttons */
-    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 22px;
+    color: #e2ecf6;
+}
+
+/* Hover effect for Prev/Next arrows */
+.pagination .page-link[rel="prev"]:hover,
+.pagination .page-link[rel="next"]:hover {
+    background: #80db66;
+    color: #25262f;
+}
+
+/* Disabled prev/next state (when on first or last page) */
+.pagination .page-item.disabled .page-link {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: transparent !important;
 }
 </style>
