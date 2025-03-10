@@ -4,12 +4,12 @@
 
 @section('main-container')
 @php
-    // Count the number of design images automatically
-    $designCount = count($imagePaths);
+// Count the number of design images automatically
+$designCount = count($imagePaths);
 
-    // Manually inserted values (update as needed)
-    $workDuration = "3 months";
-    $userSatisfaction = "95%";
+// Manually inserted values (update as needed)
+$workDuration = "3 months";
+$userSatisfaction = "95%";
 @endphp
 
 <!-- Custom styles -->
@@ -126,9 +126,17 @@
     }
 
     @keyframes borderAnimation {
-        0% { border-color: #e2ecf6; }
-        50% { border-color: #80db66; }
-        100% { border-color: #e2ecf6; }
+        0% {
+            border-color: #e2ecf6;
+        }
+
+        50% {
+            border-color: #80db66;
+        }
+
+        100% {
+            border-color: #e2ecf6;
+        }
     }
 
     .gallery-inner {
@@ -150,8 +158,13 @@
     }
 
     @keyframes scrollGallery {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
     }
 
     /* Project Header */
@@ -174,9 +187,10 @@
 
     /* Typing effect for paragraph text only */
     #description-text span {
-        color: rgba(226,236,246,0.3);
+        color: rgba(226, 236, 246, 0.3);
         transition: color 0.3s ease, text-shadow 0.3s ease;
     }
+
     #description-text span.active {
         color: #e2ecf6;
     }
@@ -187,6 +201,7 @@
         border-radius: 15px;
         margin-bottom: 40px;
     }
+
     .review-header {
         color: #e2ecf6;
         font-size: 3.1rem;
@@ -194,16 +209,19 @@
         margin-bottom: 20px;
         letter-spacing: 2px;
     }
+
     #reviews-section h2 {
         font-size: 2rem;
         font-weight: bold;
         margin-bottom: 30px;
         color: #e2ecf6;
     }
+
     #reviews-section .carousel-item {
         display: flex;
         justify-content: center;
     }
+
     #reviews-section .card {
         width: 400px;
         border: none;
@@ -212,18 +230,22 @@
         transition: transform 0.3s, box-shadow 0.3s;
         background: #fff;
     }
+
     #reviews-section .card:hover {
         transform: translateY(-10px);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     }
+
     #reviews-section .card-body {
         padding: 30px;
     }
+
     #reviews-section .card-title {
         font-size: 1.5rem;
         margin-bottom: 10px;
         color: #4a90e2;
     }
+
     #reviews-section .card-text {
         font-size: 1rem;
         color: #555;
@@ -235,6 +257,7 @@
         justify-content: center;
         margin-top: 20px;
     }
+
     .pagination .page-link {
         background: #e2ecf6;
         color: #25262f;
@@ -245,10 +268,12 @@
         text-decoration: none;
         font-weight: bold;
     }
+
     .pagination .page-link:hover {
         background: #d1e5d0;
         color: #25262f;
     }
+
     .pagination .active .page-link {
         background: #80db66;
         color: #25262f;
@@ -263,13 +288,16 @@
             width: 90%;
             height: auto;
         }
+
         .gallery-inner img {
             width: 100%;
             height: auto;
         }
+
         .stat-title {
             font-size: 1.8rem;
         }
+
         .stat-value {
             font-size: 1.5rem;
         }
@@ -280,42 +308,52 @@
         .main-content {
             flex-direction: column;
         }
+
         .sidebar {
             width: 100%;
             max-height: none;
             position: static;
             margin-bottom: 20px;
         }
+
         .sidebar ul {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
         }
+
         .projects-container {
             grid-template-columns: 1fr;
         }
+
         /* Stat row vertical stacking */
         .stats-row {
             flex-direction: column;
             gap: 15px;
         }
+
         .stat-title {
             font-size: 1.5rem;
         }
+
         .stat-value {
             font-size: 1.3rem;
         }
+
         /* Reduce project description font size for mobile view */
         #project-description {
             font-size: 2rem;
             line-height: 1.6;
         }
     }
-        /* Hide the default cursor and use your custom PNG instead */
-body {
-  cursor: url("{{ asset('assets/img/cursor.svg') }}") 3 3, auto;
-}
+
+    /* Hide the default cursor and use your custom PNG instead */
+    body {
+        cursor: url("{{ asset('assets/img/cursor.svg') }}") 3 3,
+        auto;
+    }
+
 </style>
 
 <!-- Header background rectangle with video -->
@@ -348,11 +386,11 @@ body {
     <div class="gallery-window">
         <div class="gallery-inner">
             @foreach($imagePaths as $image)
-                <img src="{{ asset($image) }}" alt="Project Image">
+            <img src="{{ asset($image) }}" alt="Project Image">
             @endforeach
             <!-- Duplicate images for seamless scroll -->
             @foreach($imagePaths as $image)
-                <img src="{{ asset($image) }}" alt="Project Image">
+            <img src="{{ asset($image) }}" alt="Project Image">
             @endforeach
         </div>
     </div>
@@ -382,7 +420,9 @@ body {
     // Count-up effect for stats when the stats row comes into view
     document.addEventListener('DOMContentLoaded', function () {
         const stats = document.querySelectorAll('.stat-value[data-target]');
-        const observerOptions = { threshold: 0.5 };
+        const observerOptions = {
+            threshold: 0.5
+        };
         let observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -394,7 +434,9 @@ body {
                             const stepTime = Math.abs(Math.floor(duration / target));
                             let counter = setInterval(() => {
                                 count++;
-                                stat.innerText = stat.getAttribute('data-target').includes('%') ? count + '%' : count;
+                                stat.innerText = stat.getAttribute(
+                                        'data-target').includes('%') ? count +
+                                    '%' : count;
                                 if (count >= target) clearInterval(counter);
                             }, stepTime);
                         }
@@ -418,7 +460,9 @@ body {
 
         // IntersectionObserver to trigger the typing loop when #description-text is visible
         let triggered = false;
-        const observerOptions = { threshold: 0.5 };
+        const observerOptions = {
+            threshold: 0.5
+        };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !triggered) {
@@ -460,5 +504,6 @@ body {
             }, 25);
         }
     });
+
 </script>
 @endsection
