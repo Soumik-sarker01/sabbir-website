@@ -39,9 +39,6 @@
 /* Fonts Start */
 /* ------------------------------------------------*/
 /* Urbanist font */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
-
 
 /* ------------------------------------------------*/
 /* Fonts End */
@@ -63,7 +60,7 @@ body {
 
 :root {
     --_size: 1.6rem;
-    --_font-default: "Poppins", sans-serif;
+    --_font-default: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     /* --_font-accent: "Humane", sans-serif; */
     --_radius: 2rem;
     --_radius-s: 1rem;
@@ -4781,6 +4778,11 @@ nav ul {
         padding-right: 1rem;
     }
 
+    .about-text{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
     .about-text h1 {
         font-size: 2.2rem;
         margin-bottom: 8px;
@@ -5944,5 +5946,5 @@ h1:hover::after {
 .about-text h1,
 .testimonial-head h1 {
     font-size: 45px;
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif !important;
 }
