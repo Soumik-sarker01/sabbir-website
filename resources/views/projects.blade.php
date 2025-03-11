@@ -10,30 +10,29 @@ $uniqueTaglines = $allUniqueTaglines;
 
 // Define tagline color mapping
 $tagColors = [
-'Financial' => '#1976d2',
-'Legal' => '#c62828',
-'Marketing' => '#0277bd',
-'Healthcare' => '#f57c00',
-'Sports' => '#6a1b9a',
-'Creative' => '#00838f',
-'Business' => '#e65100',
-'Tech' => '#2e7d32',
-'Technology & IT Services' => '#0069c0',
-'Travel' => '#7b1fa2',
-'Real Estate' => '#d84315',
-'Fashion' => '#ad1457',
-'Food' => '#1b5e20',
-'Manufacturing' => '#616161',
-'Telecom' => '#00695c',
-'Community' => '#880e4f',
+    'Financial' => '#1976d2',
+    'Legal' => '#c62828',
+    'Marketing' => '#0277bd',
+    'Healthcare' => '#f57c00',
+    'Sports' => '#6a1b9a',
+    'Creative' => '#00838f',
+    'Business' => '#e65100',
+    'Tech' => '#2e7d32',
+    'Technology & IT Services' => '#0069c0',
+    'Travel' => '#7b1fa2',
+    'Real Estate' => '#d84315',
+    'Fashion' => '#ad1457',
+    'Food' => '#1b5e20',
+    'Manufacturing' => '#616161',
+    'Telecom' => '#00695c',
+    'Community' => '#880e4f',
 ];
 @endphp
 
 <style>
     /* Hide the default cursor and use your custom PNG instead */
     body {
-        cursor: url("{{ asset('assets/img/cursor.svg') }}") 3 3,
-        auto;
+        cursor: url("{{ asset('assets/img/cursor.svg') }}") 3 3, auto;
     }
 
     /* Header background rectangle with video */
@@ -74,7 +73,6 @@ $tagColors = [
     /* Spacer to push content below the header video */
     .spacer {
         height: 600px;
-        /* Equal or slightly more than the header's height */
     }
 
     /* Main layout: Sidebar on left, projects on right */
@@ -84,12 +82,12 @@ $tagColors = [
         margin: 0 auto 50px;
         max-width: 90%;
         padding: 20px 250px;
+        box-sizing: border-box;
     }
 
     /* Sidebar: Sticky and scrollable with right border */
     .sidebar {
         width: 300px;
-        /* Increased sidebar width */
         flex-shrink: 0;
         padding: 15px;
         border-radius: 6px;
@@ -121,13 +119,11 @@ $tagColors = [
         color: #fff;
         border: none;
         padding: 10px 14px;
-        /* Increased padding */
         border-radius: 4px;
         cursor: pointer;
         width: 100%;
         text-align: left;
         font-size: 18px;
-        /* Increased font size */
         text-decoration: none;
         display: block;
     }
@@ -146,9 +142,7 @@ $tagColors = [
         display: none;
         max-width: 300px;
         margin: 20px auto;
-        /* Reduced margin so it’s visible on mobile */
         z-index: 10;
-        /* Ensure it appears above other elements */
     }
 
     .mobile-dropdown select {
@@ -160,8 +154,8 @@ $tagColors = [
     }
 
     /* Projects grid:
-     Base: 1 column on small screens
-     Desktop: 2 columns in a row */
+       Base: 1 column on small screens
+       Desktop: 2 columns in a row */
     .projects-container {
         display: grid;
         grid-template-columns: 1fr;
@@ -182,8 +176,7 @@ $tagColors = [
         border-radius: 10px;
         overflow: hidden;
         width: 100%;
-        max-width: 500px;
-        /* Increased slightly from 450px */
+        max-width: 500px; /* Fixed size to keep images unchanged */
         margin: auto;
         display: flex;
         flex-direction: column;
@@ -233,14 +226,12 @@ $tagColors = [
         font-size: 14px;
         color: #e2ecf6;
         display: inline-block;
-        /* Shrinks to fit content */
         padding: 2px 6px;
         border-radius: 6px;
         font-weight: 600;
         margin-top: 5px;
         text-align: center;
         width: 100px;
-        /* Keeps width based on content */
     }
 
     /* Pagination styling */
@@ -272,34 +263,67 @@ $tagColors = [
         border-color: #80db66;
     }
 
-    @media (min-width: 992px) {
-        .projects-container {
-            grid-template-columns: repeat(2, 1fr);
+    /* Responsive adjustments for larger screens:
+       Gradually reduce main-content padding */
+    @media (min-width: 1601px) {
+        .main-content {
+            padding: 20px 250px;
+        }
+    }
+    @media (max-width: 1600px) {
+        .main-content {
+            padding: 20px 220px;
+        }
+    }
+    @media (max-width: 1400px) {
+        .main-content {
+            padding: 20px 200px;
+        }
+    }
+    @media (max-width: 1200px) {
+        .main-content {
+            padding: 20px 150px;
         }
     }
 
-    /* Responsive adjustments for smaller devices */
+    /* Gradually reduce sidebar font size */
+    @media (min-width: 1601px) {
+        .sidebar .filter-button {
+            font-size: 18px;
+        }
+    }
+    @media (max-width: 1600px) {
+        .sidebar .filter-button {
+            font-size: 17px;
+        }
+    }
+    @media (max-width: 1400px) {
+        .sidebar .filter-button {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 1200px) {
+        .sidebar .filter-button {
+            font-size: 15px;
+        }
+    }
+
+    /* Responsive adjustments for mobile devices (keep as before) */
     @media (max-width: 991px) {
         .main-content {
             flex-direction: column;
             padding: 20px;
             margin: 30px auto 50px;
         }
-
-        /* Hide sidebar in mobile view */
         .sidebar {
             display: none;
         }
-
-        /* Show dropdown in mobile view */
         .mobile-dropdown {
             display: block;
         }
-
         .project-name {
             font-size: 16px;
         }
-
         .project-tagline {
             font-size: 13px;
         }
@@ -310,11 +334,9 @@ $tagColors = [
             gap: 20px;
             padding: 0 10px;
         }
-
         .project-name {
             font-size: 14px;
         }
-
         .project-tagline {
             font-size: 12px;
             padding: 2px 4px;
@@ -343,7 +365,6 @@ $tagColors = [
         font-weight: bold;
         margin: 0;
     }
-
 </style>
 
 <!-- Header background rectangle with video -->
@@ -365,10 +386,9 @@ $tagColors = [
 <!-- Mobile Dropdown for Tagline Selection (visible on mobile only) -->
 <div class="mobile-dropdown">
     <select id="taglineDropdown" onchange="if(this.value) window.location.href=this.value;">
-        <option value="{{ route('projects.index') }}" @if($selectedTagline==='all' ) selected @endif>All</option>
+        <option value="{{ route('projects.index') }}" @if($selectedTagline==='all') selected @endif>All</option>
         @foreach($uniqueTaglines as $tagline)
-        <option value="{{ route('projects.index', ['tagline' => $tagline]) }}" @if($selectedTagline===$tagline) selected
-            @endif>
+        <option value="{{ route('projects.index', ['tagline' => $tagline]) }}" @if($selectedTagline===$tagline) selected @endif>
             {{ $tagline }}
         </option>
         @endforeach
@@ -380,15 +400,13 @@ $tagColors = [
     <div class="sidebar">
         <ul>
             <li>
-                <a href="{{ route('projects.index') }}"
-                    class="filter-button @if($selectedTagline === 'all') active-tagline @endif">
+                <a href="{{ route('projects.index') }}" class="filter-button @if($selectedTagline === 'all') active-tagline @endif">
                     All
                 </a>
             </li>
             @foreach($uniqueTaglines as $tagline)
             <li>
-                <a href="{{ route('projects.index', ['tagline' => $tagline]) }}"
-                    class="filter-button @if($selectedTagline === $tagline) active-tagline @endif">
+                <a href="{{ route('projects.index', ['tagline' => $tagline]) }}" class="filter-button @if($selectedTagline === $tagline) active-tagline @endif">
                     {{ $tagline }}
                 </a>
             </li>
@@ -402,10 +420,10 @@ $tagColors = [
         @php
         $tagColor = '#1976d2';
         foreach ($tagColors as $keyword => $color) {
-        if (stripos($project['tagline'], $keyword) !== false) {
-        $tagColor = $color;
-        break;
-        }
+            if (stripos($project['tagline'], $keyword) !== false) {
+                $tagColor = $color;
+                break;
+            }
         }
         @endphp
 

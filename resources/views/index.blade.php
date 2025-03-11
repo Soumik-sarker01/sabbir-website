@@ -340,6 +340,93 @@
         opacity: 1;
     }
 
+    .services-included {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 3rem;
+        margin-bottom: 40px;
+        color: #25262f;
+    }
+
+    .services-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .service-item {
+        width: 300px;
+        height: 360px;
+        perspective: 1000px;
+        border-radius: 10px;
+    }
+
+    .service-item-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .service-item:hover .service-item-inner {
+        transform: rotateY(180deg);
+    }
+
+    .service-front,
+    .service-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .service-front {
+        background: #e2ecf6;
+    }
+
+    .service-back {
+        background: #80db66;
+        color: #fff;
+        transform: rotateY(180deg);
+    }
+
+    .service-icon {
+        margin-bottom: 20px;
+    }
+
+    .icon-svg {
+        width: 64px;
+        height: 64px;
+        transition: transform 0.3s ease;
+    }
+
+    .service-item:hover .icon-svg {
+        transform: scale(1.2);
+    }
+
+    .service-front h2,
+    .service-back h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .service-back p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+
 </style>
 
 <div class="site-content">
@@ -747,52 +834,79 @@
         </div>
     </section>
 
+    <!-- Service Section -->
     <section class="services-included container-lg">
         <h1 class="section-title">My Service Includes</h1>
         <div class="services-wrapper">
             <!-- Service Item 1 -->
             <div class="service-item">
                 <div class="service-item-inner">
-                    <!-- Front Side: Only Icon and Title -->
+                    <!-- Front Side -->
                     <div class="service-front">
                         <div class="service-icon">
-                            <i class="fa-solid fa-palette"></i>
+                            <!-- Custom SVG Icon for Social Media Post Design -->
+                            <svg class="icon-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="30" stroke="#80db66" stroke-width="4" fill="none" />
+                                <path d="M20 40 L44 24" stroke="#80db66" stroke-width="4" stroke-linecap="round" />
+                                <circle cx="20" cy="40" r="3" fill="#80db66" />
+                                <circle cx="44" cy="24" r="3" fill="#80db66" />
+                            </svg>
                         </div>
                         <h2>Social Media Post Design</h2>
                     </div>
-                    <!-- Back Side: Icon, Title, and Paragraph -->
+                    <!-- Back Side -->
                     <div class="service-back">
                         <div class="service-icon">
-                            <i class="fa-solid fa-palette"></i>
+                            <!-- Reused (or slightly animated) SVG Icon -->
+                            <svg class="icon-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="30" stroke="#fff" stroke-width="4" fill="none" />
+                                <path d="M20 40 L44 24" stroke="#fff" stroke-width="4" stroke-linecap="round" />
+                                <circle cx="20" cy="40" r="3" fill="#fff" />
+                                <circle cx="44" cy="24" r="3" fill="#fff" />
+                            </svg>
                         </div>
                         <h2>Social Media Post Design</h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sunt minus iusto
-                            possimus, nam nostrum ad, illum quasi sint omnis velit debitis mollitia excepturi quae at
-                            ipsa facilis. Dicta, autem?
+                            Engage your audience with visually captivating posts crafted to boost your brand’s online
+                            presence.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Service Item 2 (repeat structure for additional items) -->
+            <!-- Service Item 2 -->
             <div class="service-item">
                 <div class="service-item-inner">
+                    <!-- Front Side -->
                     <div class="service-front">
                         <div class="service-icon">
-                            <i class="fa-solid fa-bullhorn"></i>
+                            <!-- Custom SVG Icon for Social Media Ads Design -->
+                            <svg class="icon-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="10" width="44" height="44" rx="6" stroke="#80db66" stroke-width="4"
+                                    fill="none" />
+                                <path d="M22 22 H42" stroke="#80db66" stroke-width="4" stroke-linecap="round" />
+                                <path d="M22 32 H42" stroke="#80db66" stroke-width="4" stroke-linecap="round" />
+                                <path d="M22 42 H34" stroke="#80db66" stroke-width="4" stroke-linecap="round" />
+                            </svg>
                         </div>
                         <h2>Social Media Ads Design</h2>
                     </div>
+                    <!-- Back Side -->
                     <div class="service-back">
                         <div class="service-icon">
-                            <i class="fa-solid fa-bullhorn"></i>
+                            <!-- Reused SVG Icon with inverted colors -->
+                            <svg class="icon-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="10" width="44" height="44" rx="6" stroke="#fff" stroke-width="4"
+                                    fill="none" />
+                                <path d="M22 22 H42" stroke="#fff" stroke-width="4" stroke-linecap="round" />
+                                <path d="M22 32 H42" stroke="#fff" stroke-width="4" stroke-linecap="round" />
+                                <path d="M22 42 H34" stroke="#fff" stroke-width="4" stroke-linecap="round" />
+                            </svg>
                         </div>
                         <h2>Social Media Ads Design</h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus perspiciatis
-                            excepturi cumque error nobis quo aliquam provident, laudantium, deleniti numquam sapiente
-                            quos maiores minima nulla voluptatum eius nemo eum.
+                            Boost your conversions with dynamic, targeted ads designed to capture attention and drive
+                            engagement.
                         </p>
                     </div>
                 </div>
@@ -801,28 +915,40 @@
             <!-- Service Item 3 -->
             <div class="service-item">
                 <div class="service-item-inner">
+                    <!-- Front Side -->
                     <div class="service-front">
                         <div class="service-icon">
-                            <i class="fa-solid fa-film"></i>
+                            <!-- Custom SVG Icon for Video Editing -->
+                            <svg class="icon-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="12" y="12" width="40" height="40" rx="8" stroke="#80db66" stroke-width="4"
+                                    fill="none" />
+                                <polygon points="26,20 42,32 26,44" fill="#80db66" />
+                            </svg>
                         </div>
-                        <h2>Video Editing</h2>
+                        <!-- Break the title into two centered lines -->
+                        <h2 style="text-align: center;">Video<br>Editing</h2>
                     </div>
+                    <!-- Back Side -->
                     <div class="service-back">
                         <div class="service-icon">
-                            <i class="fa-solid fa-film"></i>
+                            <!-- Reused SVG Icon with inverted colors -->
+                            <svg class="icon-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="12" y="12" width="40" height="40" rx="8" stroke="#fff" stroke-width="4"
+                                    fill="none" />
+                                <polygon points="26,20 42,32 26,44" fill="#fff" />
+                            </svg>
                         </div>
-                        <h2>Video Editing</h2>
+                        <!-- Break the title into two centered lines -->
+                        <h2 style="text-align: center;">Video<br>Editing</h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur molestias nobis velit
-                            delectus hic et amet repellat atque repellendus, architecto cum quasi cupiditate nihil,
-                            deserunt beatae distinctio doloremque expedita placeat?
+                            Transform raw footage into polished content with professional editing, creative effects, and
+                            smooth transitions.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 
 
     <section id="about">
@@ -1685,17 +1811,16 @@
         <div class="container mx-auto px-4">
             <!-- Small label above the main heading -->
             <div class="mb-4 text-center">
-                <span class="inline-block text-xl uppercase px-6 py-2 
-               bg-transparent text-[#e2ecf6] rounded-full">
+                <span class="inline-block text-4xl uppercase px-6 py-2 bg-transparent text-[#e2ecf6] rounded-full">
                     Frequently Asked Questions
                 </span>
             </div>
 
-
             <!-- Main Heading -->
-            <h2 class="text-center text-4xl font-bold mb-8 text-[#e2ecf6]">
+            <h2 class="text-center text-7xl font-bold mb-8 text-[#e2ecf6]">
                 Your Questions <span class="italic">Answered!</span>
             </h2>
+
 
             <!-- FAQ Items Wrapper -->
             <div class="space-y-6">
