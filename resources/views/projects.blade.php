@@ -75,14 +75,17 @@ $tagColors = [
         height: 600px;
     }
 
-    /* Main layout: Sidebar on left, projects on right */
+    /* Main layout: Sidebar on left, projects on right.
+       Centered using margin auto and flex alignment. */
     .main-content {
         display: flex;
         gap: 80px;
         margin: 0 auto 50px;
         max-width: 90%;
+        /* Large-screen padding: top/bottom = 20, left/right = 250 */
         padding: 20px 250px;
         box-sizing: border-box;
+        justify-content: center;
     }
 
     /* Sidebar: Sticky and scrollable with right border */
@@ -153,31 +156,22 @@ $tagColors = [
         font-size: 16px;
     }
 
-    /* Projects grid:
-       Base: 1 column on small screens
-       Desktop: 2 columns in a row */
+    /* Projects container using grid layout to enforce two project cards per row.
+       On large screens, the project card width is fixed at 500px. */
     .projects-container {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 80px;
-        width: 100%;
+        justify-items: center;
     }
 
-    @media (min-width: 992px) {
-        .projects-container {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    /* Project card styling */
+    /* Project card styling with fixed width on large screens */
     .project-card {
         text-decoration: none;
         color: inherit;
         border-radius: 10px;
         overflow: hidden;
-        width: 100%;
-        max-width: 500px; /* Fixed size to keep images unchanged */
-        margin: auto;
+        width: 500px;
         display: flex;
         flex-direction: column;
     }
@@ -263,52 +257,72 @@ $tagColors = [
         border-color: #80db66;
     }
 
-    /* Responsive adjustments for larger screens:
-       Gradually reduce main-content padding */
-    @media (min-width: 1601px) {
+    /* ============================
+       RESPONSIVE ADJUSTMENTS
+       ============================ */
+
+    /* 
+       1) NEW: Reduce padding (and optionally the gap) a bit earlier,
+          from 1483px down to 1200px, so content doesn't overflow.
+    */
+    @media (max-width: 1483px) and (min-width: 1200px) {
         .main-content {
-            padding: 20px 250px;
-        }
-    }
-    @media (max-width: 1600px) {
-        .main-content {
-            padding: 20px 220px;
-        }
-    }
-    @media (max-width: 1400px) {
-        .main-content {
-            padding: 20px 200px;
-        }
-    }
-    @media (max-width: 1200px) {
-        .main-content {
-            padding: 20px 150px;
+            /* Decrease left/right padding from 250px to 120px (example) */
+            padding: 20px 120px;
+            /* Decrease gap if desired */
+            gap: 40px;
         }
     }
 
-    /* Gradually reduce sidebar font size */
-    @media (min-width: 1601px) {
-        .sidebar .filter-button {
-            font-size: 18px;
+    /*
+       2) At 1199px or below, reduce left/right padding to 80px 
+          (still symmetrical).
+    */
+    @media (max-width: 1199px) {
+        .main-content {
+            padding: 20px 80px;
         }
     }
-    @media (max-width: 1600px) {
-        .sidebar .filter-button {
-            font-size: 17px;
+
+    /*
+       3) Fluidly shrink the sidebar and project cards as soon as 
+          the main-content padding is smaller. This applies for 
+          screens between 600px and 1199px.
+    */
+    @media (max-width: 1199px) and (min-width: 600px) {
+        .sidebar {
+            width: clamp(200px, calc(((100vw - 600px) / 6) + 200px), 300px);
+        }
+        .project-card {
+            width: clamp(300px, calc(((100vw - 600px) / 3) + 300px), 500px);
+        }
+        /* Adjust grid to auto-fit the fluid card widths with two cards per row */
+        .projects-container {
+            grid-template-columns: repeat(2, auto);
         }
     }
-    @media (max-width: 1400px) {
-        .sidebar .filter-button {
+
+    /*
+       4) For screens between 992px and 1199px, reduce font sizes 
+          for project card and sidebar taglines.
+    */
+    @media (max-width: 1199px) and (min-width: 992px) {
+        .filter-button {
             font-size: 16px;
         }
-    }
-    @media (max-width: 1200px) {
-        .sidebar .filter-button {
-            font-size: 15px;
+        .project-name {
+            font-size: 16px;
+        }
+        .project-tagline {
+            font-size: 13px;
         }
     }
 
-    /* Responsive adjustments for mobile devices (keep as before) */
+    /*
+       5) For screens below 991px, we switch to a smaller overall
+          layout, eventually removing the sidebar entirely at 
+          mobile sizes.
+    */
     @media (max-width: 991px) {
         .main-content {
             flex-direction: column;
@@ -326,6 +340,20 @@ $tagColors = [
         }
         .project-tagline {
             font-size: 13px;
+        }
+    }
+
+    /*
+       6) For very small screens (below 600px), 
+          use minimum sizes and one-column layout
+    */
+    @media (max-width: 599px) {
+        .project-card {
+            width: 300px;
+        }
+        .projects-container {
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
     }
 
@@ -414,31 +442,31 @@ $tagColors = [
         </ul>
     </div>
 
-    <!-- RIGHT SIDE: Projects Grid -->
+    <!-- RIGHT SIDE: Projects Container -->
     <div class="projects-container">
         @foreach($projectsPaginated as $project)
-        @php
-        $tagColor = '#1976d2';
-        foreach ($tagColors as $keyword => $color) {
-            if (stripos($project['tagline'], $keyword) !== false) {
-                $tagColor = $color;
-                break;
-            }
-        }
-        @endphp
+            @php
+                $tagColor = '#1976d2';
+                foreach ($tagColors as $keyword => $color) {
+                    if (stripos($project['tagline'], $keyword) !== false) {
+                        $tagColor = $color;
+                        break;
+                    }
+                }
+            @endphp
 
-        <a href="{{ route('projects.show', $project['slug']) }}" class="project-card">
-            <div class="card-content">
-                <div class="image-container">
-                    <img src="{{ asset($project['thumbnail']) }}" alt="{{ $project['name'] }}">
-                </div>
-                <div class="project-details">
-                    <div class="project-name">
-                        {{ $project['name'] }}
+            <a href="{{ route('projects.show', $project['slug']) }}" class="project-card">
+                <div class="card-content">
+                    <div class="image-container">
+                        <img src="{{ asset($project['thumbnail']) }}" alt="{{ $project['name'] }}">
+                    </div>
+                    <div class="project-details">
+                        <div class="project-name">
+                            {{ $project['name'] }}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
         @endforeach
     </div>
 </div>

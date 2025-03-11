@@ -229,6 +229,52 @@
         transition: opacity 1.5s ease-out, transform 1.5s ease-out;
     }
 
+    @media only screen and (max-width: 768px) {
+            /* Reduce margin below the title */
+    .company-logo-title {
+        font-size: 30px !important; /* Keep it responsive */
+        margin-bottom: 1rem !important; /* Reduce space below the title */
+    }
+
+    /* Reduce padding/margin above the logos container */
+    .company-logos {
+        padding-top: 0 !important; /* Remove excess padding */
+        margin-top: -10px !important; /* Bring it closer to the title */
+    }
+
+    /* Adjust wrapper spacing */
+    .logos-wrapper {
+        margin-top: -15px !important; /* Bring logos container up */
+    }
+    /* Increase logo size */
+    .logos-track img {
+        width: 160px !important; /* Increase width */
+        height: auto !important;
+        margin: 3px 10px !important; /* Adjust spacing slightly */
+        filter: brightness(1.3) contrast(1.3); /* Keep clarity improvements */
+    }
+
+    /* Keep reduced blur overlay */
+    .logos-overlay {
+        width: 180px !important; /* Reduce overlay width further */
+        opacity: 0.3 !important; /* Further reduce opacity */
+    }
+
+    .logos-overlay.left,
+    .logos-overlay.right {
+        width: 180px !important;
+        opacity: 0.2 !important; /* Make blur even lighter */
+    }
+
+    /* Ensure no extra fading effects */
+    .company-logos::before,
+    .company-logos::after {
+        display: none !important;
+    }
+}
+
+
+
 
     /* ================================
    HERO SHORT-VIEWPORT OVERRIDES
@@ -453,7 +499,7 @@
 
                     <div class="hero-buttons">
                         <!-- Get Started button (Left Side) -->
-                        <a href="https://wa.me/+8801303934047" id="hero-started">
+                        <a href="https://wa.me/+8801303934047" target="_blank" id="hero-started">
                             <button class="custom-button-hero">Start a Project</button>
                         </a>
 
@@ -1817,7 +1863,7 @@
             </div>
 
             <!-- Main Heading -->
-            <h2 class="text-center text-7xl font-bold mb-8 text-[#e2ecf6]">
+            <h2 class="text-center text-5xl font-bold mb-8 text-[#e2ecf6]">
                 Your Questions <span class="italic">Answered!</span>
             </h2>
 
@@ -1829,7 +1875,7 @@
                     <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
                  focus:outline-none transition-all duration-300" onclick="toggleFaq(1)">
                         <!-- Question Text (larger font) -->
-                        <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
                             How Long Does a Design Project Take?
                         </span>
 
@@ -1848,7 +1894,7 @@
                     </button>
                     <!-- Answer (with transition class) -->
                     <div id="faq-answer-1" class="faq-answer">
-                        <p class="text-xl font-normal text-[#e2ecf6]">
+                        <p class="text-2xl font-normal text-[#e2ecf6]">
                             This can vary based on the project scope. Typically, a standard social
                             media design project might take a few days, while more complex branding
                             or web design can take several weeks.
@@ -1860,7 +1906,7 @@
                 <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
                     <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
                  focus:outline-none transition-all duration-300" onclick="toggleFaq(2)">
-                        <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
                             Why are you different?
                         </span>
                         <div id="faq-icon-container-2" class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
@@ -1875,7 +1921,7 @@
                         </div>
                     </button>
                     <div id="faq-answer-2" class="faq-answer">
-                        <p class="text-xl font-normal text-[#e2ecf6]">
+                        <p class="text-2xl font-normal text-[#e2ecf6]">
                             We focus on personalized solutions, unique branding, and top-tier
                             client support. Our goal is to help your brand stand out in a crowded
                             market with designs that truly resonate with you.
@@ -1887,7 +1933,7 @@
                 <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
                     <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
                  focus:outline-none transition-all duration-300" onclick="toggleFaq(3)">
-                        <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
                             How Much Does a Design Project Cost at Your Agency?
                         </span>
                         <div id="faq-icon-container-3" class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
@@ -1902,7 +1948,7 @@
                         </div>
                     </button>
                     <div id="faq-answer-3" class="faq-answer">
-                        <p class="text-xl font-normal text-[#e2ecf6]">
+                        <p class="text-2xl font-normal text-[#e2ecf6]">
                             Pricing depends on factors like scope, complexity, and turnaround time.
                             We typically provide custom quotes after discussing your project
                             requirements.
@@ -1914,7 +1960,7 @@
                 <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
                     <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
                  focus:outline-none transition-all duration-300" onclick="toggleFaq(4)">
-                        <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
                             Is your agency start-up–friendly?
                         </span>
                         <div id="faq-icon-container-4" class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
@@ -1929,7 +1975,7 @@
                         </div>
                     </button>
                     <div id="faq-answer-4" class="faq-answer">
-                        <p class="text-xl font-normal text-[#e2ecf6]">
+                        <p class="text-2xl font-normal text-[#e2ecf6]">
                             Absolutely! We love working with startups to develop strong brand
                             identities and creative strategies that help you grow quickly.
                         </p>
@@ -1940,7 +1986,7 @@
                 <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
                     <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
                  focus:outline-none transition-all duration-300" onclick="toggleFaq(5)">
-                        <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
                             What design tools do you use?
                         </span>
                         <div id="faq-icon-container-5" class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
@@ -1955,7 +2001,7 @@
                         </div>
                     </button>
                     <div id="faq-answer-5" class="faq-answer">
-                        <p class="text-xl font-normal text-[#e2ecf6]">
+                        <p class="text-2xl font-normal text-[#e2ecf6]">
                             Our go-to tools include Adobe Photoshop, Illustrator, Premiere Pro,
                             After Effects, Figma, and Canva for quick mockups.
                         </p>
@@ -1966,7 +2012,7 @@
                 <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
                     <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
                  focus:outline-none transition-all duration-300" onclick="toggleFaq(6)">
-                        <span class="text-2xl font-bold text-left text-[#e2ecf6]">
+                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
                             Do you create WordPress e-commerce sites, and develop apps?
                         </span>
                         <div id="faq-icon-container-6" class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
@@ -1981,7 +2027,7 @@
                         </div>
                     </button>
                     <div id="faq-answer-6" class="faq-answer">
-                        <p class="text-xl font-normal text-[#e2ecf6]">
+                        <p class="text-2xl font-normal text-[#e2ecf6]">
                             Yes, we offer WordPress e-commerce solutions. For more advanced app
                             development, we collaborate with trusted partners to ensure you get
                             the best possible outcome.

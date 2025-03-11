@@ -68,6 +68,7 @@
         // Toggle menu visibility
         burgerIcon.addEventListener('click', () => {
             navPhone.classList.toggle('active');
+            document.body.classList.toggle('menu-open'); // <-- Add this line
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
         });
@@ -165,5 +166,6 @@
         // Update the width of the progress bar accordingly
         document.getElementById('nav-progress').style.width = scrollPercent + '%';
     });
+
 
 </script>
