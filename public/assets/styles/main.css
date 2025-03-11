@@ -866,6 +866,45 @@ nav ul {
     color: #25262f;
     border: 1px solid #fff;
 }
+@media only screen and (max-width: 480px) {
+    .about-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 10px !important; /* Adjust spacing between buttons */
+        flex-wrap: wrap; /* Ensures proper wrapping if needed */
+    }
+
+    .custom-button-about {
+        min-width: auto !important; /* Allow buttons to size dynamically */
+        padding: 10px 30px !important; /* Adjust padding for better fit */
+        font-size: 1.2rem !important; /* Slightly reduce font size */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .hero-buttons {
+        position: relative !important;
+        z-index: 10 !important; /* Ensure buttons are above other elements */
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        flex-wrap: wrap;
+    }
+
+    .custom-button-hero {
+        z-index: 11 !important;
+        pointer-events: auto !important; /* Ensure clicks register */
+        position: relative;
+    }
+
+    body.menu-open .hero .hero-buttons {
+        display: none !important;
+    }
+    
+}
+
 
 /* ------------------------------------------------*/
 /* Custom Button Styles ends */
@@ -2612,9 +2651,14 @@ nav ul {
         top: 10px;
     }
 
+    .social-media-text{
+        margin-right: 0px !important;
+    }
+
     .typing-container {
         width: 200px;
         font-size: 2rem;
+        margin-left: 0px !important;
     }
 
     .hero-buttons {
@@ -3485,7 +3529,7 @@ nav ul {
     .designs-number p,
     .order-number p,
     .review-number p {
-        font-size: 1.2rem;
+        font-size: 1.8rem !important;
     }
 }
 
@@ -3821,6 +3865,21 @@ nav ul {
         /* Smaller height */
         max-width: 180px;
         /* Ensure proper scaling */
+    }
+
+    .projects {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .projects-wrapper {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .container-lg {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }
 
@@ -4626,8 +4685,8 @@ nav ul {
 
 .about-text p {
     font-size: 1.8rem;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left !important;
+    text-justify: none !important;
     color: #e2ecf6;
 }
 
@@ -4921,9 +4980,19 @@ footer img {
     .hero-text p {
         font-size: 0.9rem;
     }
+    
+    .clients h2, p{
+        top: 20px;
+    }
+
+    .clients-scroll-container{
+        top: -20px;
+        height: 100px;
+        width: 100%;
+    }
 
     .clients-img img {
-        width: 50px;
+        width: 150px;
     }
 
     .button2 {

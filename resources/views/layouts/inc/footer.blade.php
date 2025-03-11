@@ -28,7 +28,7 @@
 
     /* Increase font size for form labels */
     .contact-section .form-label {
-      font-size: 1.6rem;
+      font-size: 2rem;
       color: #25262f;
     }
 
@@ -52,6 +52,7 @@
     .contact-section h5 {
       font-size: 2rem;
       color: #25262f;
+      font-weight: bold;
     }
     .contact-section p,
     .contact-section a {
