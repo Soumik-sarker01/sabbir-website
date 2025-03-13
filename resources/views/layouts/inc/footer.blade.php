@@ -297,7 +297,7 @@
         <!-- Right Column: Contact Info Cards -->
         <div class="col-12 col-lg-5">
           <!-- Phone -->
-          <div class="card border-0 shadow-sm mb-3 p-3" style="background-color: #25262f;">
+          <div class="card border-0 mb-3 p-3" style="background-color: #25262f;">
             <h5 class="fw-bold mb-2" style="color: #80db66;">
               <i class="fa fa-phone me-2" style="color: #80db66;"></i> Phone
             </h5>
@@ -308,7 +308,7 @@
             </p>
           </div>
           <!-- Email -->
-          <div class="card border-0 shadow-sm mb-3 p-3" style="background-color: #25262f;">
+          <div class="card border-0 mb-3 p-3" style="background-color: #25262f;">
             <h5 class="fw-bold mb-2" style="color: #80db66;">
               <i class="fa fa-envelope me-2" style="color: #80db66;"></i> Email Address
             </h5>

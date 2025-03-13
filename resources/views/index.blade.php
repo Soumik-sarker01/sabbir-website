@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Aynaur')
+@section('title', 'SabbirTareq')
 
 @section('main-container')
 
@@ -49,7 +49,7 @@
 
 
     .company-logo-title {
-        font-size: 38px;
+        font-size: 45px;
         font-weight: bold;
         text-align: center;
         margin-bottom: 3rem;
@@ -232,7 +232,7 @@
     @media only screen and (max-width: 768px) {
             /* Reduce margin below the title */
     .company-logo-title {
-        font-size: 30px !important; /* Keep it responsive */
+        font-size: 45px !important; /* Keep it responsive */
         margin-bottom: 1rem !important; /* Reduce space below the title */
     }
 
@@ -529,6 +529,7 @@
             <a href="https://www.linkedin.com/in/sabbirhossain48/" target="_blank"><i
                     class="fab fa-linkedin-in"></i></a>
             <a href="https://wa.me/+8801303934047" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.behance.net/mdsabbirhossain24" target="_blank"><i class="fab fa-behance"></i></a>
         </div>
     </section>
 
@@ -600,29 +601,6 @@
                             <div class="clients-number">
                                 <h2>300+</h2>
                                 <p>Clients</p>
-                            </div>
-                            <!-- New wrapper for scrolling -->
-                            <div class="clients-scroll-container">
-                                <div class="clients-img">
-                                    <img src="{{ asset('assets/img/logos-black/1.png') }}" alt="Company 1">
-                                    <img src="{{ asset('assets/img/logos-black/2.png') }}" alt="Company 2">
-                                    <img src="{{ asset('assets/img/logos-black/3.png') }}" alt="Company 3">
-                                    <img src="{{ asset('assets/img/logos-black/4.png') }}" alt="Company 4">
-                                    <img src="{{ asset('assets/img/logos-black/5.png') }}" alt="Company 5">
-                                    <img src="{{ asset('assets/img/logos-black/6.png') }}" alt="Company 6">
-                                    <img src="{{ asset('assets/img/logos-black/7.png') }}" alt="Company 7">
-                                    <img src="{{ asset('assets/img/logos-black/8.png') }}" alt="Company 8">
-                                    <img src="{{ asset('assets/img/logos-black/9.png') }}" alt="Company 9">
-                                    <img src="{{ asset('assets/img/logos-black/10.png') }}" alt="Company 10">
-                                    <img src="{{ asset('assets/img/logos-black/11.png') }}" alt="Company 11">
-                                    <img src="{{ asset('assets/img/logos-black/12.png') }}" alt="Company 12">
-                                    <img src="{{ asset('assets/img/logos-black/13.png') }}" alt="Company 13">
-                                    <img src="{{ asset('assets/img/logos-black/14.png') }}" alt="Company 14">
-                                    <img src="{{ asset('assets/img/logos-black/15.png') }}" alt="Company 15">
-                                    <img src="{{ asset('assets/img/logos-black/16.png') }}" alt="Company 16">
-                                    <img src="{{ asset('assets/img/logos-black/17.png') }}" alt="Company 17">
-                                    <img src="{{ asset('assets/img/logos-black/18.png') }}" alt="Company 18">
-                                </div>
                             </div>
                         </div>
                         <div class="designs">
@@ -728,7 +706,10 @@
     <section class="projects container-fluid" id="portfolio">
         <div class="projects-wrapper">
             <div class="container-lg">
-                <h1>My Creations</h1>
+            <h1>
+  My Creations
+</h1>
+
                 <div class="spacer"></div>
                 <!-- Scrollable Project List -->
                 <div class="scroll-container">
@@ -1854,189 +1835,143 @@
     </section>
 
     <section id="faq" class="py-10">
-        <div class="container mx-auto px-4">
-            <!-- Small label above the main heading -->
-            <div class="mb-4 text-center">
-                <span class="inline-block text-4xl uppercase px-6 py-2 bg-transparent text-[#e2ecf6] rounded-full">
-                    Frequently Asked Questions
-                </span>
-            </div>
+  <div class="container mx-auto px-4">
+    <!-- Small label above the main heading -->
+    <div class="mb-4 flex justify-center">
+      <div class="inline-block border-2 border-[#80db66] rounded-full px-6 py-2">
+        <span class="text-2xl text-[#80db66]">
+          Frequently Asked Questions
+        </span>
+      </div>
+    </div>
 
-            <!-- Main Heading -->
-            <h2 class="text-center text-5xl font-bold mb-8 text-[#e2ecf6]">
-                Your Questions <span class="italic">Answered!</span>
-            </h2>
+    <!-- Main Heading -->
+    <h2 class="text-center text-7xl font-bold mb-8 text-[#e2ecf6]">
+      Your Questions <span class="italic"><br>Answered!</span>
+    </h2>
 
-
-            <!-- FAQ Items Wrapper -->
-            <div class="space-y-6">
-                <!-- FAQ #1 -->
-                <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
-                    <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
-                 focus:outline-none transition-all duration-300" onclick="toggleFaq(1)">
-                        <!-- Question Text (larger font) -->
-                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
-                            How Long Does a Design Project Take?
-                        </span>
-
-                        <!-- Icon Container (circle + arrow) -->
-                        <div id="faq-icon-container-1" class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
-                   rounded-full flex items-center justify-center 
-                   transition-all duration-300">
-                            <!-- SVG Arrow -->
-                            <svg id="faq-icon-1"
-                                class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none"
-                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                        </div>
-                    </button>
-                    <!-- Answer (with transition class) -->
-                    <div id="faq-answer-1" class="faq-answer">
-                        <p class="text-2xl font-normal text-[#e2ecf6]">
-                            This can vary based on the project scope. Typically, a standard social
-                            media design project might take a few days, while more complex branding
-                            or web design can take several weeks.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ #2 -->
-                <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
-                    <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
-                 focus:outline-none transition-all duration-300" onclick="toggleFaq(2)">
-                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
-                            Why are you different?
-                        </span>
-                        <div id="faq-icon-container-2" class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
-                   rounded-full flex items-center justify-center 
-                   transition-all duration-300">
-                            <svg id="faq-icon-2"
-                                class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none"
-                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                        </div>
-                    </button>
-                    <div id="faq-answer-2" class="faq-answer">
-                        <p class="text-2xl font-normal text-[#e2ecf6]">
-                            We focus on personalized solutions, unique branding, and top-tier
-                            client support. Our goal is to help your brand stand out in a crowded
-                            market with designs that truly resonate with you.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ #3 -->
-                <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
-                    <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
-                 focus:outline-none transition-all duration-300" onclick="toggleFaq(3)">
-                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
-                            How Much Does a Design Project Cost at Your Agency?
-                        </span>
-                        <div id="faq-icon-container-3" class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
-                   rounded-full flex items-center justify-center 
-                   transition-all duration-300">
-                            <svg id="faq-icon-3"
-                                class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none"
-                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                        </div>
-                    </button>
-                    <div id="faq-answer-3" class="faq-answer">
-                        <p class="text-2xl font-normal text-[#e2ecf6]">
-                            Pricing depends on factors like scope, complexity, and turnaround time.
-                            We typically provide custom quotes after discussing your project
-                            requirements.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ #4 -->
-                <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
-                    <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
-                 focus:outline-none transition-all duration-300" onclick="toggleFaq(4)">
-                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
-                            Is your agency start-up–friendly?
-                        </span>
-                        <div id="faq-icon-container-4" class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
-                   rounded-full flex items-center justify-center 
-                   transition-all duration-300">
-                            <svg id="faq-icon-4"
-                                class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none"
-                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                        </div>
-                    </button>
-                    <div id="faq-answer-4" class="faq-answer">
-                        <p class="text-2xl font-normal text-[#e2ecf6]">
-                            Absolutely! We love working with startups to develop strong brand
-                            identities and creative strategies that help you grow quickly.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ #5 -->
-                <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
-                    <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
-                 focus:outline-none transition-all duration-300" onclick="toggleFaq(5)">
-                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
-                            What design tools do you use?
-                        </span>
-                        <div id="faq-icon-container-5" class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
-                   rounded-full flex items-center justify-center 
-                   transition-all duration-300">
-                            <svg id="faq-icon-5"
-                                class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none"
-                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                        </div>
-                    </button>
-                    <div id="faq-answer-5" class="faq-answer">
-                        <p class="text-2xl font-normal text-[#e2ecf6]">
-                            Our go-to tools include Adobe Photoshop, Illustrator, Premiere Pro,
-                            After Effects, Figma, and Canva for quick mockups.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ #6 -->
-                <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
-                    <button class="faq-btn flex justify-between items-center w-full px-2 py-3 
-                 focus:outline-none transition-all duration-300" onclick="toggleFaq(6)">
-                        <span class="text-3xl font-bold text-left text-[#e2ecf6]">
-                            Do you create WordPress e-commerce sites, and develop apps?
-                        </span>
-                        <div id="faq-icon-container-6" class="faq-icon-container w-8 h-8 border-2 border-[#80db66] 
-                   rounded-full flex items-center justify-center 
-                   transition-all duration-300">
-                            <svg id="faq-icon-6"
-                                class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none"
-                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                        </div>
-                    </button>
-                    <div id="faq-answer-6" class="faq-answer">
-                        <p class="text-2xl font-normal text-[#e2ecf6]">
-                            Yes, we offer WordPress e-commerce solutions. For more advanced app
-                            development, we collaborate with trusted partners to ensure you get
-                            the best possible outcome.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <!-- FAQ Items Wrapper -->
+    <div class="space-y-6">
+      <!-- FAQ #1 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button class="faq-btn flex justify-between items-center w-full px-2 py-3 focus:outline-none transition-all duration-300" onclick="toggleFaq(1)">
+          <!-- Question Text -->
+          <span class="text-4xl font-bold text-left text-[#e2ecf6]">
+            How Long Does a Design Project Take?
+          </span>
+          <!-- Icon Container (circle + arrow) -->
+          <div id="faq-icon-container-1" class="faq-icon-container flex-shrink-0 w-8 h-8 border-2 border-[#80db66] rounded-full flex items-center justify-center transition-all duration-300">
+            <svg id="faq-icon-1" class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <!-- Answer -->
+        <div id="faq-answer-1" class="faq-answer">
+          <p class="text-3xl font-normal text-[#e2ecf6]">
+            This can vary based on the project scope. Typically, a standard social media design project might take a few days, while more complex branding or web design can take several weeks.
+          </p>
         </div>
-    </section>
+      </div>
+
+      <!-- FAQ #2 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button class="faq-btn flex justify-between items-center w-full px-2 py-3 focus:outline-none transition-all duration-300" onclick="toggleFaq(2)">
+          <span class="text-4xl font-bold text-left text-[#e2ecf6]">
+            Why are you different?
+          </span>
+          <div id="faq-icon-container-2" class="faq-icon-container flex-shrink-0 w-8 h-8 border-2 border-[#80db66] rounded-full flex items-center justify-center transition-all duration-300">
+            <svg id="faq-icon-2" class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <div id="faq-answer-2" class="faq-answer">
+          <p class="text-3xl font-normal text-[#e2ecf6]">
+            We focus on personalized solutions, unique branding, and top-tier client support. Our goal is to help your brand stand out in a crowded market with designs that truly resonate with you.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ #3 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button class="faq-btn flex justify-between items-center w-full px-2 py-3 focus:outline-none transition-all duration-300" onclick="toggleFaq(3)">
+          <span class="text-4xl font-bold text-left text-[#e2ecf6]">
+            How Much Does a Design Project Cost at Your Agency?
+          </span>
+          <div id="faq-icon-container-3" class="faq-icon-container flex-shrink-0 w-8 h-8 border-2 border-[#80db66] rounded-full flex items-center justify-center transition-all duration-300">
+            <svg id="faq-icon-3" class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <div id="faq-answer-3" class="faq-answer">
+          <p class="text-3xl font-normal text-[#e2ecf6]">
+            Pricing depends on factors like scope, complexity, and turnaround time. We typically provide custom quotes after discussing your project requirements.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ #4 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button class="faq-btn flex justify-between items-center w-full px-2 py-3 focus:outline-none transition-all duration-300" onclick="toggleFaq(4)">
+          <span class="text-4xl font-bold text-left text-[#e2ecf6]">
+            Is your agency start-up–friendly?
+          </span>
+          <div id="faq-icon-container-4" class="faq-icon-container flex-shrink-0 w-8 h-8 border-2 border-[#80db66] rounded-full flex items-center justify-center transition-all duration-300">
+            <svg id="faq-icon-4" class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <div id="faq-answer-4" class="faq-answer">
+          <p class="text-3xl font-normal text-[#e2ecf6]">
+            Absolutely! We love working with startups to develop strong brand identities and creative strategies that help you grow quickly.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ #5 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button class="faq-btn flex justify-between items-center w-full px-2 py-3 focus:outline-none transition-all duration-300" onclick="toggleFaq(5)">
+          <span class="text-4xl font-bold text-left text-[#e2ecf6]">
+            What design tools do you use?
+          </span>
+          <div id="faq-icon-container-5" class="faq-icon-container flex-shrink-0 w-8 h-8 border-2 border-[#80db66] rounded-full flex items-center justify-center transition-all duration-300">
+            <svg id="faq-icon-5" class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <div id="faq-answer-5" class="faq-answer">
+          <p class="text-3xl font-normal text-[#e2ecf6]">
+            Our go-to tools include Adobe Photoshop, Illustrator, Premiere Pro, After Effects, Figma, and Canva for quick mockups.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ #6 -->
+      <div class="faq-item border-b border-[#e2ecf6]/30 pb-4">
+        <button class="faq-btn flex justify-between items-center w-full px-2 py-3 focus:outline-none transition-all duration-300" onclick="toggleFaq(6)">
+          <span class="text-4xl font-bold text-left text-[#e2ecf6]">
+            Do you create WordPress e-commerce sites, and develop apps?
+          </span>
+          <div id="faq-icon-container-6" class="faq-icon-container flex-shrink-0 w-8 h-8 border-2 border-[#80db66] rounded-full flex items-center justify-center transition-all duration-300">
+            <svg id="faq-icon-6" class="w-4 h-4 text-[#80db66] transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </div>
+        </button>
+        <div id="faq-answer-6" class="faq-answer">
+          <p class="text-3xl font-normal text-[#e2ecf6]">
+            Yes, we offer WordPress e-commerce solutions. For more advanced app development, we collaborate with trusted partners to ensure you get the best possible outcome.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
