@@ -3,7 +3,10 @@
         {{-- Show PREV only if NOT on page 1 --}}
         @if ($paginator->currentPage() > 1)
             <li class="page-item">
-                <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">&laquo;</a>
+                <a class="page-link" href="{{ $paginator->previousPageUrl() }}"
+                   rel="prev" aria-label="@lang('pagination.previous')">
+                    <i class="fas fa-chevron-left"></i> <!-- Font Awesome icon -->
+                </a>
             </li>
         @endif
 
@@ -37,63 +40,83 @@
         {{-- Show NEXT only if there are more pages --}}
         @if ($paginator->hasMorePages())
             <li class="page-item">
-                <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">&raquo;</a>
+                <a class="page-link" href="{{ $paginator->nextPageUrl() }}"
+                   rel="next" aria-label="@lang('pagination.next')">
+                    <i class="fas fa-chevron-right"></i> <!-- Font Awesome icon -->
+                </a>
             </li>
         @endif
     </ul>
 @endif
 
 <style>
-/* Remove the circle styles from the default page links */
-.pagination .page-link {
-    border: none !important;
-    background: transparent !important;
-    color: #e2ecf6;
-    font-weight: bold;
-    font-size: 20px;
-    text-decoration: none;
-    transition: background 0.3s ease, color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
+/* Basic pagination container styling */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
     justify-content: center;
 }
 
-/* Hover effect for normal page links */
+/* Spacing between items */
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+/* Base style for all page links */
+.pagination .page-link {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 40px;
+
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #e2ecf6;
+
+    border: none;
+    background: transparent;
+
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Make the icon a bit bigger */
+.pagination .page-link i {
+    font-size: 20px; /* adjust as needed */
+}
+
+/* Hover state for page links */
 .pagination .page-link:hover {
+    background: #25262f;
     color: #80db66;
 }
 
-/* Active page link gets a circle */
+/* Active page: rectangular with curved corners */
 .pagination .page-item.active .page-link {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #80db66 !important;
-    color: #25262f;
-    pointer-events: none; /* disable clicks on current page */
-}
-
-/* Prev/Next arrows are circles, slightly larger font */
-.pagination .page-link[rel="prev"],
-.pagination .page-link[rel="next"] {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 22px;
-    color: #e2ecf6;
-}
-
-/* Hover effect for Prev/Next arrows */
-.pagination .page-link[rel="prev"]:hover,
-.pagination .page-link[rel="next"]:hover {
+    border-radius: 10px;
     background: #80db66;
     color: #25262f;
+    pointer-events: none; /* disable click on the active page */
 }
 
-/* Disabled prev/next state (when on first or last page) */
+/* Inactive page numbers: rectangular with curved corners */
+.pagination .page-item:not(.active) .page-link {
+    border-radius: 10px;
+}
+
+/* Prev/Next buttons: "pill" shape (still 10px corner radius) */
+.pagination .page-link[rel="prev"],
+.pagination .page-link[rel="next"] {
+    border-radius: 10px !important;
+}
+
+/* Disabled state (when on first/last page) */
 .pagination .page-item.disabled .page-link {
     opacity: 0.5;
     cursor: not-allowed;
-    background: transparent !important;
+    background: transparent;
 }
 </style>

@@ -29,6 +29,10 @@ $tagColors = [
 ];
 @endphp
 
+{{-- 1) Import Playfair Display Italic from Google Fonts --}}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
 <style>
     /* Hide the default cursor and use your custom PNG instead */
     body {
@@ -41,7 +45,7 @@ $tagColors = [
         top: 0;
         left: 0;
         width: 100%;
-        height: 580px;
+        height: 475px;
         background: #333;
         z-index: 0;
         border-bottom-left-radius: 50px;
@@ -75,8 +79,7 @@ $tagColors = [
         height: 600px;
     }
 
-    /* Main layout: Sidebar on left, projects on right.
-       Centered using margin auto and flex alignment. */
+    /* Main layout: Sidebar on left, projects on right. */
     .main-content {
         display: flex;
         gap: 80px;
@@ -156,8 +159,7 @@ $tagColors = [
         font-size: 16px;
     }
 
-    /* Projects container using grid layout to enforce two project cards per row.
-       On large screens, the project card width is fixed at 500px. */
+    /* Projects container using grid layout (two columns) */
     .projects-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -210,7 +212,7 @@ $tagColors = [
     }
 
     .project-name {
-        font-size: 18px;
+        font-size: 28px;
         font-weight: bold;
         color: #e2ecf6;
         margin-bottom: 5px;
@@ -257,38 +259,21 @@ $tagColors = [
         border-color: #80db66;
     }
 
-    /* ============================
-       RESPONSIVE ADJUSTMENTS
-       ============================ */
-
-    /* 
-       1) NEW: Reduce padding (and optionally the gap) a bit earlier,
-          from 1483px down to 1200px, so content doesn't overflow.
-    */
+    /* Responsive adjustments */
     @media (max-width: 1483px) and (min-width: 1200px) {
         .main-content {
-            /* Decrease left/right padding from 250px to 120px (example) */
+            /* Decrease left/right padding */
             padding: 20px 120px;
-            /* Decrease gap if desired */
             gap: 40px;
         }
     }
 
-    /*
-       2) At 1199px or below, reduce left/right padding to 80px 
-          (still symmetrical).
-    */
     @media (max-width: 1199px) {
         .main-content {
             padding: 20px 80px;
         }
     }
 
-    /*
-       3) Fluidly shrink the sidebar and project cards as soon as 
-          the main-content padding is smaller. This applies for 
-          screens between 600px and 1199px.
-    */
     @media (max-width: 1199px) and (min-width: 600px) {
         .sidebar {
             width: clamp(200px, calc(((100vw - 600px) / 6) + 200px), 300px);
@@ -296,33 +281,23 @@ $tagColors = [
         .project-card {
             width: clamp(300px, calc(((100vw - 600px) / 3) + 300px), 500px);
         }
-        /* Adjust grid to auto-fit the fluid card widths with two cards per row */
         .projects-container {
             grid-template-columns: repeat(2, auto);
         }
     }
 
-    /*
-       4) For screens between 992px and 1199px, reduce font sizes 
-          for project card and sidebar taglines.
-    */
     @media (max-width: 1199px) and (min-width: 992px) {
         .filter-button {
             font-size: 16px;
         }
         .project-name {
-            font-size: 16px;
+            font-size: 26px;
         }
         .project-tagline {
             font-size: 13px;
         }
     }
 
-    /*
-       5) For screens below 991px, we switch to a smaller overall
-          layout, eventually removing the sidebar entirely at 
-          mobile sizes.
-    */
     @media (max-width: 991px) {
         .main-content {
             flex-direction: column;
@@ -336,17 +311,13 @@ $tagColors = [
             display: block;
         }
         .project-name {
-            font-size: 16px;
+            font-size: 26px;
         }
         .project-tagline {
             font-size: 13px;
         }
     }
 
-    /*
-       6) For very small screens (below 600px), 
-          use minimum sizes and one-column layout
-    */
     @media (max-width: 599px) {
         .project-card {
             width: 300px;
@@ -363,7 +334,7 @@ $tagColors = [
             padding: 0 10px;
         }
         .project-name {
-            font-size: 14px;
+            font-size: 24px;
         }
         .project-tagline {
             font-size: 12px;
@@ -371,6 +342,7 @@ $tagColors = [
         }
     }
 
+    /* HEADER TEXT: Use Playfair Display Italic and remove hover effect */
     .header-text {
         position: absolute;
         top: 50%;
@@ -380,18 +352,31 @@ $tagColors = [
         width: 100%;
     }
 
+    /* 2) Apply the imported font and italic style */
+    .header-text h1,
+    .header-text h2 {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        margin: 0;
+        color: #e2ecf6;
+    }
+
+    /* Remove any hover effect if present (override global or default) */
+    .header-text h1:hover,
+    .header-text h2:hover {
+        color: #e2ecf6 !important;
+        text-decoration: none !important;
+        cursor: default !important;
+    }
+
+    /* Font sizes */
     .header-text h1 {
         font-size: 50px;
-        color: #e2ecf6;
-        margin: 0;
     }
 
     .header-text h2 {
         font-size: 45px;
-        color: #e2ecf6;
-        font-style: italic;
         font-weight: bold;
-        margin: 0;
     }
 </style>
 
@@ -403,8 +388,9 @@ $tagColors = [
     </video>
     <div class="video-overlay"></div>
     <div class="header-text">
+        <!-- 1) No hover effect on this text, 2) Using Playfair Display Italic -->
         <h1>I Turn Great Ideas Into</h1>
-        <h2>Execelent Designs</h2>
+        <h2>Excellent Designs</h2>
     </div>
 </div>
 
@@ -416,9 +402,9 @@ $tagColors = [
     <select id="taglineDropdown" onchange="if(this.value) window.location.href=this.value;">
         <option value="{{ route('projects.index') }}" @if($selectedTagline==='all') selected @endif>All</option>
         @foreach($uniqueTaglines as $tagline)
-        <option value="{{ route('projects.index', ['tagline' => $tagline]) }}" @if($selectedTagline===$tagline) selected @endif>
-            {{ $tagline }}
-        </option>
+            <option value="{{ route('projects.index', ['tagline' => $tagline]) }}" @if($selectedTagline===$tagline) selected @endif>
+                {{ $tagline }}
+            </option>
         @endforeach
     </select>
 </div>

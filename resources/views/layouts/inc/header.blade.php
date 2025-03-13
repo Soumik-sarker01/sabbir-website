@@ -45,13 +45,14 @@
         <div class="phone-menu">
             <ul>
                 <li><a href="/" class="phone-link nav-link active">Home</a></li>
-                <li><a href="/#portfolio" class="phone-link nav-link">Portfolio</a></li>
+                <li><a href="<?php echo rtrim(config('app.url'), '/') . '/projects'; ?>"
+                class="nav-link">Portfolio</a></li>
                 <li><a href="/#about" class="phone-link nav-link">About us</a></li>
             </ul>
             <div class="nav-action">
                 <!-- Fiverr Profile Button in Navbar -->
                 <a href="https://www.fiverr.com/sabbir_tareq" target="_blank" id="nav-fiverr">
-                    <button class="custom-button-fiverr">FIVERR PROFILE</button>
+                    <button class="custom-button-nav-hero">FIVERR PROFILE</button>
                 </a>
             </div>
         </div>

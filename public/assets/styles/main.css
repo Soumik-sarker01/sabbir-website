@@ -217,7 +217,7 @@ a {
 html {
     /* width: 100%;
     height: 100%; */
-    font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif !important;;
     font-size: 62.5%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -236,7 +236,7 @@ body {
     /* Ensures no unwanted color gap */
     /* color: var(--t-medium); */
     overflow-x: hidden;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif !important;;
 }
 
 /* section {
@@ -244,10 +244,7 @@ body {
     min-width: 360px;
 } */
 
-h1 {
-    text-transform: capitalize;
-    font-size: 38px;
-}
+
 
 a {
     text-decoration: none;
@@ -812,7 +809,7 @@ nav ul {
 
 /* Hover effect: Transparent background */
 .custom-button-nav-hero:hover {
-    background: rgba(255, 255, 255, 1) !important;
+    background: #ffffff !important;
     color: #25262f;
     border: 1px solid #fff;
 }
@@ -974,7 +971,7 @@ nav ul {
     /* Ensure visibility */
     margin-bottom: 5px;
     left: -125px;
-    font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif !important;;
 }
 
 .profile h1 {
@@ -984,7 +981,7 @@ nav ul {
     color: #e2ecf6;
     margin-top: 0;
     left: -125px;
-    font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif !important;;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1012,7 +1009,7 @@ nav ul {
     align-items: center;
     justify-content: center;
     text-align: left;
-    max-width: 600px;
+    max-width: 800px;
     position: relative;
     width: 100%;
     top: 200px;
@@ -1036,7 +1033,7 @@ nav ul {
     left: -17px;
     top: 20px;
     /* Ensure it's positioned correctly */
-    font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif !important;;
 }
 
 /* Keep "Social Media" text fixed */
@@ -1350,7 +1347,7 @@ nav ul {
         /* Ensure visibility */
         margin-bottom: 5px;
         left: 5px;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     .profile h1 {
@@ -1359,7 +1356,7 @@ nav ul {
         font-weight: 700;
         color: #e2ecf6;
         margin-top: 0;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     /* Container for image and circle */
@@ -1456,7 +1453,7 @@ nav ul {
         height: 70px;
         left: 85px;
         /* Ensure it's positioned correctly */
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     /* Keep "Social Media" text fixed */
@@ -1598,7 +1595,7 @@ nav ul {
         /* Ensure visibility */
         margin-bottom: 5px;
         left: -125px;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     .profile h1 {
@@ -1608,7 +1605,7 @@ nav ul {
         color: #e2ecf6;
         margin-top: 0;
         left: -125px;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     .hero-text {
@@ -1617,7 +1614,7 @@ nav ul {
         align-items: center;
         justify-content: center;
         text-align: left;
-        max-width: 600px;
+        max-width: 800px;
         position: relative;
         width: 100%;
         top: 200px;
@@ -1625,10 +1622,10 @@ nav ul {
 
     .hero-text p {
         font-size: 2.2rem;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
         color: #fff;
         text-align: center;
-        max-width: 700px;
+        max-width: 800px;
         /* Adjust width */
         width: 100%;
         /* Ensures it doesn't exceed parent width */
@@ -1652,7 +1649,7 @@ nav ul {
         left: 3px;
         top: 20px;
         /* Ensure it's positioned correctly */
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     /* Keep "Social Media" text fixed */
@@ -1719,6 +1716,9 @@ nav ul {
 
 /* ----- For Screens 1500px to 1200px ----- */
 @media only screen and (max-width: 1500px) and (min-width: 1200px) {
+    .hero-wrapper{
+        width: 1500px;
+    }
     :root {
         --image-width: 900px;
         --image-height: 900px;
@@ -1734,7 +1734,7 @@ nav ul {
         /* Ensure visibility */
         margin-bottom: 5px;
         left: 5px;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     .profile h1 {
@@ -1743,7 +1743,7 @@ nav ul {
         font-weight: 700;
         color: #e2ecf6;
         margin-top: 0;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     /* Container for image and circle */
@@ -1838,7 +1838,7 @@ nav ul {
         height: 70px;
         left: -50px !important;
         /* Ensure it's positioned correctly */
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     /* Keep "Social Media" text fixed */
@@ -1857,7 +1857,8 @@ nav ul {
         position: relative;
         white-space: nowrap;
         font-size: inherit;
-        width: 370px;
+        width: 100%; /* Ensure it takes full width */
+        max-width: 1200px; /* Adjust according to your layout */
         /* Adjust as needed */
         overflow: hidden;
         text-align: left;
@@ -1980,7 +1981,7 @@ nav ul {
         /* Ensure visibility */
         margin-bottom: 5px;
         left: -125px;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     .profile h1 {
@@ -1990,7 +1991,7 @@ nav ul {
         color: #e2ecf6;
         margin-top: 0;
         left: -125px;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     .hero-text {
@@ -1999,7 +2000,7 @@ nav ul {
         align-items: center;
         justify-content: center;
         text-align: left;
-        max-width: 600px;
+        max-width: 800px;
         position: relative;
         width: 100%;
         top: 200px;
@@ -2007,7 +2008,7 @@ nav ul {
 
     .hero-text p {
         font-size: 2.2rem;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
         color: #fff;
         text-align: center;
         max-width: 700px;
@@ -2034,7 +2035,7 @@ nav ul {
         left: 11px;
         top: 20px;
         /* Ensure it's positioned correctly */
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     /* Keep "Social Media" text fixed */
@@ -2060,6 +2061,7 @@ nav ul {
         overflow: hidden;
         text-align: left;
         font-size: 3.2rem;
+        max-width: 1200px; /* Adjust according to your layout */
         /* Typing text is larger */
         line-height: 3.2rem;
         /* Match the text height */
@@ -2116,7 +2118,7 @@ nav ul {
         /* Ensure visibility */
         margin-bottom: 5px;
         left: 5px;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     .profile h1 {
@@ -2125,7 +2127,7 @@ nav ul {
         font-weight: 700;
         color: #e2ecf6;
         margin-top: 0;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     /* Container for image and circle */
@@ -2222,7 +2224,7 @@ nav ul {
         height: 70px;
         left: 85px;
         /* Ensure it's positioned correctly */
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     /* Keep "Social Media" text fixed */
@@ -2253,7 +2255,7 @@ nav ul {
         color: #80db66;
         display: inline-block;
         overflow: hidden;
-        min-width: fit-content;
+        min-width: 700px;
         padding-right: -10px;
         /* Ensures cursor sticks to last letter */
         margin-right: -15px;
@@ -2364,7 +2366,7 @@ nav ul {
         /* Ensure visibility */
         margin-bottom: 5px;
         left: -125px;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     .profile h1 {
@@ -2374,7 +2376,7 @@ nav ul {
         color: #e2ecf6;
         margin-top: 0;
         left: -125px;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     .hero-text {
@@ -2391,10 +2393,10 @@ nav ul {
 
     .hero-text p {
         font-size: 2.2rem;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
         color: #fff;
         text-align: center;
-        max-width: 700px;
+        max-width: 800px;
         /* Adjust width */
         width: 100%;
         /* Ensures it doesn't exceed parent width */
@@ -2418,7 +2420,7 @@ nav ul {
         left: -50px;
         top: 20px;
         /* Ensure it's positioned correctly */
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     /* Keep "Social Media" text fixed */
@@ -2567,7 +2569,46 @@ nav ul {
     }
 }
 
-
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    /* Fix the overall container width */
+    .social-media-container {
+      position: relative;
+      width: 500px; /* Set a fixed width for the entire container */
+      height: auto;
+      top: 40px;
+    }
+    /* Position the left text so it never moves */
+    .social-media-text {
+      position: absolute;
+      left: 45px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 150px; /* Fixed width for the text */
+      white-space: nowrap;
+    }
+    /* Position the typing container to start immediately after the left text */
+    .typing-container {
+      position: absolute;
+      left: 175px; /* Same as the width of .social-media-text */
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto !important;
+      max-width: none !important;
+      white-space: nowrap;
+      overflow: visible;
+      height: 3.2rem; /* Set to the desired fixed height */
+      line-height: 3.2rem; /* Ensure the line-height stays consistent */
+    }
+  /* Ensure the hero buttons are on top of the social media container */
+  .hero-buttons {
+    position: relative;
+    top: 70px;
+    z-index: 10;
+  }
+  }
+  
+  
+  
 
 
 /* ----- For Extra Small Devices (Max-width: 480px) ----- */
@@ -2592,12 +2633,12 @@ nav ul {
 
     .hero-text {
         top: 100px;
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .hero-text p {
         font-size: 1.6rem;
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .social-media-container {
@@ -3597,6 +3638,26 @@ nav ul {
     margin: 0 auto;
 }
 
+.projects-wrapper h1 {
+    all: unset;
+    font-size: 45px !important;
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    position: relative !important;
+}
+
+.projects-wrapper h1::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 @media only screen and (max-width: 800px) {
     .projects-wrapper {
         padding: 3rem 1rem;
@@ -3610,10 +3671,7 @@ nav ul {
     text-align: center;
 }
 
-.projects-wrapper h1 {
-    font-size: 38px;
-    font-weight: bold;
-}
+
 
 @media only screen and (max-width: 800px) {
     .projects-wrapper h1 {
@@ -4478,9 +4536,7 @@ nav ul {
     font-weight: bold;
 }
 
-.testimonial:hover {
-    box-shadow: 0 5px 15px #80db66 !important;
-}
+
 
 .projects-nav i {
     font-size: 3rem;
@@ -5202,7 +5258,7 @@ footer img {
         /* Ensure visibility */
         margin-bottom: 5px;
         left: 5px;
-        font-family: 'plus-jakarta-sans', sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     .profile h1 {
@@ -5211,7 +5267,7 @@ footer img {
         font-weight: 800;
         color: #e2ecf6;
         margin-top: -10;
-        font-family: 'plus-jakarta-sans', sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     .hero-text .button2 {
@@ -5288,7 +5344,7 @@ footer img {
         height: 70px;
         left: 100px;
         top: -30px;
-        font-family: 'plus-jakarta-sans', sans-serif, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif !important;;
     }
 
     /* Keep "Social Media" text fixed */
@@ -5547,8 +5603,6 @@ footer img {
     .projects-wrapper h1 {
         font-size: 38px;
         font-weight: bold;
-        text-transform: uppercase;
-        font-weight: bold;
     }
 
     .projects-btn {
@@ -5670,7 +5724,6 @@ footer img {
     .services-included h1 {
         font-size: 38px;
         font-weight: 800;
-        text-transform: uppercase;
         margin-bottom: 20px;
         color: #e2ecf6;
     }
@@ -5706,7 +5759,6 @@ footer img {
         font-weight: bold;
         color: #222;
         margin-bottom: 40px;
-        text-transform: uppercase;
         text-align: center;
     }
 
@@ -5906,7 +5958,7 @@ footer img {
 h1 {
     position: relative;
     color: #e2ecf6;
-    font-family: 'plus-jakarta-sans', sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif !important;;
     transition: transform 0.5s ease, letter-spacing 0.5s ease, color 0.5s ease;
     text-shadow: none !important;
 }
@@ -5940,11 +5992,16 @@ h1:hover::after {
 
 
 .company-logo-title,
-.container-lg h1,
 .section-title,
 .aim-title,
 .about-text h1,
 .testimonial-head h1 {
-    font-size: 45px;
+    font-size: 45px !important;
     font-family: "Segoe UI", Arial, sans-serif !important;
+    font-weight: bold !important;
 }
+
+.section-title {
+    text-transform: none !important;
+  }
+  

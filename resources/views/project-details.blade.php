@@ -36,7 +36,7 @@ $userSatisfaction = "95%";
         top: 0;
         left: 0;
         width: 100%;
-        height: 580px;
+        height: 475px;
         background: #333;
         z-index: 0;
         border-bottom-left-radius: 50px;
@@ -173,7 +173,6 @@ $userSatisfaction = "95%";
         font-size: 3.1rem;
         font-weight: bold;
         margin-bottom: 20px;
-        letter-spacing: 2px;
     }
 
     /* Project Description (typing effect) */
@@ -207,7 +206,6 @@ $userSatisfaction = "95%";
         font-size: 3.1rem;
         font-weight: bold;
         margin-bottom: 20px;
-        letter-spacing: 2px;
     }
 
     #reviews-section h2 {
